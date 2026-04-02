@@ -17,7 +17,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
 
 /* PHONE SHELL */
 .shell{
-  width:390px;height:844px;
+  width:390px;height:95vh;
   position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
   background:#111820;border-radius:48px;overflow:hidden;
   box-shadow:0 40px 120px rgba(0,0,0,0.8),0 0 0 1px rgba(255,255,255,0.1),inset 0 0 0 2px #1a2530;
@@ -38,7 +38,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
 .notch-mic{width:4px;height:4px;border-radius:50%;background:#333;}
 .status-time{font-size:15px;font-weight:700;}
 .status-icons{display:flex;gap:5px;align-items:center;}
-.screen-wrap{flex:1;overflow:hidden;position:relative;}
+.screen-wrap{flex:1;overflow:hidden;position:relative;
+padding-bottom: 80px;}
 
 /* SCREENS */
 .page{
@@ -51,11 +52,20 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
 .page::-webkit-scrollbar{display:none;}
 
 /* BOTTOM NAV */
-.bottom-nav{
-  height:80px;background:rgba(10,20,28,0.95);backdrop-filter:blur(20px);
+.bottom-nav{box-shadow:0 -5px 20px rgba(0,0,0,0,3);
+  height:80px;
+  background:rgba(10,20,28,0.95);
+  backdrop-filter:blur(20px);
   border-top:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-around;
-  padding:0 10px 16px;flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  padding:0 10px 16px;
+
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
 }
 .nav-item{
   display:flex;flex-direction:column;align-items:center;gap:4px;
@@ -460,11 +470,19 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
               <div class="demo-card-role">Delivery Agent</div>
             </div>
             <div class="demo-card" onclick="quickLogin('customer')">
+
               <div class="demo-card-icon">🛒</div>
               <div class="demo-card-name">Ishani</div>
               <div class="demo-card-role">Customer App</div>
             </div>
-          </div>
+          <!-- ADD THIS ADMIN CARD -->
+  <div class="demo-card" onclick="goTo('admin-dashboard')">
+    <div class="demo-card-icon">🛠️</div>
+    <div class="demo-card-name">Admin</div>
+    <div class="demo-card-role">Platform Dashboard</div>
+  </div>
+</div>
+        </div>
         </div>
       </div>
     </div>
@@ -516,7 +534,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
         <div class="card" style="animation-delay:.3s">
           <div class="section-title">Recent Orders <span>All orders →</span></div>
           <div class="order-item-row">
-            <div><div class="order-name">Coconut Oil 1L ×5</div><div class="order-meta">Big Bazaar · 10:32 AM</div></div>
+            <div><div class="order-name">Coconut Oil 1L ×5</div><div class="order-meta">SM Street· 10:32 AM</div></div>
             <div style="text-align:right"><div class="order-amount">₹900</div><span class="badge badge-green">Delivered</span></div>
           </div>
           <div class="order-item-row">
@@ -541,7 +559,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
         <div class="rental-card" onclick="showModal('space-a1')">
           <div class="rental-header">
             <div>
-              <div class="rental-loc">🏬 Space A1 — Big Bazaar</div>
+              <div class="rental-loc">🏬 Space A1 — SM Street</div>
               <div class="rental-store">Mavoor Road, Calicut · Prime Location</div>
             </div>
             <span class="badge badge-green">Active</span>
@@ -644,7 +662,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
         <div class="card">
           <div class="section-title">Sales by Store Location</div>
           <div class="order-item-row">
-            <div><div class="order-name">Big Bazaar — Space A1</div><div class="order-meta">Prime location · 156 orders</div></div>
+            <div><div class="order-name">SM Street — Space A1</div><div class="order-meta">Prime location · 156 orders</div></div>
             <div style="text-align:right"><div class="order-amount">₹24,100</div><span class="badge badge-green">Best</span></div>
           </div>
           <div class="order-item-row">
@@ -657,18 +675,43 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
           </div>
         </div>
 
-        <div class="card">
-          <div class="section-title">Peak Sales Times</div>
-          <div class="bar-chart" style="height:80px;">
-            <div class="bar-col"><div class="bar" style="height:20%"></div><div class="bar-lbl">6am</div></div>
-            <div class="bar-col"><div class="bar" style="height:40%"></div><div class="bar-lbl">8am</div></div>
-            <div class="bar-col"><div class="bar" style="height:70%"></div><div class="bar-lbl">10am</div></div>
-            <div class="bar-col"><div class="bar" style="height:100%"></div><div class="bar-lbl">12pm</div></div>
-            <div class="bar-col"><div class="bar" style="height:80%"></div><div class="bar-lbl">2pm</div></div>
-            <div class="bar-col"><div class="bar" style="height:60%"></div><div class="bar-lbl">4pm</div></div>
-            <div class="bar-col"><div class="bar" style="height:90%"></div><div class="bar-lbl">6pm</div></div>
-            <div class="bar-col"><div class="bar" style="height:75%"></div><div class="bar-lbl">8pm</div></div>
-          </div>
+        <class="card">
+  <div class="section-title">Peak Sales Times</div>
+
+  <div style="height:120px;position:relative;margin-top:10px;">
+    <svg viewBox="0 0 300 120" style="width:100%;height:100%;">
+      <polyline
+        fill="none"
+        stroke="#4db8d8"
+        stroke-width="3"
+        points="
+        0,100
+        40,80
+        80,50
+        120,20
+        160,40
+        200,60
+        240,30
+        280,50
+        " />
+    </svg>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-top:6px;">
+    <span>6am</span>
+    <span>8am</span>
+    <span>10am</span>
+    <span>12pm</span>
+    <span>2pm</span>
+    <span>4pm</span>
+    <span>6pm</span>
+    <span>8pm</span>
+  </div>
+
+  <div style="font-size:11px;color:var(--muted);margin-top:10px;text-align:center;">
+    Peak hours: 12 PM and 6 PM
+  </div>
+
           <div style="font-size:11px;color:var(--muted);margin-top:10px;text-align:center;">Peak hours: 12 PM and 6 PM — stock up before these times</div>
         </div>
 
@@ -705,11 +748,41 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
           </div>
         </div>
         <div class="card">
-          <div class="setting-row"><div class="setting-left"><span class="setting-icon">📦</span><span class="setting-name">My Products (8)</span></div><span class="setting-arrow">›</span></div>
-          <div class="setting-row"><div class="setting-left"><span class="setting-icon">💳</span><span class="setting-name">Payment Settings</span></div><span class="setting-arrow">›</span></div>
-          <div class="setting-row"><div class="setting-left"><span class="setting-icon">📋</span><span class="setting-name">My Agreements</span></div><span class="setting-arrow">›</span></div>
-          <div class="setting-row"><div class="setting-left"><span class="setting-icon">🔔</span><span class="setting-name">Notifications</span></div><span class="setting-arrow">›</span></div>
-          <div class="setting-row"><div class="setting-left"><span class="setting-icon">🆘</span><span class="setting-name">Support</span></div><span class="setting-arrow">›</span></div>
+          <div class="setting-row" onclick="goTo('seller-products')">
+  <div class="setting-left">
+    <span class="setting-icon">📦</span>
+    <span class="setting-name">My Products (8)</span>
+  </div>
+  <span class="setting-arrow">›</span>
+</div>
+          <div class="setting-row" onclick="goTo('seller-payment')">
+  <div class="setting-left">
+    <span class="setting-icon">💳</span>
+    <span class="setting-name">Payment Settings</span>
+  </div>
+  <span class="setting-arrow">›</span>
+</div>
+          <div class="setting-row" onclick="goTo('seller-agreements')">
+  <div class="setting-left">
+    <span class="setting-icon">📋</span>
+    <span class="setting-name">My Agreements</span>
+  </div>
+  <span class="setting-arrow">›</span>
+</div>
+          <div class="setting-row" onclick="goTo('notifications')">
+  <div class="setting-left">
+    <span class="setting-icon">🔔</span>
+    <span class="setting-name">Notifications</span>
+  </div>
+  <span class="setting-arrow">›</span>
+</div>
+          <div class="setting-row" onclick="goTo('seller-support')">
+  <div class="setting-left">
+    <span class="setting-icon">🆘</span>
+    <span class="setting-name">Support</span>
+  </div>
+  <span class="setting-arrow">›</span>
+</div>
           <div class="setting-row" onclick="goTo('login')"><div class="setting-left"><span class="setting-icon">🚪</span><span class="setting-name" style="color:var(--coral)">Sign Out</span></div><span class="setting-arrow">›</span></div>
         </div>
       </div>
@@ -720,7 +793,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
       <div class="page-header">
         <div class="greeting">Ready to deliver, <strong>Rohan</strong> 🚴</div>
         <div class="page-title">Delivery Dashboard</div>
-        <div class="page-sub"><span class="live-dot"></span>Online · Calicut Zone · Bike</div>
+        <div class="page-sub"><span class="live-dot"></span>Online · Calicut Zone · Jeep</div>
       </div>
       <div class="content">
         <div class="kpi-row">
@@ -735,7 +808,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
           <div class="delivery-card">
             <div class="del-header">
               <div class="del-icon">🚴</div>
-              <div style="flex:1"><div class="del-id">DEL-2026-0847</div><div class="del-route">Nihal Farm → Big Bazaar, Calicut</div></div>
+              <div style="flex:1"><div class="del-id">DEL-2026-0847</div><div class="del-route">Nihal Farm → SM Street, Calicut</div></div>
               <span class="badge badge-amber">Moving</span>
             </div>
             <div style="font-size:11px;color:var(--muted);margin-bottom:8px;">Coconut Oil ×5 · Banana Chips ×12 · 2.4 km</div>
@@ -794,15 +867,17 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
         </div>
         <div class="card">
           <div class="section-title">Recent Payments</div>
-          <div class="order-item-row"><div><div class="order-name">DEL-2026-0847</div><div class="order-meta">Big Bazaar route · 2.4 km · Today 10:30 AM</div></div><div class="order-amount">₹120</div></div>
+          <div class="order-item-row"><div><div class="order-name">DEL-2026-0847</div><div class="order-meta">SM Street route · 2.4 km · Today 10:30 AM</div></div><div class="order-amount">₹120</div></div>
           <div class="order-item-row"><div><div class="order-name">DEL-2026-0834</div><div class="order-meta">More Market route · 1.8 km · Today 8:20 AM</div></div><div class="order-amount">₹95</div></div>
           <div class="order-item-row"><div><div class="order-name">DEL-2026-0821</div><div class="order-meta">City Mall route · 3.1 km · Yesterday</div></div><div class="order-amount">₹145</div></div>
-          <div class="order-item-row"><div><div class="order-name">DEL-2026-0819</div><div class="order-meta">Big Bazaar route · 2.4 km · Yesterday</div></div><div class="order-amount">₹120</div></div>
+          <div class="order-item-row"><div><div class="order-name">DEL-2026-0819</div><div class="order-meta">SM Street route · 2.4 km · Yesterday</div></div><div class="order-amount">₹120</div></div>
         </div>
       </div>
     </div>
 
     <!-- ══ DELIVERY PROFILE ══ -->
+
+    
     <div class="page hidden" id="delivery-profile">
       <div class="page-header"><div class="page-title">My Profile</div></div>
       <div class="content">
@@ -810,14 +885,17 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
           <div class="profile-avatar" style="background:linear-gradient(135deg,var(--leaf),var(--leaf-light))">NK</div>
           <div>
             <div class="profile-name">Rohan</div>
-            <div class="profile-role" style="color:var(--leaf-light)">🚴 Delivery Partner · Bike</div>
+            <div class="profile-role" style="color:var(--leaf-light)">🚴 Delivery Partner · Jeep</div>
             <div class="profile-loc">📍 Calicut Zone · Rating: 4.8⭐</div>
           </div>
         </div>
         <div class="card">
-          <div class="setting-row"><div class="setting-left"><span class="setting-icon">🗺️</span><span class="setting-name">Route History</span></div><span class="setting-arrow">›</span></div>
-          <div class="setting-row"><div class="setting-left"><span class="setting-icon">🚴</span><span class="setting-name">Vehicle Details</span></div><span class="setting-arrow">›</span></div>
-          <div class="setting-row"><div class="setting-left"><span class="setting-icon">📋</span><span class="setting-name">Partner Agreement</span></div><span class="setting-arrow">›</span></div>
+          <div class="setting-row"
+          onclick="goTo('delivery-route-history')"><div class="setting-left"><span class="setting-icon">🗺️</span><span class="setting-name">Route History</span></div><span class="setting-arrow">›</span></div>
+          <div class="setting-row"
+          onclick="goTo('delivery-vehicle')"><div class="setting-left"><span class="setting-icon">🚴</span> 
+            <span class="setting-name">Vehicle Details</span></div><span class="setting-arrow">›</span></div>
+          <div class="setting-row"onclick="goTo('delivery agreement')"><div class="setting-left"><span class="setting-icon">📋</span><span class="setting-name">Partner Agreement</span></div><span class="setting-arrow">›</span></div>
           <div class="setting-row" onclick="goTo('login')"><div class="setting-left"><span class="setting-icon">🚪</span><span class="setting-name" style="color:var(--coral)">Sign Out</span></div><span class="setting-arrow">›</span></div>
         </div>
       </div>
@@ -842,13 +920,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
         </div>
         <div class="section-title">Fresh From Farms <span>See all →</span></div>
         <div class="prod-grid">
-          <div class="prod-card"><div class="prod-img">🥥</div><div class="prod-body"><div class="prod-name">Coconut Oil 1L</div><div class="prod-seller">by Nihal</div><div class="prod-footer"><div class="prod-price">₹180</div><button class="add-btn">+</button></div></div></div>
-          <div class="prod-card"><div class="prod-img">🌾</div><div class="prod-body"><div class="prod-name">Red Rice 5kg</div><div class="prod-seller">by Green Farm</div><div class="prod-footer"><div class="prod-price">₹320</div><button class="add-btn">+</button></div></div></div>
+          <div class="prod-card"><div class="prod-img">🥥</div><div class="prod-body"><div class="prod-name">Coconut Oil 1L</div><div class="prod-seller">by Nihal</div><div class="prod-footer"><div class="prod-price">₹180</div><button class="add-btn">+</button>>+</button></div></div></div>
+          <div class="prod-card"><div class="prod-img">🌾</div><div class="prod-body"><div class="prod-name">Red Rice 5kg</div><div class="prod-seller">by Green Farm</div><div class="prod-footer"><div class="prod-price">₹320</div><button class="add-btn"></button>+</button></div></div></div>
           <div class="prod-card"><div class="prod-img">🍌</div><div class="prod-body"><div class="prod-name">Banana Chips 200g</div><div class="prod-seller">by Local Bakes</div><div class="prod-footer"><div class="prod-price">₹60</div><button class="add-btn">+</button></div></div></div>
           <div class="prod-card"><div class="prod-img">🌶️</div><div class="prod-body"><div class="prod-name">Kerala Spice Mix</div><div class="prod-seller">by Spice Hub</div><div class="prod-footer"><div class="prod-price">₹95</div><button class="add-btn">+</button></div></div></div>
         </div>
         <div class="section-title">Nearby RIVULET Stores <span>Map →</span></div>
-        <div class="store-row"><div class="store-icon-big">🏬</div><div style="flex:1"><div class="store-name">Big Bazaar Calicut</div><div class="store-meta">0.4 km · 14 sellers · Open until 10 PM</div></div><span class="badge badge-green">Open</span></div>
+        <div class="store-row"><div class="store-icon-big">🏬</div><div style="flex:1"><div class="store-name">SM Street Calicut</div><div class="store-meta">0.4 km · 14 sellers · Open until 10 PM</div></div><span class="badge badge-green">Open</span></div>
         <div class="store-row"><div class="store-icon-big">🛒</div><div style="flex:1"><div class="store-name">More Supermarket</div><div class="store-meta">1.2 km · 8 sellers · Open until 9 PM</div></div><span class="badge badge-green">Open</span></div>
         <div class="store-row"><div class="store-icon-big">🏪</div><div style="flex:1"><div class="store-name">City Mall</div><div class="store-meta">2.1 km · 6 sellers · Open until 11 PM</div></div><span class="badge badge-green">Open</span></div>
       </div>
@@ -879,7 +957,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
         </div>
         <div class="card">
           <div class="section-title">Past Orders</div>
-          <div class="order-item-row"><div><div class="order-name">Red Rice 5kg + Spice Mix</div><div class="order-meta">30 Mar 2026 · Big Bazaar</div></div><div style="text-align:right"><div class="order-amount">₹415</div><span class="badge badge-green">Delivered</span></div></div>
+          <div class="order-item-row"><div><div class="order-name">Red Rice 5kg + Spice Mix</div><div class="order-meta">30 Mar 2026 · SM Street</div></div><div style="text-align:right"><div class="order-amount">₹415</div><span class="badge badge-green">Delivered</span></div></div>
           <div class="order-item-row"><div><div class="order-name">Coconut Oil ×2</div><div class="order-meta">28 Mar 2026 · More Market</div></div><div style="text-align:right"><div class="order-amount">₹360</div><span class="badge badge-green">Delivered</span></div></div>
         </div>
       </div>
@@ -889,6 +967,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
     <div class="page hidden" id="customer-profile">
       <div class="page-header"><div class="page-title">My Profile</div></div>
       <div class="content">
+       
         <div class="profile-hero" style="background:linear-gradient(135deg,rgba(232,160,32,0.2),rgba(232,160,32,0.05));border-color:rgba(232,160,32,0.3);">
           <div class="profile-avatar" style="background:linear-gradient(135deg,var(--amber),#ffcc44)">MS</div>
           <div>
@@ -905,7 +984,379 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
         </div>
       </div>
     </div>
+<div class="page hidden" id="delivery-route-history">
+  <div class="page-header">
+    <div class="page-title">Route History</div>
+  </div>
+  <div class="content">
+    <div class="card">SM Street → City Mall · 3.2 km · ₹120</div>
+    <div class="card">More Market → Beach Road · ₹95</div>
+  </div>
+</div>
 
+<div class="page hidden" id="delivery-vehicle">
+  <div class="page-header">
+    <div class="page-title">Vehicle Details</div>
+  </div>
+  <div class="content">
+    <div class="card">
+      Vehicle: Jeep <br>
+      Model: Mahindra Jeep <br>
+      Number: KL-07 JA 2255
+    </div>
+  </div>
+</div>
+<!-- ADMIN DASHBOARD -->
+<div class="page hidden" id="admin-dashboard">
+  <div class="page-header">
+    <div class="page-title">Admin Dashboard</div>
+    <div class="page-sub">Platform overview & management</div>
+  </div>
+
+  <div class="content">
+    <div class="kpi-row">
+      <div class="kpi">
+        <div class="kpi-label">Total Sales</div>
+        <div class="kpi-val">₹4,82,000</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Commission</div>
+        <div class="kpi-val">₹24,100</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Active Sellers</div>
+        <div class="kpi-val">48</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Delivery Agents</div>
+        <div class="kpi-val">32</div>
+      </div>
+    </div>
+
+    <div class="card">
+  <div class="section-title">Manage Platform</div>
+  <div class="setting-row" onclick="goTo('admin-sellers')">Approve Sellers</div>
+  <div class="setting-row" onclick="goTo('admin-delivery')">Approve Delivery Agents</div>
+  <div class="setting-row" onclick="goTo('admin-stores')">Manage Stores</div>
+  <div class="setting-row" onclick="goTo('admin-spaces')">Manage Shelf Spaces</div>
+  <div class="setting-row" onclick="goTo('admin-reports')">View Reports</div>
+</div>
+  </div>
+</div>
+<div class="page hidden" id="admin-sellers">
+  <div class="page-header">
+    <div class="back-btn" onclick="goTo('admin-dashboard')">←</div>
+    <div class="page-title">Seller Approvals</div>
+  </div>
+
+  <div class="content">
+    <div class="card">Nihal Farms — Pending Approval</div>
+    <div class="card">Green Farm — Approved</div>
+    <div class="card">Spice Hub — Approved</div>
+  </div>
+</div>
+<div class="page hidden" id="admin-delivery">
+  <div class="page-header">
+    <div class="back-btn" onclick="goTo('admin-dashboard')">←</div>
+    <div class="page-title">Delivery Agents</div>
+  </div>
+
+  <div class="content">
+    <div class="card">Rohan — Active</div>
+    <div class="card">Akash — Pending Approval</div>
+    <div class="card">Vivek — Active</div>
+  </div>
+</div>
+<div class="page hidden" id="admin-stores">
+  <div class="page-header">
+    <div class="back-btn" onclick="goTo('admin-dashboard')">←</div>
+    <div class="page-title">Store Management</div>
+  </div>
+
+  <div class="content">
+    <div class="card">Big Bazaar Calicut</div>
+    <div class="card">More Supermarket</div>
+    <div class="card">City Mall</div>
+  </div>
+</div>
+<div class="page hidden" id="admin-spaces">
+  <div class="page-header">
+    <div class="back-btn" onclick="goTo('admin-dashboard')">←</div>
+    <div class="page-title">Shelf Spaces</div>
+  </div>
+
+  <div class="content">
+    <div class="card">A1 — Occupied</div>
+    <div class="card">A2 — Occupied</div>
+    <div class="card">A3 — Vacant</div>
+    <div class="card">B1 — Reserved</div>
+  </div>
+</div>
+<div class="page hidden" id="admin-reports">
+  <div class="page-header">
+    <div class="back-btn" onclick="goTo('admin-dashboard')">←</div>
+    <div class="page-title">Reports</div>
+  </div>
+
+  <div class="content">
+    <div class="card">Weekly Sales Report</div>
+    <div class="card">Monthly Revenue Report</div>
+    <div class="card">Top Sellers Report</div>
+  </div>
+</div>
+<!-- SELLER PRODUCTS -->
+<div class="page hidden" id="seller-products">
+  <div class="page-header">
+    <div class="back-btn" onclick="goTo('seller-profile')">←</div>
+    <div class="page-title">My Products</div>
+    <div class="page-sub">Products you are selling</div>
+  </div>
+
+  <div class="content">
+    <div class="card" onclick="goTo('product-details')">
+      Coconut Oil 1L — ₹180 — Stock: 24
+    </div>
+
+    <div class="card">Red Rice 5kg — ₹320 — Stock: 12</div>
+    <div class="card">Banana Chips — ₹60 — Stock: 40</div>
+    <div class="card">Kerala Spice Mix — ₹95 — Stock: 18</div>
+    <div class="card">Coconut Powder — ₹120 — Stock: 15</div>
+    <div class="card">Turmeric Powder — ₹80 — Stock: 22</div>
+    <div class="card">Pepper — ₹140 — Stock: 10</div>
+    <div class="card">Cardamom — ₹220 — Stock: 8</div>
+
+    <button class="login-btn" onclick="goTo('seller-add-product')" style="margin-top:10px;">
+      Add New Product
+    </button>
+  </div>
+</div>
+<!-- SELLER ADD PRODUCT -->
+<div class="page hidden" id="seller-add-product">
+  <div class="page-header">
+    <div class="back-btn" onclick="goTo('seller-products')">←</div>
+    <div class="page-title">Add Product</div>
+    <div class="page-sub">Add a new product to your shelf</div>
+  </div>
+
+  <div class="content">
+
+    <div class="field-label">Product Name</div>
+    <input class="field" placeholder="Eg: Coconut Oil 1L">
+
+    <div class="field-label">Category</div>
+    <input class="field" placeholder="Eg: Coconut / Grains / Spices">
+
+    <div class="field-label">Price (₹)</div>
+    <input class="field" placeholder="Enter price">
+
+    <div class="field-label">Stock Quantity</div>
+    <input class="field" placeholder="Enter stock">
+
+    <div class="field-label">Shelf Location</div>
+    <input class="field" placeholder="Eg: Big Bazaar A1">
+
+    <div class="field-label">Description</div>
+    <input class="field" placeholder="Product description">
+
+    <button class="login-btn" style="margin-top:12px;">
+      Add Product
+    </button>
+
+    <button class="splash-btn outline" onclick="goTo('seller-products')" style="margin-top:10px;">
+      Cancel
+    </button>
+
+  </div>
+</div>
+<!-- SELLER PAYMENT SETTINGS -->
+<div class="page hidden" id="seller-payment">
+  <div class="page-header">
+    <div class="back-btn" onclick="goTo('seller-profile')">←</div>
+    <div class="page-title">Payment Settings</div>
+    <div class="page-sub">Payout & bank details</div>
+  </div>
+
+  <div class="content">
+    <div class="card">
+      <div class="section-title">Bank Account</div>
+      Account Name: Nihal<br>
+      Bank: SBI<br>
+      Account No: XXXX4321<br>
+      IFSC: SBIN0001234
+    </div>
+
+    <div class="card">
+      <div class="section-title">UPI ID</div>
+      nihal@upi
+    </div>
+
+    <div class="card">
+      <div class="section-title">Payout Schedule</div>
+      Weekly Settlement<br>
+      Every Sunday Night
+    </div>
+
+    <div class="card">
+      <div class="section-title">Pending Payout</div>
+      ₹11,220
+    </div>
+
+    <button class="login-btn">Update Payment Details</button>
+  </div>
+</div>
+<!-- SELLER AGREEMENTS -->
+<div class="page hidden" id="seller-agreements">
+  <div class="page-header">
+    <div class="back-btn" onclick="goTo('seller-profile')">←</div>
+    <div class="page-title">My Agreements</div>
+    <div class="page-sub">Contracts & platform agreements</div>
+  </div>
+
+  <div class="content">
+
+    <div class="card">
+      <div class="section-title">Shelf Rental Agreement</div>
+      Store: Big Bazaar<br>
+      Space: A1<br>
+      Rent: ₹1,400 / week<br>
+      Period: 16 Mar – 30 Apr 2026<br>
+      Status: Active
+    </div>
+
+    <div class="card">
+      <div class="section-title">Platform Commission Agreement</div>
+      Commission: 0.5% per sale<br>
+      Settlement: Weekly<br>
+      Signed: Jan 2026
+    </div>
+
+    <div class="card">
+      <div class="section-title">Delivery Agreement</div>
+      Platform handles delivery logistics<br>
+      Delivery fee charged to seller per order
+    </div>
+
+    <div class="card">
+      <div class="section-title">Terms & Conditions</div>
+      Standard RIVULET seller agreement accepted
+    </div>
+
+    <button class="login-btn">Download Agreement PDF</button>
+
+  </div>
+</div>
+<!-- NOTIFICATIONS PAGE -->
+<div class="page hidden" id="notifications">
+  <div class="page-header">
+    <div class="back-btn" onclick="goTo('seller-profile')">←</div>
+    <div class="page-title">Notifications</div>
+    <div class="page-sub">Updates, alerts & platform messages</div>
+  </div>
+
+  <div class="content">
+
+    <div class="card">
+      <div class="section-title">Today</div>
+
+      <div class="order-item-row">
+        <div>
+          <div class="order-name">New Order Received</div>
+          <div class="order-meta">Coconut Oil ×5 · Big Bazaar · 10:32 AM</div>
+        </div>
+        <span class="badge badge-green">Order</span>
+      </div>
+
+      <div class="order-item-row">
+        <div>
+          <div class="order-name">Delivery Picked Up</div>
+          <div class="order-meta">DEL-2026-0847 · 9:50 AM</div>
+        </div>
+        <span class="badge badge-blue">Delivery</span>
+      </div>
+
+      <div class="order-item-row">
+        <div>
+          <div class="order-name">Shelf Rent Due Soon</div>
+          <div class="order-meta">City Mall Space C3 · 2 days left</div>
+        </div>
+        <span class="badge badge-amber">Alert</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-title">This Week</div>
+
+      <div class="order-item-row">
+        <div>
+          <div class="order-name">Weekly Payout Processed</div>
+          <div class="order-meta">₹8,420 credited to bank</div>
+        </div>
+        <span class="badge badge-green">Payout</span>
+      </div>
+
+      <div class="order-item-row">
+        <div>
+          <div class="order-name">Low Stock Warning</div>
+          <div class="order-meta">Red Rice only 7 units left</div>
+        </div>
+        <span class="badge badge-red">Stock</span>
+      </div>
+
+      <div class="order-item-row">
+        <div>
+          <div class="order-name">Sales Report Ready</div>
+          <div class="order-meta">March analytics available</div>
+        </div>
+        <span class="badge badge-blue">Report</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- SELLER SUPPORT -->
+<div class="page hidden" id="seller-support">
+  <div class="page-header">
+    <div class="back-btn" onclick="goTo('seller-profile')">←</div>
+    <div class="page-title">Support</div>
+    <div class="page-sub">Help, FAQ & contact support</div>
+  </div>
+
+  <div class="content">
+
+    <div class="card">
+      <div class="section-title">Help Topics</div>
+      Shelf rental issues<br>
+      Payment & payouts<br>
+      Product listing<br>
+      Delivery issues<br>
+      Account settings
+    </div>
+
+    <div class="card">
+      <div class="section-title">Contact Support</div>
+      Phone: +91 98765 43210<br>
+      Email: support@rivulet.com<br>
+      Support Hours: 9 AM – 8 PM
+    </div>
+
+    <div class="card">
+      <div class="section-title">Raise Support Ticket</div>
+      Describe your issue and our team will contact you.
+      <button class="login-btn" style="margin-top:10px;">
+        Create Ticket
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="section-title">FAQ</div>
+      How to rent shelf space?<br>
+      When do I receive payouts?<br>
+      How commission is calculated?<br>
+      How delivery works?
+    </div>
+
+  </div>
+</div>
   </div><!-- /screen-wrap -->
 
   <!-- BOTTOM NAV (hidden on splash/login) -->
@@ -963,7 +1414,7 @@ function goTo(id) {
   });
   const target = document.getElementById(id);
   if(target) { target.classList.remove('hidden'); }
-  const showNav = !['splash','login'].includes(id);
+  const showNav = !['splash','login','admin-dashboard','admin-sellers','admin-delivery','admin-stores','admin-spaces','admin-reports'].includes(id);
   document.getElementById('bottomNav').style.display = showNav ? 'flex' : 'none';
 }
 
@@ -1009,7 +1460,7 @@ function updateNavActive() {
 // ── MODALS ──
 const modalData = {
   'space-a1': {
-    title: 'Space A1 — Big Bazaar',
+    title: 'Space A1 — SM Street',
     sub: 'Mavoor Road, Calicut · Prime Location 🌟',
     rows: [
       ['Location Type','Prime End-Shelf'],
@@ -1057,7 +1508,7 @@ const modalData = {
     title: 'Book a New Space',
     sub: 'Flexible weekly rental — no long-term commitment',
     rows: [
-      ['Space','A3 — Big Bazaar (Vacant)'],
+      ['Space','A3 — SM Street (Vacant)'],
       ['Location','Near dairy section'],
       ['Weekly Rent','₹1,200 / week'],
       ['Minimum Period','1 week'],
