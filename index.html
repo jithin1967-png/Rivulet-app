@@ -400,8 +400,32 @@ padding-bottom: 80px;}
 
 /* RESPONSIVE — FULL SCREEN ON SMALL DEVICES */
 @media(max-width:430px){
-  .shell{width:100vw;height:100vh;border-radius:0;box-shadow:none;}
-  .desktop-hint{display:none;}
+  body{
+    overflow:auto;
+  }
+
+  .desktop-bg{
+    display:none;
+  }
+
+  .shell{
+    width:100vw;
+    height:100vh;
+    border-radius:0;
+    box-shadow:none;
+    position:fixed;
+    top:0;
+    left:0;
+    transform:none;
+  }
+
+  .screen-wrap{
+    padding-bottom:80px;
+  }
+
+  .desktop-hint{
+    display:none;
+  }
 }
 </style>
 </head>
