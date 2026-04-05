@@ -6,6 +6,7 @@
 <title>RIVULET App</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
+
 :root{
   --river:#0a4f6e;--river-mid:#1a7a9a;--river-light:#4db8d8;--river-glow:#7ee8ff;
   --leaf:#2d7a3e;--leaf-light:#48c464;--amber:#e8a020;--coral:#e05a3a;
@@ -30,7 +31,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
   .shell{width:100vw;height:100vh;border-radius:0;box-shadow:none;position:fixed;top:0;left:0;transform:none;}
   .status-bar{display:none;}
   .desktop-bg{display:none;}
-  .desktop-hint{display:none;}
+  .desktop-hint{display:none!important;}
 }
 
 .status-bar{
@@ -81,11 +82,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
   background:radial-gradient(ellipse at 30% 40%,rgba(26,122,154,0.35),transparent 60%),
             radial-gradient(ellipse at 80% 80%,rgba(45,122,62,0.2),transparent 50%),#060f14;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
+  overflow-y:auto;
 }
 .splash-wave{font-size:64px;animation:waveAnim 2s ease-in-out infinite;margin-bottom:8px;}
 @keyframes waveAnim{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
 .splash-logo{
-  font-family:'Syne',sans-serif;font-size:52px;font-weight:800;letter-spacing:3px;
+  font-family:'Syne',sans-serif;font-size:46px;font-weight:800;letter-spacing:1px;
   background:linear-gradient(135deg,var(--river-light),var(--river-glow));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
   animation:logoIn 1s ease both;
@@ -97,7 +99,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
 }
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
 .splash-btn{
-  width:280px;padding:18px;border-radius:20px;border:none;cursor:pointer;
+  width:100%;max-width:300px;padding:18px;border-radius:20px;border:none;cursor:pointer;
   font-family:'Syne',sans-serif;font-size:16px;font-weight:700;letter-spacing:1px;
   background:linear-gradient(135deg,var(--river),var(--river-mid));color:white;
   animation:fadeUp .8s .5s ease both;transition:all .2s;margin-bottom:14px;display:block;
@@ -330,14 +332,203 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
 .walk-btn.skip{background:rgba(255,255,255,0.08);color:var(--muted);}
 
 /* ── DESKTOP BG ── */
-.desktop-bg{position:fixed;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(26,122,154,0.15),transparent 60%),radial-gradient(ellipse at 70% 30%,rgba(45,122,62,0.1),transparent 50%),#030810;}
-.desktop-hint{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);backdrop-filter:blur(16px);border-radius:16px;padding:12px 24px;font-size:12px;color:rgba(255,255,255,0.5);white-space:nowrap;display:flex;align-items:center;gap:8px;}
+.desktop-bg{position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 65% 55% at 18% 48%,rgba(10,79,110,.22),transparent),radial-gradient(ellipse 55% 45% at 82% 28%,rgba(45,122,62,.12),transparent),#030810;}
+.desktop-hint{display:none!important;}
+
+
+/* ── ENHANCED COLOURS ── */
+:root{
+  --teal:#0d6e89;--teal-glow:rgba(77,184,216,0.18);
+  --success:#1db954;--warn:#f59e0b;
+  --border2:rgba(255,255,255,0.06);--card2:rgba(255,255,255,0.04);
+}
+
+/* ── DESKTOP BG ── */
+.desktop-bg{position:fixed;inset:0;z-index:0;
+  background:radial-gradient(ellipse 65% 55% at 18% 48%,rgba(10,79,110,.22),transparent),
+  radial-gradient(ellipse 55% 45% at 82% 28%,rgba(45,122,62,.12),transparent),#030810;}
+.desktop-hint{display:none!important;}
+
+/* ── NAV BADGE ── */
+.nav-badge{position:absolute;top:2px;right:4px;min-width:16px;height:16px;border-radius:8px;
+  background:var(--coral);color:white;font-size:9px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;padding:0 3px;line-height:1;}
+.nav-item{position:relative;}
+
+/* ── AUTH PAGES ── */
+.auth-scroll{overflow-y:auto;padding-bottom:48px;
+  background:radial-gradient(ellipse at top,rgba(26,122,154,.18),transparent 55%),var(--bg);}
+.auth-scroll::-webkit-scrollbar{display:none;}
+.auth-inner{padding:36px 24px;}
+.auth-back{width:36px;height:36px;border-radius:11px;background:var(--card);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;font-size:17px;cursor:pointer;margin-bottom:22px;}
+.auth-back:active{transform:scale(.92);}
+.auth-logo{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;
+  background:linear-gradient(135deg,var(--river-light),var(--river-glow));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px;}
+.auth-sub2{font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.6;}
+.field-row{display:flex;gap:10px;}
+.field-row>div{flex:1;}
+.field-eye{position:relative;}
+.field-eye .field{padding-right:44px;}
+.field-eye-icon{position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  font-size:15px;color:var(--muted);cursor:pointer;user-select:none;}
+.auth-divider{display:flex;align-items:center;gap:10px;margin:16px 0;color:var(--muted);font-size:11px;}
+.auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:var(--border);}
+.social-row{display:flex;gap:8px;margin-bottom:4px;}
+.social-btn{flex:1;padding:12px;border-radius:12px;border:1px solid var(--border);background:var(--card);
+  color:var(--text);font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:500;
+  transition:all .2s;display:flex;align-items:center;justify-content:center;gap:7px;}
+.social-btn:active{transform:scale(.96);}
+.auth-switch{font-size:12px;color:var(--muted);text-align:center;margin-top:16px;}
+.auth-switch a{color:var(--river-light);cursor:pointer;font-weight:600;}
+.auth-terms{display:flex;align-items:flex-start;gap:9px;margin-bottom:14px;}
+.auth-terms input{margin-top:3px;flex-shrink:0;accent-color:var(--river-light);}
+.auth-terms label{font-size:12px;color:var(--muted);line-height:1.6;cursor:pointer;}
+.auth-terms a{color:var(--river-light);}
+
+/* ── CART PAGE ── */
+.cart-empty{text-align:center;padding:64px 20px;}
+.cart-empty-icon{font-size:54px;margin-bottom:14px;opacity:.32;}
+.cart-empty-title{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:7px;opacity:.6;}
+.cart-item-row{display:flex;align-items:center;gap:11px;background:var(--card);
+  border:1px solid var(--border);border-radius:16px;padding:13px;margin-bottom:9px;animation:cardIn .35s ease both;}
+.cart-item-emoji{font-size:26px;width:44px;height:44px;background:rgba(255,255,255,.04);
+  border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cart-item-body{flex:1;min-width:0;}
+.cart-item-name{font-size:13px;font-weight:600;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cart-item-store{font-size:10px;color:var(--river-light);}
+.cart-item-price{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--leaf-light);margin-top:4px;}
+.qty-ctrl{display:flex;align-items:center;gap:7px;flex-shrink:0;}
+.qty-btn{width:26px;height:26px;border-radius:8px;border:1px solid var(--border);
+  background:rgba(255,255,255,.06);color:var(--text);font-size:15px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:all .15s;font-family:'DM Sans',sans-serif;}
+.qty-btn:active{transform:scale(.84);}
+.qty-num{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;min-width:18px;text-align:center;}
+.cart-summary-box{background:linear-gradient(135deg,rgba(26,122,154,.12),rgba(45,122,62,.07));
+  border:1px solid var(--border);border-radius:16px;padding:15px;margin-bottom:12px;}
+.cart-sum-row{display:flex;justify-content:space-between;padding:6px 0;font-size:13px;
+  border-bottom:1px solid var(--border2);}
+.cart-sum-row:last-child{border-bottom:none;}
+.cart-sum-row.total-row{font-weight:700;color:var(--leaf-light);font-family:'Syne',sans-serif;font-size:15px;}
+.big-btn{width:100%;padding:16px;border-radius:14px;border:none;cursor:pointer;
+  font-family:'Syne',sans-serif;font-size:14px;font-weight:700;letter-spacing:.4px;
+  transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.big-btn:active{transform:scale(.97);}
+.big-btn-green{background:linear-gradient(135deg,var(--leaf),var(--leaf-light));color:white;
+  box-shadow:0 5px 18px rgba(45,122,62,.38);}
+.big-btn-outline{background:transparent;border:1px solid rgba(224,90,58,.28);color:var(--coral);margin-top:9px;}
+
+/* ── MAP PAGE ── */
+.map-box{height:248px;background:#0b1c29;border-radius:16px;overflow:hidden;
+  position:relative;border:1px solid var(--border);margin-bottom:12px;}
+.map-inner{width:100%;height:100%;
+  background:linear-gradient(155deg,#091c29 0%,#0c2a3a 55%,#071620 100%);position:relative;}
+.map-road-h{position:absolute;left:0;right:0;background:rgba(77,184,216,.14);}
+.map-road-v{position:absolute;top:0;bottom:0;background:rgba(77,184,216,.14);}
+.map-road-h.major,.map-road-v.major{background:rgba(77,184,216,.30);}
+.map-blk{position:absolute;border-radius:3px;background:rgba(26,122,154,.09);border:1px solid rgba(77,184,216,.06);}
+.map-pin{position:absolute;transform:translate(-50%,-100%);
+  display:flex;flex-direction:column;align-items:center;cursor:pointer;}
+.map-pin-dot{width:28px;height:28px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);
+  display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,.4);}
+.map-pin-dot span{transform:rotate(45deg);font-size:12px;}
+.map-pin-lbl{margin-top:4px;background:rgba(8,24,36,.92);border:1px solid rgba(255,255,255,.1);
+  border-radius:7px;padding:2px 7px;font-size:9px;font-weight:700;white-space:nowrap;}
+.map-user{position:absolute;transform:translate(-50%,-50%);width:13px;height:13px;border-radius:50%;
+  background:var(--leaf-light);border:2px solid white;
+  box-shadow:0 0 0 6px rgba(72,196,100,.22);animation:pulse 2s infinite;}
+.map-ctrl{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;gap:5px;}
+.map-ctrl-btn{width:28px;height:28px;border-radius:8px;background:rgba(8,20,30,.88);
+  border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;
+  font-size:12px;cursor:pointer;color:var(--text);}
+.directions-btn{width:100%;padding:13px;border-radius:13px;border:none;cursor:pointer;
+  background:linear-gradient(135deg,var(--river),var(--river-mid));color:white;
+  font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:12px;
+  box-shadow:0 4px 14px rgba(10,79,110,.38);display:flex;align-items:center;justify-content:center;gap:8px;}
+.mkt-row{display:flex;align-items:center;justify-content:space-between;background:var(--card);
+  border:1px solid var(--border);border-radius:13px;padding:13px;margin-bottom:9px;cursor:pointer;transition:all .2s;}
+.mkt-row:active{border-color:var(--river-light);}
+.mkt-icon{width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,var(--river),var(--river-mid));
+  display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.mkt-name{font-size:13px;font-weight:600;}
+.mkt-dist{font-size:10px;color:var(--muted);margin-top:2px;}
+.mkt-spaces{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--leaf-light);}
+
+/* ── PAYMENT PAGE ── */
+.pay-card-display{background:linear-gradient(135deg,#0a4f6e,#1a7a9a,#0a5a7e);
+  border-radius:18px;padding:20px 18px;margin-bottom:14px;position:relative;overflow:hidden;
+  box-shadow:0 10px 34px rgba(10,79,110,.48);}
+@keyframes shimmer{0%{transform:translateX(-100%);}100%{transform:translateX(100%);}}
+.pay-card-display::after{content:'';position:absolute;inset:-50%;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.06) 50%,transparent 60%);
+  animation:shimmer 3s infinite;}
+.cc-chip{width:34px;height:26px;background:linear-gradient(135deg,#c9971f,#f5c842);
+  border-radius:5px;margin-bottom:16px;}
+.cc-num{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;letter-spacing:3px;
+  margin-bottom:14px;opacity:.9;}
+.cc-bottom{display:flex;justify-content:space-between;align-items:flex-end;}
+.cc-lbl{font-size:9px;opacity:.5;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.cc-val{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;}
+.pay-method{background:var(--card);border:1px solid var(--border);border-radius:15px;
+  padding:14px;margin-bottom:9px;cursor:pointer;transition:all .2s;
+  display:flex;align-items:center;gap:11px;}
+.pay-method.active{border-color:var(--river-light);background:rgba(77,184,216,.07);}
+.pay-method:active{transform:scale(.98);}
+.pay-radio{width:18px;height:18px;border-radius:50%;border:2px solid var(--border);
+  flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.pay-method.active .pay-radio{border-color:var(--river-light);}
+.pay-radio-dot{width:9px;height:9px;border-radius:50%;background:var(--river-light);display:none;}
+.pay-method.active .pay-radio-dot{display:block;}
+.pay-method-icon{font-size:20px;width:40px;height:40px;background:rgba(255,255,255,.05);
+  border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.pay-method-name{font-size:13px;font-weight:600;}
+.pay-method-sub{font-size:11px;color:var(--muted);margin-top:1px;}
+
+/* ── ORDER SUCCESS ── */
+.success-wrap{display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding:44px 24px 100px;}
+.success-ring{width:94px;height:94px;border-radius:50%;background:rgba(72,196,100,.14);
+  border:2px solid rgba(72,196,100,.4);display:flex;align-items:center;justify-content:center;
+  font-size:42px;margin-bottom:20px;box-shadow:0 0 26px rgba(72,196,100,.18);
+  animation:logoIn .6s cubic-bezier(.17,.67,.3,1.4) both;}
+.track-step{display:flex;align-items:center;gap:11px;padding:8px 0;text-align:left;}
+.track-dot{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:12px;flex-shrink:0;}
+.track-dot.done{background:rgba(72,196,100,.16);border:2px solid var(--leaf-light);}
+.track-dot.pend{background:rgba(255,255,255,.04);border:2px solid var(--border);}
+.track-line{width:2px;height:16px;background:var(--border);margin-left:12px;}
+
+/* ── TOAST ── */
+.toast-wrap{position:absolute;top:62px;left:14px;right:14px;z-index:400;
+  background:#0f2030;border:1px solid rgba(255,255,255,.1);border-radius:14px;
+  padding:12px 14px;display:flex;align-items:center;gap:10px;
+  animation:fadeUp .3s ease;box-shadow:0 8px 24px rgba(0,0,0,.5);}
+.toast-icon{font-size:19px;flex-shrink:0;}
+.toast-msg{font-size:12px;font-weight:600;line-height:1.4;flex:1;}
+.toast-x{font-size:17px;color:var(--muted);cursor:pointer;flex-shrink:0;}
+
+/* ── LOGOUT BUTTON ── */
+.logout-btn{width:100%;padding:14px;border-radius:13px;border:1px solid rgba(224,90,58,.26);
+  background:rgba(224,90,58,.07);color:var(--coral);font-family:'Syne',sans-serif;
+  font-size:13px;font-weight:700;cursor:pointer;margin-top:14px;transition:all .2s;}
+.logout-btn:active{transform:scale(.97);}
+
+/* ── MISC FIXES ── */
+.add-btn{transition:all .15s;}
+.add-btn:active{transform:scale(.82);}
+.rental-card:active{transform:scale(.993);}
+.store-row:active{transform:scale(.98);}
+.demo-card:active{transform:scale(.96);border-color:var(--river-light);}
+.login-btn:active{transform:scale(.97);}
+.splash-btn:active{transform:scale(.97);}
+*{scrollbar-width:none;-ms-overflow-style:none;}
+
 </style>
 </head>
 <body>
 
 <div class="desktop-bg"></div>
-<div class="desktop-hint">≋ RIVULET — Mobile App Prototype · Share this HTML file · Works offline</div>
 
 <div class="shell">
   <div class="status-bar">
@@ -350,14 +541,14 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
 
     <!-- ══ SPLASH ══ -->
     <div class="page" id="splash">
-      <div style="text-align:center;padding:0 32px;">
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:48px 32px;text-align:center;">
         <div class="splash-wave">🌊</div>
         <div class="splash-logo">RIVULET</div>
         <div class="splash-tagline">Connecting Sellers · Stores · Customers<br>through the seamless flow of retail</div>
         <button class="splash-btn" onclick="goTo('login')">Get Started</button>
         <button class="splash-btn outline" onclick="startDemo()">▶ Watch Demo Walkthrough</button>
         <div style="font-size:11px;color:var(--muted);margin-top:20px;">
-          <span class="live-dot"></span>Prototype v1.0 · Pentawave Foundation · Calicut
+          <span class="live-dot"></span>Pentawave Foundation · Calicut
         </div>
       </div>
     </div>
@@ -379,7 +570,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
         <input class="field" type="password" placeholder="Enter password">
         <button class="login-btn" onclick="doLogin()">Sign In →</button>
         <div style="text-align:center;font-size:12px;color:var(--muted);margin-top:16px;">
-          New to RIVULET? <span style="color:var(--river-light);cursor:pointer;">Register as Seller</span>
+          New to RIVULET? <span style="color:var(--river-light);cursor:pointer;" onclick="goTo('register')">Register as Seller</span>
         </div>
         <div class="demo-cards">
           <div class="demo-title">Quick Demo — Tap to Enter</div>
@@ -399,7 +590,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
               <div class="demo-card-name">Ishani</div>
               <div class="demo-card-role">Customer App</div>
             </div>
-            <div class="demo-card" onclick="goTo('admin-dashboard')">
+            <div class="demo-card" onclick="quickLogin('admin')">
               <div class="demo-card-icon">🛠️</div>
               <div class="demo-card-name">Admin</div>
               <div class="demo-card-role">Platform Dashboard</div>
@@ -622,7 +813,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
           <div class="setting-row" onclick="goTo('seller-agreements')"><div class="setting-left"><span class="setting-icon">📋</span><span class="setting-name">My Agreements</span></div><span class="setting-arrow">›</span></div>
           <div class="setting-row" onclick="goTo('notifications')"><div class="setting-left"><span class="setting-icon">🔔</span><span class="setting-name">Notifications</span></div><span class="setting-arrow">›</span></div>
           <div class="setting-row" onclick="goTo('seller-support')"><div class="setting-left"><span class="setting-icon">🆘</span><span class="setting-name">Support</span></div><span class="setting-arrow">›</span></div>
-          <div class="setting-row" onclick="goTo('login')"><div class="setting-left"><span class="setting-icon">🚪</span><span class="setting-name" style="color:var(--coral)">Sign Out</span></div><span class="setting-arrow">›</span></div>
+          <div class="setting-row" onclick="doLogout()"><div class="setting-left"><span class="setting-icon">🚪</span><span class="setting-name" style="color:var(--coral)">Sign Out</span></div><span class="setting-arrow">›</span></div>
         </div>
       </div>
     </div>
@@ -712,7 +903,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
           <div class="setting-row" onclick="goTo('delivery-route-history')"><div class="setting-left"><span class="setting-icon">🗺️</span><span class="setting-name">Route History</span></div><span class="setting-arrow">›</span></div>
           <div class="setting-row" onclick="goTo('delivery-vehicle')"><div class="setting-left"><span class="setting-icon">🚗</span><span class="setting-name">Vehicle Details</span></div><span class="setting-arrow">›</span></div>
           <div class="setting-row"><div class="setting-left"><span class="setting-icon">📋</span><span class="setting-name">Partner Agreement</span></div><span class="setting-arrow">›</span></div>
-          <div class="setting-row" onclick="goTo('login')"><div class="setting-left"><span class="setting-icon">🚪</span><span class="setting-name" style="color:var(--coral)">Sign Out</span></div><span class="setting-arrow">›</span></div>
+          <div class="setting-row" onclick="doLogout()"><div class="setting-left"><span class="setting-icon">🚪</span><span class="setting-name" style="color:var(--coral)">Sign Out</span></div><span class="setting-arrow">›</span></div>
         </div>
       </div>
     </div>
@@ -758,10 +949,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
         </div>
         <div class="section-title">Fresh From Farms <span>See all →</span></div>
         <div class="prod-grid">
-          <div class="prod-card"><div class="prod-img">🥥</div><div class="prod-body"><div class="prod-name">Coconut Oil 1L</div><div class="prod-seller">by Nihal</div><div class="prod-footer"><div class="prod-price">₹180</div><button class="add-btn">+</button></div></div></div>
-          <div class="prod-card"><div class="prod-img">🌾</div><div class="prod-body"><div class="prod-name">Red Rice 5kg</div><div class="prod-seller">by Green Farm</div><div class="prod-footer"><div class="prod-price">₹320</div><button class="add-btn">+</button></div></div></div>
-          <div class="prod-card"><div class="prod-img">🍌</div><div class="prod-body"><div class="prod-name">Banana Chips 200g</div><div class="prod-seller">by Local Bakes</div><div class="prod-footer"><div class="prod-price">₹60</div><button class="add-btn">+</button></div></div></div>
-          <div class="prod-card"><div class="prod-img">🌶️</div><div class="prod-body"><div class="prod-name">Kerala Spice Mix</div><div class="prod-seller">by Spice Hub</div><div class="prod-footer"><div class="prod-price">₹95</div><button class="add-btn">+</button></div></div></div>
+          <div class="prod-card"><div class="prod-img">🥥</div><div class="prod-body"><div class="prod-name">Coconut Oil 1L</div><div class="prod-seller">by Nihal</div><div class="prod-footer"><div class="prod-price">₹180</div><button class="add-btn" onclick="addToCart({id:1,name:'Coconut Oil 1L',price:180,emoji:'🥥',store:'Nihal'})">+</button></div></div></div>
+          <div class="prod-card"><div class="prod-img">🌾</div><div class="prod-body"><div class="prod-name">Red Rice 5kg</div><div class="prod-seller">by Green Farm</div><div class="prod-footer"><div class="prod-price">₹320</div><button class="add-btn" onclick="addToCart({id:2,name:'Red Rice 5kg',price:320,emoji:'🌾',store:'Green Farm'})">+</button></div></div></div>
+          <div class="prod-card"><div class="prod-img">🍌</div><div class="prod-body"><div class="prod-name">Banana Chips 200g</div><div class="prod-seller">by Local Bakes</div><div class="prod-footer"><div class="prod-price">₹60</div><button class="add-btn" onclick="addToCart({id:3,name:'Banana Chips 200g',price:60,emoji:'🍌',store:'Local Bakes'})">+</button></div></div></div>
+          <div class="prod-card"><div class="prod-img">🌶️</div><div class="prod-body"><div class="prod-name">Kerala Spice Mix</div><div class="prod-seller">by Spice Hub</div><div class="prod-footer"><div class="prod-price">₹95</div><button class="add-btn" onclick="addToCart({id:4,name:'Kerala Spice Mix',price:95,emoji:'🌶️',store:'Spice Hub'})">+</button></div></div></div>
         </div>
         <div class="section-title">Nearby RIVULET Stores <span>Map →</span></div>
         <div class="store-row"><div class="store-icon-big">🏬</div><div style="flex:1"><div class="store-name">SM Street Calicut</div><div class="store-meta">0.4 km · 14 sellers · Open until 10 PM</div></div><span class="badge badge-green">Open</span></div>
@@ -817,7 +1008,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
           <div class="setting-row"><div class="setting-left"><span class="setting-icon">📍</span><span class="setting-name">Saved Addresses</span></div><span class="setting-arrow">›</span></div>
           <div class="setting-row"><div class="setting-left"><span class="setting-icon">💳</span><span class="setting-name">Payment Methods</span></div><span class="setting-arrow">›</span></div>
           <div class="setting-row"><div class="setting-left"><span class="setting-icon">🔔</span><span class="setting-name">Notifications</span></div><span class="setting-arrow">›</span></div>
-          <div class="setting-row" onclick="goTo('login')"><div class="setting-left"><span class="setting-icon">🚪</span><span class="setting-name" style="color:var(--coral)">Sign Out</span></div><span class="setting-arrow">›</span></div>
+          <div class="setting-row" onclick="doLogout()"><div class="setting-left"><span class="setting-icon">🚪</span><span class="setting-name" style="color:var(--coral)">Sign Out</span></div><span class="setting-arrow">›</span></div>
         </div>
       </div>
     </div>
@@ -849,7 +1040,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
 
     <!-- ══ ADMIN SELLERS ══ -->
     <div class="page hidden" id="admin-sellers">
-      <div class="page-header"><div class="back-btn" onclick="goTo('admin-dashboard')">←</div><div class="page-title">Seller Approvals</div></div>
+      <div class="page-header"><div class="back-btn" onclick="quickLogin('admin')">←</div><div class="page-title">Seller Approvals</div></div>
       <div class="content">
         <div class="card"><div class="order-item-row"><div><div class="order-name">Nihal Farms</div><div class="order-meta">Coconut products · Calicut</div></div><span class="badge badge-amber">Pending</span></div><div class="order-item-row"><div><div class="order-name">Green Farm Kerala</div><div class="order-meta">Vegetables &amp; grains</div></div><span class="badge badge-green">Approved</span></div><div class="order-item-row"><div><div class="order-name">Spice Hub</div><div class="order-meta">Premium spices</div></div><span class="badge badge-green">Approved</span></div></div>
       </div>
@@ -857,7 +1048,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
 
     <!-- ══ ADMIN DELIVERY ══ -->
     <div class="page hidden" id="admin-delivery">
-      <div class="page-header"><div class="back-btn" onclick="goTo('admin-dashboard')">←</div><div class="page-title">Delivery Agents</div></div>
+      <div class="page-header"><div class="back-btn" onclick="quickLogin('admin')">←</div><div class="page-title">Delivery Agents</div></div>
       <div class="content">
         <div class="card"><div class="order-item-row"><div><div class="order-name">Rohan</div><div class="order-meta">Jeep · KL-07 JA 2255</div></div><span class="badge badge-green">Active</span></div><div class="order-item-row"><div><div class="order-name">Akash</div><div class="order-meta">Bike · KL-11 AB 3344</div></div><span class="badge badge-amber">Pending</span></div><div class="order-item-row"><div><div class="order-name">Vivek</div><div class="order-meta">Van · KL-08 MN 5566</div></div><span class="badge badge-green">Active</span></div></div>
       </div>
@@ -865,7 +1056,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
 
     <!-- ══ ADMIN STORES ══ -->
     <div class="page hidden" id="admin-stores">
-      <div class="page-header"><div class="back-btn" onclick="goTo('admin-dashboard')">←</div><div class="page-title">Store Management</div></div>
+      <div class="page-header"><div class="back-btn" onclick="quickLogin('admin')">←</div><div class="page-title">Store Management</div></div>
       <div class="content">
         <div class="card"><div class="order-item-row"><div><div class="order-name">SM Street Calicut</div><div class="order-meta">14 spaces rented · 4 vacant</div></div><span class="badge badge-green">Active</span></div><div class="order-item-row"><div><div class="order-name">More Supermarket</div><div class="order-meta">8 spaces rented · 2 vacant</div></div><span class="badge badge-green">Active</span></div><div class="order-item-row"><div><div class="order-name">City Mall</div><div class="order-meta">6 spaces rented · 1 vacant</div></div><span class="badge badge-green">Active</span></div></div>
       </div>
@@ -873,7 +1064,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
 
     <!-- ══ ADMIN SPACES ══ -->
     <div class="page hidden" id="admin-spaces">
-      <div class="page-header"><div class="back-btn" onclick="goTo('admin-dashboard')">←</div><div class="page-title">Shelf Spaces</div></div>
+      <div class="page-header"><div class="back-btn" onclick="quickLogin('admin')">←</div><div class="page-title">Shelf Spaces</div></div>
       <div class="content">
         <div class="card">
           <div class="section-title">SM Street Overview</div>
@@ -893,7 +1084,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
 
     <!-- ══ ADMIN REPORTS ══ -->
     <div class="page hidden" id="admin-reports">
-      <div class="page-header"><div class="back-btn" onclick="goTo('admin-dashboard')">←</div><div class="page-title">Reports</div></div>
+      <div class="page-header"><div class="back-btn" onclick="quickLogin('admin')">←</div><div class="page-title">Reports</div></div>
       <div class="content">
         <div class="card"><div class="section-title">Weekly Sales Report</div><div class="bar-chart"><div class="bar-col"><div class="bar" style="height:55%"></div><div class="bar-lbl">Mon</div></div><div class="bar-col"><div class="bar" style="height:70%"></div><div class="bar-lbl">Tue</div></div><div class="bar-col"><div class="bar" style="height:95%"></div><div class="bar-lbl">Wed</div></div><div class="bar-col"><div class="bar" style="height:80%"></div><div class="bar-lbl">Thu</div></div><div class="bar-col"><div class="bar" style="height:100%"></div><div class="bar-lbl">Fri</div></div><div class="bar-col"><div class="bar" style="height:90%"></div><div class="bar-lbl">Sat</div></div><div class="bar-col"><div class="bar" style="height:72%"></div><div class="bar-lbl">Sun</div></div></div></div>
         <div class="card"><div class="section-title">Top Sellers This Month</div><div class="order-item-row"><div><div class="order-name">Nihal — Coconut products</div><div class="order-meta">156 orders</div></div><div class="order-amount">₹24,100</div></div><div class="order-item-row"><div><div class="order-name">Green Farm — Grains</div><div class="order-meta">98 orders</div></div><div class="order-amount">₹18,400</div></div><div class="order-item-row"><div><div class="order-name">Spice Hub — Spices</div><div class="order-meta">72 orders</div></div><div class="order-amount">₹12,200</div></div></div>
@@ -985,95 +1176,451 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
     <div class="page hidden" id="seller-support">
       <div class="page-header"><div class="back-btn" onclick="goTo('seller-profile')">←</div><div class="page-title">Support</div><div class="page-sub">Help &amp; assistance</div></div>
       <div class="content">
-        <div class="card"><div class="section-title">Contact Us</div><div class="order-item-row"><span style="color:var(--muted)">Phone</span><span style="color:var(--river-light)">+91 98765 00001</span></div><div class="order-item-row"><span style="color:var(--muted)">Email</span><span style="color:var(--river-light)">support@rivulet.in</span></div><div class="order-item-row"><span style="color:var(--muted)">WhatsApp</span><span style="color:var(--leaf-light)">Available 9AM–9PM</span></div></div>
+        <div class="card"><div class="section-title">Contact Us</div><div class="order-item-row"><span style="color:var(--muted)">Phone</span><span style="color:var(--river-light)">+91 98765 00001</span></div><div class="order-item-row"><span style="color:var(--muted)">Email</span><span style="color:var(--river-light)"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d9aaaca9a9b6abad99abb0afacb5bcadf7b0b7">[email&#160;protected]</a></span></div><div class="order-item-row"><span style="color:var(--muted)">WhatsApp</span><span style="color:var(--leaf-light)">Available 9AM–9PM</span></div></div>
         <div class="card"><div class="section-title">Raise Support Ticket</div><div style="font-size:13px;color:var(--muted);margin-bottom:12px;">Describe your issue and our team will contact you within 24 hours.</div><button class="login-btn">Create Ticket</button></div>
         <div class="card"><div class="section-title">FAQ</div><div class="order-item-row"><span>How to rent shelf space?</span><span style="color:var(--muted)">›</span></div><div class="order-item-row"><span>When do I receive payouts?</span><span style="color:var(--muted)">›</span></div><div class="order-item-row"><span>How is commission calculated?</span><span style="color:var(--muted)">›</span></div><div class="order-item-row"><span>How does delivery work?</span><span style="color:var(--muted)">›</span></div></div>
       </div>
     </div>
 
+  
+
+
+    <!-- ══ REGISTER PAGE ══ -->
+    <div class="page hidden auth-scroll" id="register">
+      <div class="auth-inner">
+        <div class="auth-back" onclick="goTo('login')">←</div>
+        <div class="auth-logo">≋ Join RIVULET</div>
+        <div class="auth-sub2">Create your account and start selling, buying, or delivering across Calicut.</div>
+        <div class="role-tabs">
+          <button class="role-tab active" onclick="setRole(this,'seller')">🌾 Seller</button>
+          <button class="role-tab" onclick="setRole(this,'delivery')">🚚 Delivery</button>
+          <button class="role-tab" onclick="setRole(this,'customer')">🛒 Customer</button>
+        </div>
+        <div class="field-row">
+          <div><div class="field-label">First Name</div><input class="field" id="regFirst" type="text" placeholder="Nihal"></div>
+          <div><div class="field-label">Last Name</div><input class="field" id="regLast" type="text" placeholder="K."></div>
+        </div>
+        <div class="field-label">Phone Number</div>
+        <input class="field" id="regPhone" type="tel" placeholder="+91 98765 43210">
+        <div class="field-label">Business / Farm Name <span style="color:var(--muted);font-weight:400;text-transform:none;">(optional)</span></div>
+        <input class="field" id="regBiz" type="text" placeholder="Eg: Nihal Farms">
+        <div class="field-label">Password</div>
+        <div class="field-eye">
+          <input class="field" id="regPw" type="password" placeholder="Min. 8 characters">
+          <span class="field-eye-icon" onclick="togglePw('regPw',this)">👁</span>
+        </div>
+        <div class="field-label">Confirm Password</div>
+        <input class="field" id="regPw2" type="password" placeholder="Re-enter password">
+        <div class="auth-terms">
+          <input type="checkbox" id="regTerms">
+          <label for="regTerms">I agree to RIVULET's <a>Terms of Service</a> and <a>Privacy Policy</a></label>
+        </div>
+        <button class="login-btn" onclick="doRegister()">Create Account →</button>
+        <div class="auth-switch">Already have an account? <a onclick="goTo('login')">Sign in</a></div>
+      </div>
+    </div>
+
+    <!-- ══ CART PAGE ══ -->
+    <div class="page hidden" id="cart-page">
+      <div class="page-header">
+        <div class="page-title">Your Cart 🛒</div>
+        <div class="page-sub" id="cartSubLabel">0 items</div>
+      </div>
+      <div class="content" id="cartContent"></div>
+    </div>
+
+    <!-- ══ MAP PAGE ══ -->
+    <div class="page hidden" id="map-page">
+      <div class="page-header">
+        <div class="page-title">Nearby Stores 🗺️</div>
+        <div class="page-sub"><span class="live-dot"></span>Calicut · Live locations</div>
+      </div>
+      <div class="content">
+        <div class="map-box">
+          <div class="map-inner">
+            <!-- Roads -->
+            <div class="map-road-h major" style="top:50%;height:3px;"></div>
+            <div class="map-road-h" style="top:25%;height:2px;"></div>
+            <div class="map-road-h" style="top:75%;height:2px;"></div>
+            <div class="map-road-v major" style="left:50%;width:3px;"></div>
+            <div class="map-road-v" style="left:28%;width:2px;"></div>
+            <div class="map-road-v" style="left:72%;width:2px;"></div>
+            <!-- Buildings -->
+            <div class="map-blk" style="left:16%;top:10%;width:10%;height:13%;"></div>
+            <div class="map-blk" style="left:30%;top:10%;width:16%;height:12%;"></div>
+            <div class="map-blk" style="left:55%;top:10%;width:14%;height:14%;"></div>
+            <div class="map-blk" style="left:72%;top:10%;width:11%;height:12%;"></div>
+            <div class="map-blk" style="left:16%;top:57%;width:10%;height:18%;"></div>
+            <div class="map-blk" style="left:55%;top:57%;width:14%;height:18%;"></div>
+            <div class="map-blk" style="left:72%;top:57%;width:11%;height:14%;"></div>
+            <!-- Ishani (user) -->
+            <div class="map-user" style="left:50%;top:54%;"></div>
+            <!-- SM Street -->
+            <div class="map-pin" style="left:34%;top:40%;" onclick="showToast('🏬','SM Street · Mavoor Road · 0.4 km · Open until 10 PM')">
+              <div class="map-pin-dot" style="background:linear-gradient(135deg,var(--river-light),var(--river-glow));"><span>🏬</span></div>
+              <div class="map-pin-lbl" style="color:var(--river-glow);">SM Street</div>
+            </div>
+            <!-- More Supermarket -->
+            <div class="map-pin" style="left:63%;top:30%;" onclick="showToast('🛒','More Supermarket · SM Street Area · 1.2 km · Open until 9 PM')">
+              <div class="map-pin-dot" style="background:linear-gradient(135deg,var(--leaf),var(--leaf-light));"><span>🛒</span></div>
+              <div class="map-pin-lbl" style="color:var(--leaf-light);">More Mkt</div>
+            </div>
+            <!-- City Mall -->
+            <div class="map-pin" style="left:70%;top:64%;" onclick="showToast('🏪','City Mall · Beach Road · 2.1 km · Open until 11 PM')">
+              <div class="map-pin-dot" style="background:linear-gradient(135deg,var(--amber),#ffcc44);"><span>🏪</span></div>
+              <div class="map-pin-lbl" style="color:var(--amber);">City Mall</div>
+            </div>
+            <!-- Controls -->
+            <div class="map-ctrl">
+              <div class="map-ctrl-btn" onclick="showToast('📍','Your location: Beach Road, Calicut')">📍</div>
+              <div class="map-ctrl-btn">＋</div>
+              <div class="map-ctrl-btn">－</div>
+            </div>
+          </div>
+        </div>
+        <button class="directions-btn" onclick="showToast('🧭','Opening directions to SM Street, Mavoor Road...')">
+          🧭 Get Directions to Nearest Store
+        </button>
+        <div class="section-title">All Stores in Calicut</div>
+        <div class="mkt-row" onclick="showToast('🏬','SM Street · 14 sellers active · 4 spaces vacant')">
+          <div style="display:flex;align-items:center;gap:11px;">
+            <div class="mkt-icon">🏬</div>
+            <div><div class="mkt-name">SM Street Calicut</div><div class="mkt-dist">📍 0.4 km · Mavoor Road · 14 sellers · Open until 10 PM</div></div>
+          </div>
+          <div style="text-align:right;"><div class="mkt-spaces">4</div><div style="font-size:10px;color:var(--muted);">spaces free</div></div>
+        </div>
+        <div class="mkt-row" onclick="showToast('🛒','More Supermarket · 8 sellers · 2 spaces vacant')">
+          <div style="display:flex;align-items:center;gap:11px;">
+            <div class="mkt-icon">🛒</div>
+            <div><div class="mkt-name">More Supermarket</div><div class="mkt-dist">📍 1.2 km · SM Street Area · 8 sellers · Open until 9 PM</div></div>
+          </div>
+          <div style="text-align:right;"><div class="mkt-spaces">2</div><div style="font-size:10px;color:var(--muted);">spaces free</div></div>
+        </div>
+        <div class="mkt-row" onclick="showToast('🏪','City Mall · 6 sellers · 1 space vacant')">
+          <div style="display:flex;align-items:center;gap:11px;">
+            <div class="mkt-icon">🏪</div>
+            <div><div class="mkt-name">City Mall</div><div class="mkt-dist">📍 2.1 km · Beach Road · 6 sellers · Open until 11 PM</div></div>
+          </div>
+          <div style="text-align:right;"><div class="mkt-spaces">1</div><div style="font-size:10px;color:var(--muted);">space free</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ PAYMENT PAGE ══ -->
+    <div class="page hidden" id="payment-page">
+      <div class="page-header">
+        <div class="back-btn" onclick="goTo('cart-page')" style="display:inline-block;margin-bottom:0;">←</div>
+        <div class="page-title" style="margin-top:8px;">Checkout 💳</div>
+        <div class="page-sub">Secure · UPI · Cards · RBI Compliant</div>
+      </div>
+      <div class="content">
+        <!-- Summary -->
+        <div class="section-title">Order Summary</div>
+        <div class="cart-summary-box" style="margin-bottom:14px;">
+          <div class="cart-sum-row"><span style="color:var(--muted)">Subtotal</span><span id="paySubtotal">₹0</span></div>
+          <div class="cart-sum-row"><span style="color:var(--muted)">Delivery</span><span style="color:var(--leaf-light)">FREE</span></div>
+          <div class="cart-sum-row"><span style="color:var(--muted)">Platform fee (0.5%)</span><span id="payFee">₹0</span></div>
+          <div class="cart-sum-row total-row"><span>Total</span><span id="payTotal">₹0</span></div>
+        </div>
+        <!-- Card display -->
+        <div class="pay-card-display">
+          <div class="cc-chip"></div>
+          <div class="cc-num" id="ccNum">•••• •••• •••• 4321</div>
+          <div class="cc-bottom">
+            <div><div class="cc-lbl">Card Holder</div><div class="cc-val" id="ccHolder">ISHANI</div></div>
+            <div><div class="cc-lbl">Expires</div><div class="cc-val" id="ccExp">12/27</div></div>
+            <div style="font-size:24px;opacity:.7;">💳</div>
+          </div>
+        </div>
+        <!-- Methods -->
+        <div class="section-title">Payment Method</div>
+        <div class="pay-method active" onclick="selPayment(this,'upi')">
+          <div class="pay-radio"><div class="pay-radio-dot"></div></div>
+          <div class="pay-method-icon">📱</div>
+          <div><div class="pay-method-name">UPI</div><div class="pay-method-sub">PhonePe · GPay · Paytm · nihal@upi</div></div>
+        </div>
+        <div class="pay-method" onclick="selPayment(this,'card')">
+          <div class="pay-radio"><div class="pay-radio-dot"></div></div>
+          <div class="pay-method-icon">💳</div>
+          <div><div class="pay-method-name">Credit / Debit Card</div><div class="pay-method-sub">Visa · Mastercard · RuPay</div></div>
+        </div>
+        <div class="pay-method" onclick="selPayment(this,'cod')">
+          <div class="pay-radio"><div class="pay-radio-dot"></div></div>
+          <div class="pay-method-icon">💵</div>
+          <div><div class="pay-method-name">Cash on Delivery</div><div class="pay-method-sub">Pay when Rohan arrives</div></div>
+        </div>
+        <!-- Card fields (shown only for card method) -->
+        <div id="cardFields" style="display:none;">
+          <div class="section-title" style="margin-top:12px;">Card Details</div>
+          <div class="field-label">Card Number</div>
+          <input class="field" id="cardNum" type="tel" placeholder="1234 5678 9012 3456" maxlength="19"
+            oninput="fmtCardNum(this)" onkeyup="updateCardDisplay()">
+          <div class="field-row">
+            <div><div class="field-label">Expiry</div><input class="field" id="cardExp" type="tel" placeholder="MM/YY" maxlength="5" oninput="fmtExpiry(this)" onkeyup="updateCardDisplay()"></div>
+            <div><div class="field-label">CVV</div><input class="field" id="cardCvv" type="tel" placeholder="•••" maxlength="4"></div>
+          </div>
+          <div class="field-label">Name on Card</div>
+          <input class="field" id="cardHolder" type="text" placeholder="Ishani" oninput="updateCardDisplay()">
+        </div>
+        <!-- Delivery -->
+        <div class="section-title" style="margin-top:4px;">Delivery Address</div>
+        <input class="field" id="delivAddr" type="text" placeholder="Beach Road, Calicut — 673001">
+        <input class="field" id="delivNote" type="text" placeholder="Delivery note (optional)" style="margin-top:-6px;">
+        <button id="payBtn" class="big-btn big-btn-green" onclick="processPayment()">
+          🔒 Pay <span id="payBtnAmt">₹0</span> Securely
+        </button>
+        <div style="text-align:center;font-size:11px;color:var(--muted);margin-top:9px;">
+          🛡 256-bit SSL · RBI Compliant · Powered by Razorpay
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ ORDER SUCCESS PAGE ══ -->
+    <div class="page hidden" id="order-success">
+      <div class="success-wrap">
+        <div class="success-ring">✅</div>
+        <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-bottom:7px;animation:fadeUp .5s .3s both;">Order Confirmed!</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:26px;animation:fadeUp .5s .4s both;">
+          Your order has been placed successfully.<br>
+          Rohan will deliver in <strong style="color:var(--river-light);">30–45 minutes</strong>
+        </div>
+        <div class="card" style="width:100%;text-align:left;animation:fadeUp .5s .5s both;">
+          <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:11px;">
+            Order #ORD-2026-<span id="orderNum">0342</span>
+          </div>
+          <div class="track-step"><div class="track-dot done">✓</div><div><div style="font-size:13px;font-weight:600;">Order Confirmed</div><div style="font-size:10px;color:var(--muted);">Just now</div></div></div>
+          <div class="track-line"></div>
+          <div class="track-step"><div class="track-dot done">✓</div><div><div style="font-size:13px;font-weight:600;">Seller Packing</div><div style="font-size:10px;color:var(--muted);">~5 minutes</div></div></div>
+          <div class="track-line"></div>
+          <div class="track-step"><div class="track-dot pend">🚗</div><div><div style="font-size:13px;font-weight:600;">Rohan on the way</div><div style="font-size:10px;color:var(--muted);">~20 minutes</div></div></div>
+          <div class="track-line"></div>
+          <div class="track-step"><div class="track-dot pend">📦</div><div><div style="font-size:13px;font-weight:600;">Delivered</div><div style="font-size:10px;color:var(--muted);">~40 minutes</div></div></div>
+        </div>
+        <button class="big-btn big-btn-green" style="width:100%;margin-top:18px;animation:fadeUp .5s .6s both;"
+          onclick="quickLogin('customer')">🛒 Continue Shopping</button>
+      </div>
+    </div>
+
+    <div id="modalContainer"></div>
+    <div id="toastContainer"></div>
+
+
   </div><!-- /screen-wrap -->
 
   <!-- BOTTOM NAV -->
   <div class="bottom-nav" id="bottomNav" style="display:none;">
-    <button class="nav-item active" id="nav1" onclick="navTo(0)"><div class="nav-icon">🏠</div>Home</button>
-    <button class="nav-item" id="nav2" onclick="navTo(1)"><div class="nav-icon" id="nav2icon">📦</div><span id="nav2label">Spaces</span></button>
-    <button class="nav-item" id="nav3" onclick="navTo(2)"><div class="nav-icon" id="nav3icon">📊</div><span id="nav3label">Analytics</span></button>
-    <button class="nav-item" id="nav4" onclick="navTo(3)"><div class="nav-icon">👤</div>Profile</button>
+    <button class="nav-item active" id="nav1" onclick="navTo(0)">
+      <div class="nav-icon">🏠</div>Home
+    </button>
+    <button class="nav-item" id="nav2" onclick="navTo(1)">
+      <div class="nav-icon" id="nav2icon">🏪</div><span id="nav2label">Spaces</span>
+    </button>
+    <button class="nav-item" id="nav3" onclick="navTo(2)">
+      <div class="nav-icon" id="nav3icon">📊</div><span id="nav3label">Analytics</span>
+    </button>
+    <button class="nav-item" id="nav4" onclick="navTo(3)" style="position:relative;">
+      <div class="nav-icon" id="nav4icon">🛒</div><span id="nav4label">Cart</span>
+      <div id="cartBadge" style="display:none;position:absolute;top:2px;right:6px;min-width:16px;height:16px;border-radius:8px;background:var(--coral);color:white;font-size:9px;font-weight:700;align-items:center;justify-content:center;padding:0 3px;">0</div>
+    </button>
+    <button class="nav-item" id="nav5" onclick="navTo(4)">
+      <div class="nav-icon">👤</div>Profile
+    </button>
   </div>
 </div><!-- /shell -->
 
 <div id="modalContainer"></div>
 <div id="walkthroughContainer"></div>
+<div id="toastContainer"></div>
+
+
 
 <script>
-// ── STATE ──
+// ══ STATE ══
 let currentRole = 'seller';
-let currentNav = 0;
-let selectedRole = 'seller';
+let currentNav  = 0;
+let selectedRole= 'seller';
+let _payMethod  = 'upi';
+let _toastTimer = null;
+let walkStep    = 0;
 
+// ══ ROLE NAV CONFIG (5 tabs) ══
 const roleNavs = {
-  seller:   { pages:['seller-home','seller-spaces','seller-analytics','seller-profile'],   icons:['🏠','🏪','📊','👤'], labels:['Home','Spaces','Analytics','Profile'] },
-  delivery: { pages:['delivery-home','delivery-earnings','delivery-home','delivery-profile'], icons:['🏠','💰','🗺️','👤'], labels:['Home','Earnings','Map','Profile'] },
-  customer: { pages:['customer-home','customer-orders','customer-home','customer-profile'],  icons:['🏠','📋','🏪','👤'], labels:['Home','Orders','Stores','Profile'] }
+  seller:   {pages:['seller-home','seller-spaces','seller-analytics','cart-page','seller-profile'],   icons:['🏠','🏪','📊','🛒','👤'],labels:['Home','Spaces','Analytics','Cart','Profile']},
+  delivery: {pages:['delivery-home','delivery-earnings','map-page','cart-page','delivery-profile'],   icons:['🏠','💰','🗺️','🛒','👤'],labels:['Home','Earnings','Map','Cart','Profile']},
+  customer: {pages:['customer-home','customer-orders','map-page','cart-page','customer-profile'],     icons:['🏠','📋','🗺️','🛒','👤'],labels:['Home','Orders','Map','Cart','Profile']},
+  admin:    {pages:['admin-dashboard','admin-sellers','admin-stores','admin-spaces','admin-reports'],  icons:['🏠','🌾','🏬','🗂️','📊'],labels:['Home','Sellers','Stores','Spaces','Reports']},
 };
+const noNavPages = ['splash','login','register'];
 
-const noNavPages = ['splash','login','admin-dashboard','admin-sellers','admin-delivery','admin-stores','admin-spaces','admin-reports'];
+// ══ CART (real reactive, persisted) ══
+const cart = {
+  items: [],
+  add(p){
+    const ex = this.items.find(i=>i.id===p.id);
+    ex ? ex.qty++ : this.items.push({...p, qty:1});
+    this.save(); _cartUI();
+  },
+  remove(id){ this.items=this.items.filter(i=>i.id!==id); this.save(); _cartUI(); },
+  qty(id,d){
+    const i=this.items.find(x=>x.id===id);
+    if(!i)return;
+    i.qty+=d;
+    if(i.qty<=0) this.remove(id); else { this.save(); _cartUI(); }
+  },
+  get sub(){ return this.items.reduce((s,i)=>s+i.price*i.qty,0); },
+  get fee(){ return Math.round(this.sub*0.005); },
+  get total(){ return this.sub+this.fee; },
+  get count(){ return this.items.reduce((s,i)=>s+i.qty,0); },
+  clear(){ this.items=[]; this.save(); _cartUI(); },
+  save(){ try{ localStorage.setItem('rv_cart',JSON.stringify(this.items)); }catch(e){} },
+  load(){ try{ this.items=JSON.parse(localStorage.getItem('rv_cart')||'[]'); }catch(e){ this.items=[]; } }
+};
+cart.load();
 
-// ── CLOCK ──
-function updateClock(){
-  const now = new Date();
-  const h = now.getHours(), m = now.getMinutes();
-  const el = document.getElementById('clock');
-  if(el) el.textContent = h + ':' + (m < 10 ? '0' : '') + m;
+function _cartUI(){
+  // badge
+  const b=document.getElementById('cartBadge');
+  if(b){ b.style.display=cart.count>0?'flex':'none'; b.textContent=cart.count; }
+  // payment amounts
+  const map={paySubtotal:'₹'+cart.sub, payFee:'₹'+cart.fee, payTotal:'₹'+cart.total, payBtnAmt:'₹'+cart.total};
+  Object.entries(map).forEach(([id,v])=>{ const el=document.getElementById(id); if(el) el.textContent=v; });
 }
-updateClock();
-setInterval(updateClock, 30000);
 
-// ── NAVIGATION ──
-function goTo(id) {
-  document.querySelectorAll('.page').forEach(p => {
-    p.classList.add('hidden');
-    p.classList.remove('slide-left');
+function addToCart(p){ cart.add(p); showToast('🛒', p.emoji+' '+p.name+' added to cart'); }
+
+// ══ RENDER CART ══
+function renderCart(){
+  const box=document.getElementById('cartContent');
+  const lbl=document.getElementById('cartSubLabel');
+  if(!box) return;
+  const c=cart.count;
+  if(lbl) lbl.textContent=c+' item'+(c!==1?'s':'');
+  if(cart.items.length===0){
+    box.innerHTML=`<div class="cart-empty">
+      <div class="cart-empty-icon">🛒</div>
+      <div class="cart-empty-title">Cart is empty</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:22px;">Add fresh products from Calicut's best farms!</div>
+      <button onclick="navTo(0)" style="padding:13px 26px;border-radius:13px;border:none;background:var(--river);color:white;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;cursor:pointer;">🛒 Browse Market</button>
+    </div>`;
+    return;
+  }
+  let h='';
+  cart.items.forEach(item=>{
+    h+=`<div class="cart-item-row">
+      <div class="cart-item-emoji">${item.emoji}</div>
+      <div class="cart-item-body">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-store">by ${item.store}</div>
+        <div class="cart-item-price">₹${item.price*item.qty}</div>
+      </div>
+      <div class="qty-ctrl">
+        <button class="qty-btn" onclick="cart.qty(${item.id},-1);renderCart()">−</button>
+        <span class="qty-num">${item.qty}</span>
+        <button class="qty-btn" onclick="cart.qty(${item.id},1);renderCart()">+</button>
+      </div>
+    </div>`;
   });
-  const target = document.getElementById(id);
-  if (target) target.classList.remove('hidden');
-  const nav = document.getElementById('bottomNav');
-  nav.style.display = noNavPages.includes(id) ? 'none' : 'flex';
+  h+=`<div class="cart-summary-box">
+    <div class="cart-sum-row"><span style="color:var(--muted)">Subtotal</span><span>₹${cart.sub}</span></div>
+    <div class="cart-sum-row"><span style="color:var(--muted)">Delivery</span><span style="color:var(--leaf-light)">FREE</span></div>
+    <div class="cart-sum-row"><span style="color:var(--muted)">Platform fee (0.5%)</span><span>₹${cart.fee}</span></div>
+    <div class="cart-sum-row total-row"><span>Total</span><span>₹${cart.total}</span></div>
+  </div>
+  <button class="big-btn big-btn-green" onclick="goToPayment()">🔒 Checkout · ₹${cart.total}</button>
+  <button class="big-btn big-btn-outline" onclick="cart.clear();renderCart();">🗑 Clear Cart</button>`;
+  box.innerHTML=h;
 }
 
-function setRole(el, role) {
-  document.querySelectorAll('.role-tab').forEach(t => t.classList.remove('active'));
+function goToPayment(){
+  if(cart.items.length===0){ showToast('⚠️','Cart is empty'); return; }
+  _cartUI();
+  goTo('payment-page');
+}
+
+// ══ CLOCK ══
+function updateClock(){
+  const n=new Date();
+  const el=document.getElementById('clock');
+  if(el) el.textContent=n.getHours()+':'+(n.getMinutes()<10?'0':'')+n.getMinutes();
+}
+updateClock(); setInterval(updateClock,30000);
+
+// ══ NAVIGATION ══
+function goTo(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));
+  const t=document.getElementById(id);
+  if(t) t.classList.remove('hidden');
+  document.getElementById('bottomNav').style.display = noNavPages.includes(id)?'none':'flex';
+  if(id==='cart-page') renderCart();
+  if(id==='payment-page') _cartUI();
+}
+
+function setRole(el,role){
+  el.closest('.role-tabs').querySelectorAll('.role-tab').forEach(t=>t.classList.remove('active'));
   el.classList.add('active');
-  selectedRole = role;
+  selectedRole=role;
 }
 
-function doLogin() { quickLogin(selectedRole); }
+function doLogin(){ quickLogin(selectedRole); }
 
-function quickLogin(role) {
-  currentRole = role;
-  const nav = roleNavs[role];
-  document.getElementById('nav2icon').textContent = nav.icons[1];
-  document.getElementById('nav2label').textContent = nav.labels[1];
-  document.getElementById('nav3icon').textContent = nav.icons[2];
-  document.getElementById('nav3label').textContent = nav.labels[2];
-  currentNav = 0;
-  updateNavActive();
+function quickLogin(role){
+  currentRole=role;
+  const nav=roleNavs[role];
+  // Update 5-tab nav labels
+  const navEls=[
+    {icon:'nav2icon',lbl:'nav2label',i:1},
+    {icon:'nav3icon',lbl:'nav3label',i:2},
+    {icon:'nav4icon',lbl:'nav4label',i:3},
+  ];
+  navEls.forEach(({icon,lbl,i})=>{
+    const ei=document.getElementById(icon); if(ei) ei.textContent=nav.icons[i];
+    const el=document.getElementById(lbl);  if(el) el.textContent=nav.labels[i];
+  });
+  currentNav=0; updateNavActive();
   goTo(nav.pages[0]);
+  _cartUI();
 }
 
-function navTo(idx) {
-  currentNav = idx;
-  updateNavActive();
+function navTo(idx){
+  currentNav=idx; updateNavActive();
   goTo(roleNavs[currentRole].pages[idx]);
 }
 
-function updateNavActive() {
-  for (let i = 1; i <= 4; i++) {
-    document.getElementById('nav' + i).classList.toggle('active', i - 1 === currentNav);
+function updateNavActive(){
+  for(let i=1;i<=5;i++){
+    const el=document.getElementById('nav'+i);
+    if(el) el.classList.toggle('active', i-1===currentNav);
   }
 }
 
-// ── MODALS ──
+function doLogout(){
+  cart.clear();
+  document.getElementById('bottomNav').style.display='none';
+  goTo('splash');
+  showToast('👋','Signed out successfully');
+}
+
+// ══ REGISTER ══
+function togglePw(id,icon){
+  const f=document.getElementById(id);
+  f.type= f.type==='password'?'text':'password';
+  icon.textContent= f.type==='password'?'👁':'🙈';
+}
+
+function doRegister(){
+  const first=(document.getElementById('regFirst')?.value||'').trim();
+  const pw=document.getElementById('regPw')?.value||'';
+  const pw2=document.getElementById('regPw2')?.value||'';
+  const terms=document.getElementById('regTerms')?.checked;
+  if(!first){ showToast('⚠️','Please enter your first name'); return; }
+  if(pw.length<8){ showToast('⚠️','Password must be at least 8 characters'); return; }
+  if(pw!==pw2){ showToast('❌','Passwords do not match'); return; }
+  if(!terms){ showToast('⚠️','Please accept the Terms of Service'); return; }
+  showToast('✅','Account created! Welcome to RIVULET');
+  setTimeout(()=>quickLogin(selectedRole), 700);
+}
+
+// ══ MODALS (original data preserved) ══
 const modalData = {
   'space-a1': {
     title: 'Space A1 — SM Street',
@@ -1097,64 +1644,130 @@ const modalData = {
   }
 };
 
-function showModal(id) {
-  const data = modalData[id];
-  if (!data) return;
-  document.getElementById('modalContainer').innerHTML = `
-    <div class="modal-bg" onclick="closeModal(event)">
+function showModal(id){
+  const d=modalData[id]; if(!d) return;
+  const rows=d.rows.map(r=>`<div class="modal-row"><span class="modal-row-label">${r[0]}</span><span class="modal-row-val">${r[1]}</span></div>`).join('');
+  const btnLabel = id==='book-space' ? 'Confirm Booking' : 'Close';
+  const btnFn    = id==='book-space' ? `showToast('✅','Booking request sent for Space A3 — SM Street');closeModal();` : 'closeModal()';
+  document.getElementById('modalContainer').innerHTML=`
+    <div class="modal-bg" onclick="if(event.target===this)closeModal()">
       <div class="modal" onclick="event.stopPropagation()">
         <div class="modal-handle"></div>
-        <div class="modal-title">${data.title}</div>
-        <div class="modal-sub">${data.sub}</div>
-        ${data.rows.map(r => `<div class="modal-row"><span class="modal-row-label">${r[0]}</span><span class="modal-row-val">${r[1]}</span></div>`).join('')}
-        <button class="modal-close" onclick="closeModal()">Close</button>
+        <div class="modal-title">${d.title}</div>
+        <div class="modal-sub">${d.sub}</div>
+        ${rows}
+        <button class="modal-close" onclick="${btnFn}">${btnLabel}</button>
       </div>
     </div>`;
 }
 
-function closeModal(e) {
-  if (!e || e.target.classList.contains('modal-bg')) {
-    document.getElementById('modalContainer').innerHTML = '';
-  }
+function closeModal(e){
+  if(!e || e.target?.classList?.contains('modal-bg'))
+    document.getElementById('modalContainer').innerHTML='';
 }
 
-// ── WALKTHROUGH ──
-const steps = [
-  {title:'Welcome to RIVULET 🌊', desc:'A prototype of the RIVULET integrated retail ecosystem. Explore 4 dashboards — Seller, Delivery Agent, Customer, and Admin.'},
-  {title:'Seller Dashboard 🌾', desc:'Sellers view live sales, manage rented shelf spaces across stores, track orders, and get AI restocking insights.'},
-  {title:'Space Rental Details 🏪', desc:'Each rented space shows exact rent, days remaining, rental period, footfall data, and location score.'},
-  {title:'Sales Analytics 📊', desc:'See what sold, how much, peak hours, and which store location performs best — real-time data.'},
-  {title:'Delivery Agent Dashboard 🚗', desc:'Delivery partners track active deliveries, earnings, routes, and manage their vehicle details.'},
-  {title:'Customer App 🛒', desc:'Customers browse farm-fresh products, find nearby RIVULET stores, and track their orders live.'},
-  {title:'Admin Dashboard 🛠️', desc:'Admins approve sellers and agents, manage stores, shelf spaces, and view platform reports.'},
-  {title:"You're ready! 🚀", desc:'Tap any demo card on the login screen to explore each dashboard. Share this HTML file — it works offline in any browser!'}
+// ══ PAYMENT ══
+function selPayment(el,method){
+  document.querySelectorAll('.pay-method').forEach(m=>m.classList.remove('active'));
+  el.classList.add('active');
+  _payMethod=method;
+  document.getElementById('cardFields').style.display = method==='card'?'block':'none';
+}
+
+function fmtCardNum(i){
+  let v=i.value.replace(/\D/g,'').substring(0,16);
+  i.value=v.replace(/(.{4})/g,'$1 ').trim();
+}
+function fmtExpiry(i){
+  let v=i.value.replace(/\D/g,'').substring(0,4);
+  if(v.length>=2) v=v.substring(0,2)+'/'+v.substring(2);
+  i.value=v;
+}
+function updateCardDisplay(){
+  const num=(document.getElementById('cardNum')?.value||'').replace(/\s/g,'');
+  const masked=(num||'').padEnd(16,'•').replace(/(.{4})/g,'$1 ').trim();
+  const name=(document.getElementById('cardHolder')?.value||'ISHANI').toUpperCase()||'ISHANI';
+  const exp= document.getElementById('cardExp')?.value||'12/27';
+  const n=document.getElementById('ccNum'); if(n) n.textContent=masked;
+  const h=document.getElementById('ccHolder'); if(h) h.textContent=name;
+  const e=document.getElementById('ccExp'); if(e) e.textContent=exp;
+}
+
+function processPayment(){
+  const addr=(document.getElementById('delivAddr')?.value||'').trim();
+  if(!addr){ showToast('⚠️','Please enter your delivery address'); return; }
+  if(_payMethod==='card'){
+    const n=(document.getElementById('cardNum')?.value||'').replace(/\s/g,'');
+    if(n.length<16){ showToast('⚠️','Please enter a valid 16-digit card number'); return; }
+    const cvv=document.getElementById('cardCvv')?.value||'';
+    if(cvv.length<3){ showToast('⚠️','Please enter a valid CVV'); return; }
+    const exp=document.getElementById('cardExp')?.value||'';
+    if(exp.length<5){ showToast('⚠️','Please enter a valid expiry date'); return; }
+  }
+  const btn=document.getElementById('payBtn');
+  if(btn){ btn.innerHTML='⏳ Processing...'; btn.disabled=true; }
+  setTimeout(()=>{
+    const n=Math.floor(341+Math.random()*200);
+    const el=document.getElementById('orderNum'); if(el) el.textContent=String(n).padStart(4,'0');
+    cart.clear();
+    goTo('order-success');
+    if(btn){ btn.innerHTML='🔒 Pay Securely'; btn.disabled=false; }
+  },2000);
+}
+
+// ══ TOAST ══
+function showToast(icon,msg){
+  if(_toastTimer) clearTimeout(_toastTimer);
+  const t=document.getElementById('toastContainer');
+  if(!t) return;
+  t.innerHTML=`<div class="toast-wrap">
+    <span class="toast-icon">${icon}</span>
+    <span class="toast-msg">${msg}</span>
+    <span class="toast-x" onclick="closeToast()">×</span>
+  </div>`;
+  _toastTimer=setTimeout(closeToast,3200);
+}
+function closeToast(){ const t=document.getElementById('toastContainer'); if(t) t.innerHTML=''; }
+
+// ══ WALKTHROUGH (original 8 steps preserved) ══
+const steps=[
+  {title:'Welcome to RIVULET 🌊',desc:'A prototype of the RIVULET integrated retail ecosystem. Explore 4 dashboards — Seller, Delivery Agent, Customer, and Admin.'},
+  {title:'Seller Dashboard 🌾',desc:'Nihal views live sales, manages rented shelf spaces across SM Street, More Supermarket & City Mall, and gets AI restocking insights.'},
+  {title:'Space Rental Details 🏪',desc:'Each rented space shows exact rent, days remaining, rental period, footfall data, and location score.'},
+  {title:'Sales Analytics 📊',desc:'See what sold, how much, peak hours, and which store location performs best — real-time Calicut market data.'},
+  {title:'Delivery Agent Dashboard 🚗',desc:'Rohan tracks active deliveries, earnings, routes, and manages his Mahindra Jeep (KL-07 JA 2255).'},
+  {title:'Customer App 🛒',desc:'Ishani browses farm-fresh products, finds nearby RIVULET stores in Calicut, and tracks orders live.'},
+  {title:'Admin Dashboard 🛠️',desc:'Admins approve sellers and agents, manage stores, shelf spaces, and view platform reports.'},
+  {title:"You're ready! 🚀",desc:"Tap any demo card on the login screen to explore each dashboard. Share this HTML — it works offline in any browser!"}
 ];
-let walkStep = 0;
 
-function startDemo() { walkStep = 0; showWalkStep(); }
+function startDemo(){ walkStep=0; showWalkStep(); }
 
-function showWalkStep() {
-  const s = steps[walkStep];
-  const isLast = walkStep === steps.length - 1;
-  const dots = steps.map((_, i) => `<div class="walk-dot ${i === walkStep ? 'active' : ''}"></div>`).join('');
-  document.getElementById('walkthroughContainer').innerHTML = `
+function showWalkStep(){
+  const s=steps[walkStep]; const isLast=walkStep===steps.length-1;
+  const dots=steps.map((_,i)=>`<div class="walk-dot${i===walkStep?' active':''}"></div>`).join('');
+  document.getElementById('walkthroughContainer').innerHTML=`
     <div class="walkthrough">
       <div class="walk-dots">${dots}</div>
       <div class="walk-bubble">
-        <div class="walk-step">Step ${walkStep + 1} of ${steps.length}</div>
+        <div class="walk-step">Step ${walkStep+1} of ${steps.length}</div>
         <div class="walk-title">${s.title}</div>
         <div class="walk-desc">${s.desc}</div>
       </div>
       <div class="walk-btns">
-        <button class="walk-btn skip" onclick="closeWalk()">${isLast ? 'Start Exploring' : 'Skip'}</button>
-        <button class="walk-btn primary" onclick="${isLast ? 'closeWalkAndLogin()' : 'nextWalkStep()'}">${isLast ? 'Go to Login →' : 'Next →'}</button>
+        <button class="walk-btn skip"    onclick="${isLast?'closeWalk()':'closeWalk()'}">${isLast?'Start Exploring':'Skip'}</button>
+        <button class="walk-btn primary" onclick="${isLast?'closeWalkAndLogin()':'nextWalkStep()'}">${isLast?'Go to Login →':'Next →'}</button>
       </div>
     </div>`;
 }
 
-function nextWalkStep() { walkStep++; showWalkStep(); }
-function closeWalk() { document.getElementById('walkthroughContainer').innerHTML = ''; }
-function closeWalkAndLogin() { closeWalk(); goTo('login'); }
+function nextWalkStep(){ walkStep++; if(walkStep<steps.length) showWalkStep(); else closeWalk(); }
+function closeWalk(){ document.getElementById('walkthroughContainer').innerHTML=''; }
+function closeWalkAndLogin(){ closeWalk(); goTo('login'); }
+
+// ══ INIT ══
+_cartUI();
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
 </script>
 </body>
 </html>
