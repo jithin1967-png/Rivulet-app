@@ -770,6 +770,85 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
   font-size:14px;color:rgba(77,184,216,0.4);
 }
 
+/* ── Header icon buttons (bell, search) ── */
+.hdr-icon-btn{
+  width:40px;height:40px;border-radius:13px;
+  background:var(--card);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;cursor:pointer;position:relative;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  transition:all .15s;
+}
+.hdr-icon-btn:active{transform:scale(0.88);background:rgba(77,184,216,0.12);}
+
+/* ── AI Chat Bot ── */
+.ai-fab{
+  position:absolute;bottom:100px;right:16px;z-index:50;
+  width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;
+  background:linear-gradient(135deg,#6c3fc8,#4db8d8);
+  color:white;font-size:22px;
+  box-shadow:0 6px 24px rgba(108,63,200,0.5);
+  display:none;align-items:center;justify-content:center;
+  transition:all .2s;-webkit-tap-highlight-color:transparent;
+  animation:fabPop .4s cubic-bezier(.34,1.56,.64,1) both;
+}
+.ai-fab:active{transform:scale(0.88);}
+@keyframes fabPop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+
+/* ── AI Chat Panel ── */
+.ai-panel{
+  position:absolute;inset:0;z-index:280;
+  background:rgba(6,10,16,0.98);backdrop-filter:blur(24px);
+  display:flex;flex-direction:column;
+  transform:translateY(100%);transition:transform .38s cubic-bezier(.4,0,.2,1);
+}
+.ai-panel.open{transform:translateY(0);}
+.ai-panel-header{
+  padding:18px 18px 14px;display:flex;align-items:center;gap:12px;
+  border-bottom:1px solid var(--border);flex-shrink:0;
+}
+.ai-avatar{
+  width:38px;height:38px;border-radius:12px;flex-shrink:0;
+  background:linear-gradient(135deg,#6c3fc8,#4db8d8);
+  display:flex;align-items:center;justify-content:center;font-size:18px;
+}
+.ai-panel-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:800;}
+.ai-panel-sub{font-size:10px;color:var(--leaf-light);margin-top:1px;}
+.ai-close{margin-left:auto;width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,0.07);border:none;color:var(--muted);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.ai-messages{flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:10px;}
+.ai-msg{max-width:82%;padding:11px 14px;border-radius:16px;font-size:13px;line-height:1.5;animation:fadeUp .25s ease both;}
+.ai-msg.bot{background:rgba(77,184,216,0.1);border:1px solid rgba(77,184,216,0.15);align-self:flex-start;border-bottom-left-radius:4px;}
+.ai-msg.user{background:linear-gradient(135deg,var(--river),var(--river-mid));align-self:flex-end;border-bottom-right-radius:4px;color:white;}
+.ai-typing{display:flex;gap:4px;align-items:center;padding:11px 14px;}
+.ai-typing span{width:7px;height:7px;border-radius:50%;background:var(--river-light);animation:typingDot 1.2s infinite;}
+.ai-typing span:nth-child(2){animation-delay:.2s;}
+.ai-typing span:nth-child(3){animation-delay:.4s;}
+@keyframes typingDot{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-5px);opacity:1}}
+.ai-suggestions{display:flex;gap:6px;padding:0 16px 10px;overflow-x:auto;flex-shrink:0;}
+.ai-suggestions::-webkit-scrollbar{display:none;}
+.ai-chip{padding:8px 13px;border-radius:20px;background:rgba(77,184,216,0.08);border:1px solid rgba(77,184,216,0.2);font-size:11px;font-weight:600;white-space:nowrap;cursor:pointer;color:var(--river-light);flex-shrink:0;-webkit-tap-highlight-color:transparent;}
+.ai-chip:active{background:rgba(77,184,216,0.2);}
+.ai-input-row{display:flex;gap:8px;padding:12px 16px;border-top:1px solid var(--border);flex-shrink:0;}
+.ai-input{flex:1;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px;color:var(--text);font-size:13px;font-family:'DM Sans',sans-serif;outline:none;}
+.ai-input:focus{border-color:var(--river-light);}
+.ai-send{width:42px;height:42px;border-radius:12px;border:none;background:linear-gradient(135deg,#6c3fc8,#4db8d8);color:white;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+
+/* ── Quick Actions row ── */
+.quick-actions{display:flex;gap:8px;margin-bottom:14px;overflow-x:auto;padding-bottom:2px;}
+.quick-actions::-webkit-scrollbar{display:none;}
+.qa-btn{
+  display:flex;flex-direction:column;align-items:center;gap:5px;
+  padding:12px 14px;border-radius:16px;background:var(--card);
+  border:1px solid var(--border);cursor:pointer;flex-shrink:0;
+  font-size:10px;font-weight:700;color:var(--muted);
+  transition:all .15s;-webkit-tap-highlight-color:transparent;
+}
+.qa-btn:active{border-color:var(--river-light);color:var(--river-light);transform:scale(0.94);}
+.qa-icon{font-size:22px;}
+
+/* ── Swipe tabs indicator ── */
+.swipe-hint{text-align:center;font-size:10px;color:var(--muted);padding:6px 0 0;letter-spacing:.5px;}
+
 </style>
 </head>
 <body>
@@ -780,12 +859,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
   <div class="status-bar">
     <div class="status-notch"><div class="notch-cam"></div><div class="notch-mic"></div></div>
     <span class="status-time" id="clock">9:41</span>
-    <div class="status-icons" style="display:flex;align-items:center;gap:8px;">
-      <button class="bell-btn" id="bellBtn" onclick="toggleNotifs()" style="display:none;">
-        🔔<div class="bell-badge" id="bellBadge"></div>
-      </button>
-      <span>●●●</span><span>WiFi</span><span>🔋</span>
-    </div>
+    <div class="status-icons"><span>●●●</span><span>WiFi</span><span>🔋</span></div>
   </div>
 
   <div class="screen-wrap" id="screenWrap">
@@ -854,16 +928,29 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
     <!-- ══ SELLER HOME ══ -->
     <div class="page hidden" id="seller-home">
       <div class="page-header">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
           <div>
             <div class="greeting">Good morning, <strong>Nihal</strong> 👋</div>
             <div class="page-title">Seller Dashboard</div>
-            <div class="page-sub"><span class="live-dot"></span>Live · Wed, 2 Apr 2026 · Calicut</div>
+            <div class="page-sub"><span class="live-dot"></span>Live · Calicut</div>
           </div>
-          <button onclick="openSearch()" style="background:var(--card);border:1px solid var(--border);border-radius:12px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:17px;cursor:pointer;margin-top:4px;flex-shrink:0;">🔍</button>
+          <div style="display:flex;gap:8px;">
+            <button onclick="openSearch()" class="hdr-icon-btn">🔍</button>
+            <button onclick="toggleNotifs()" class="hdr-icon-btn" style="position:relative;">
+              🔔<div class="bell-badge" id="bellBadge" style="display:none;position:absolute;top:2px;right:2px;width:9px;height:9px;border-radius:50%;background:var(--coral);border:2px solid var(--bg);"></div>
+            </button>
+          </div>
         </div>
       </div>
       <div class="content">
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+          <div class="qa-btn" onclick="navTo(1)"><div class="qa-icon">🏪</div>My Spaces</div>
+          <div class="qa-btn" onclick="showModal('book-space')"><div class="qa-icon">➕</div>Book Space</div>
+          <div class="qa-btn" onclick="navTo(2)"><div class="qa-icon">📊</div>Analytics</div>
+          <div class="qa-btn" onclick="goTo('seller-payment')"><div class="qa-icon">💰</div>Payout</div>
+          <div class="qa-btn" onclick="openAI()"><div class="qa-icon">🤖</div>AI Help</div>
+        </div>
         <!-- Live Ticker -->
         <div class="ticker-bar">
           <div class="ticker-item"><div class="ticker-val">₹3,840</div><div class="ticker-lbl">Today</div></div>
@@ -1074,6 +1161,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
           <div class="setting-row" onclick="goTo('seller-products')"><div class="setting-left"><span class="setting-icon">📦</span><span class="setting-name">My Products (8)</span></div><span class="setting-arrow">›</span></div>
           <div class="setting-row" onclick="goTo('seller-payment')"><div class="setting-left"><span class="setting-icon">💳</span><span class="setting-name">Payment Settings</span></div><span class="setting-arrow">›</span></div>
           <div class="setting-row" onclick="goTo('seller-agreements')"><div class="setting-left"><span class="setting-icon">📋</span><span class="setting-name">My Agreements</span></div><span class="setting-arrow">›</span></div>
+          <div class="setting-row" onclick="goTo('seller-fssai')"><div class="setting-left"><span class="setting-icon">🛡️</span><span class="setting-name">FSSAI License</span></div><span class="badge badge-green" style="font-size:10px;">Active</span></div>
           <div class="setting-row" onclick="toggleNotifs()"><div class="setting-left"><span class="setting-icon">🔔</span><span class="setting-name">Notifications</span></div><span class="setting-arrow">›</span></div>
           <div class="setting-row" style="cursor:default;"><div class="setting-left"><span class="setting-icon">🌗</span><span class="setting-name">Light Mode</span></div><button class="theme-toggle" id="themeToggle" onclick="toggleTheme()"><div class="theme-knob">🌙</div></button></div>
           <div class="setting-row" onclick="goTo('seller-support')"><div class="setting-left"><span class="setting-icon">🆘</span><span class="setting-name">Support</span></div><span class="setting-arrow">›</span></div>
@@ -1449,6 +1537,70 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
   
 
 
+
+    <!-- ══ FSSAI LICENSE ══ -->
+    <div class="page hidden" id="seller-fssai">
+      <div class="page-header">
+        <div class="back-btn" onclick="goTo('seller-profile')">←</div>
+        <div class="page-title">FSSAI License</div>
+        <div class="page-sub">Food Safety &amp; Standards Authority of India</div>
+      </div>
+      <div class="content">
+        <div style="background:linear-gradient(135deg,#0a3d2e,#0d5c3a);border:1px solid rgba(72,196,100,0.35);border-radius:22px;padding:22px;margin-bottom:16px;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-20px;right:-20px;font-size:80px;opacity:0.07;">🛡️</div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+            <div style="width:48px;height:48px;border-radius:14px;background:rgba(72,196,100,0.2);border:1px solid rgba(72,196,100,0.4);display:flex;align-items:center;justify-content:center;font-size:24px;">🛡️</div>
+            <div>
+              <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;">FSSAI License</div>
+              <div style="font-size:11px;color:rgba(72,196,100,0.9);margin-top:2px;">✅ Verified &amp; Active</div>
+            </div>
+            <span class="badge badge-green" style="margin-left:auto;">Valid</span>
+          </div>
+          <div style="background:rgba(0,0,0,0.2);border-radius:14px;padding:16px;margin-bottom:14px;">
+            <div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">License Number</div>
+            <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;letter-spacing:3px;color:var(--leaf-light);">11224999000754</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div style="background:rgba(0,0,0,0.15);border-radius:12px;padding:12px;">
+              <div style="font-size:9px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;">Issue Date</div>
+              <div style="font-size:13px;font-weight:700;">15 Jan 2026</div>
+            </div>
+            <div style="background:rgba(0,0,0,0.15);border-radius:12px;padding:12px;">
+              <div style="font-size:9px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;">Expiry Date</div>
+              <div style="font-size:13px;font-weight:700;color:var(--amber);">14 Jan 2027</div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="section-title">License Details</div>
+          <div class="order-item-row"><span style="color:var(--muted)">Business Name</span><span style="font-weight:600">Nihal Farms</span></div>
+          <div class="order-item-row"><span style="color:var(--muted)">License Type</span><span style="font-weight:600">Basic Registration</span></div>
+          <div class="order-item-row"><span style="color:var(--muted)">Category</span><span style="font-weight:600">Food Retailer</span></div>
+          <div class="order-item-row"><span style="color:var(--muted)">State</span><span style="font-weight:600">Kerala</span></div>
+          <div class="order-item-row"><span style="color:var(--muted)">Address</span><span style="font-weight:600;text-align:right;max-width:55%;">SM Street, Mavoor Road, Calicut – 673001</span></div>
+        </div>
+        <div class="card">
+          <div class="section-title">Permitted Food Categories</div>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:4px;">
+            <span class="badge badge-green">🥥 Coconut Products</span>
+            <span class="badge badge-blue">🌾 Grains &amp; Cereals</span>
+            <span class="badge badge-amber">🌶️ Spices &amp; Condiments</span>
+            <span class="badge badge-green">🍌 Processed Snacks</span>
+            <span class="badge badge-blue">🌿 Herbs &amp; Dry Goods</span>
+          </div>
+        </div>
+        <div style="background:rgba(232,160,32,0.1);border:1px solid rgba(232,160,32,0.3);border-radius:16px;padding:16px;margin-bottom:12px;display:flex;gap:12px;align-items:flex-start;">
+          <div style="font-size:22px;">⏰</div>
+          <div>
+            <div style="font-size:13px;font-weight:700;margin-bottom:3px;">Renewal Due in 9 months</div>
+            <div style="font-size:11px;color:var(--muted);line-height:1.5;">Your FSSAI license expires on 14 Jan 2027. RIVULET will remind you 30 days before expiry.</div>
+          </div>
+        </div>
+        <button class="login-btn" onclick="showToast('📄','FSSAI certificate downloaded!')">⬇️ Download Certificate</button>
+        <button class="login-btn" onclick="showToast('🔄','Renewal request submitted to FSSAI portal')" style="margin-top:10px;background:transparent;border:1px solid rgba(72,196,100,0.3);color:var(--leaf-light);">🔄 Apply for Renewal</button>
+      </div>
+    </div>
+
     <!-- ══ REGISTER PAGE ══ -->
     <div class="page hidden auth-scroll" id="register">
       <div class="auth-inner">
@@ -1720,6 +1872,34 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
     </div>
 
   </div><!-- /screen-wrap -->
+
+  <!-- ══ AI ASSISTANT PANEL ══ -->
+  <div class="ai-panel" id="aiPanel">
+    <div class="ai-panel-header">
+      <div class="ai-avatar">🤖</div>
+      <div>
+        <div class="ai-panel-title">Jiya ✨</div>
+        <div class="ai-panel-sub">● Online · Your RIVULET Assistant</div>
+      </div>
+      <button class="ai-close" onclick="closeAI()">✕</button>
+    </div>
+    <div class="ai-messages" id="aiMessages">
+      <div class="ai-msg bot">Hi Nihal! 👋 I'm <strong>Jiya</strong>, your RIVULET assistant. I can help with restocking advice, sales insights, space recommendations and more. What would you like to know?</div>
+    </div>
+    <div class="ai-suggestions" id="aiSuggestions">
+      <div class="ai-chip" onclick="askAI('What should I restock?')">🔄 Restock advice</div>
+      <div class="ai-chip" onclick="askAI('How are my sales this week?')">📊 Sales summary</div>
+      <div class="ai-chip" onclick="askAI('Which space is performing best?')">🏪 Best space</div>
+      <div class="ai-chip" onclick="askAI('When should I renew City Mall space?')">⏰ Renewal alert</div>
+    </div>
+    <div class="ai-input-row">
+      <input class="ai-input" id="aiInput" placeholder="Ask anything…" onkeydown="if(event.key==='Enter')sendAI()">
+      <button class="ai-send" onclick="sendAI()">➤</button>
+    </div>
+  </div>
+
+  <!-- AI FAB -->
+  <button class="ai-fab" id="aiFab" onclick="openAI()">🤖</button>
 
   <!-- PWA INSTALL BANNER -->
   <div class="install-banner" id="installBanner">
@@ -2179,20 +2359,76 @@ function updateClock(){
 updateClock();
 setInterval(updateClock,10000);
 
-// ══ SHOW BELL WHEN LOGGED IN ══
-// Safely patch quickLogin after all functions are defined
+// ══ AI ASSISTANT ══
+const _aiResponses = {
+  'restock': `Based on your sales data:\n\n🥥 **Coconut Oil** — restock urgently (only 24 units, selling 8/day)\n🌾 **Red Rice** — critical (7 units left, 2 days until stockout)\n🌶️ **Kerala Spice Mix** — order soon (18 units, peaks Thursday)\n\nRecommend ordering tomorrow before your Friday peak.`,
+  'sales': `This week's summary 📊\n\n• Total revenue: **₹21,840** (↑14% vs last week)\n• Best day: **Friday ₹4,000**\n• Best product: **Coconut Oil** (42% of revenue)\n• SM Street outperforming other locations by 2.3×\n\nYou're on track for your best month!`,
+  'space': `Space performance ranking 🏪\n\n1️⃣ **SM Street A1** — ₹24,100 · 4.8⭐ · Best ROI\n2️⃣ **City Mall C3** — ₹15,800 · 4.9⭐ · Premium traffic\n3️⃣ **More Supermarket B2** — ₹8,300 · 4.2⭐ · Growing\n\nCity Mall has highest footfall but SM Street converts best.`,
+  'renewal': `City Mall Space C3 ⚠️\n\nExpires in **2 days** (4 Apr 2026)\nWeekly rent: ₹2,200\nDaily footfall: ~4,200 customers\n\n💡 Recommendation: Renew for 4 weeks — your Coconut Oil sells 3× faster here than other locations. ROI is strong.`,
+  'default': `Great question! Here are some insights based on your current data:\n\n• Your sales are up 12% this week\n• 3 active shelf spaces across Calicut\n• ₹11,220 payout pending tonight\n\nTry asking me about restocking, sales trends, or space performance!`
+};
+
+function openAI() {
+  document.getElementById('aiPanel').classList.add('open');
+}
+function closeAI() {
+  document.getElementById('aiPanel').classList.remove('open');
+}
+
+function sendAI() {
+  const input = document.getElementById('aiInput');
+  const msg = input.value.trim();
+  if (!msg) return;
+  input.value = '';
+  askAI(msg);
+}
+
+function askAI(question) {
+  const messages = document.getElementById('aiMessages');
+  // Add user message
+  messages.innerHTML += `<div class="ai-msg user">${question}</div>`;
+  // Add typing indicator
+  const typingId = 'typing_' + Date.now();
+  messages.innerHTML += `<div class="ai-msg bot ai-typing" id="${typingId}"><span></span><span></span><span></span></div>`;
+  messages.scrollTop = messages.scrollHeight;
+  // Hide suggestions after first question
+  document.getElementById('aiSuggestions').style.display = 'none';
+
+  // Pick response
+  const q = question.toLowerCase();
+  let response = _aiResponses.default;
+  if (q.includes('restock') || q.includes('stock')) response = _aiResponses.restock;
+  else if (q.includes('sale') || q.includes('revenue') || q.includes('week')) response = _aiResponses.sales;
+  else if (q.includes('space') || q.includes('best') || q.includes('perform')) response = _aiResponses.space;
+  else if (q.includes('renew') || q.includes('city mall') || q.includes('expir')) response = _aiResponses.renewal;
+
+  setTimeout(() => {
+    document.getElementById(typingId)?.remove();
+    // Format bold markdown
+    const formatted = response.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+    messages.innerHTML += `<div class="ai-msg bot">${formatted}</div>`;
+    messages.scrollTop = messages.scrollHeight;
+  }, 1400);
+}
+
+// ══ SHOW BELL + AI FAB WHEN LOGGED IN ══
 window.addEventListener('DOMContentLoaded', () => {
   const _origQL = window.quickLogin;
   if (typeof _origQL === 'function') {
     window.quickLogin = function(role) {
       _origQL(role);
-      const bell = document.getElementById('bellBtn');
-      if (bell) bell.style.display = 'flex';
+      // Show bell badge in header
       const badge = document.getElementById('bellBadge');
       if (badge) badge.style.display = 'block';
+      // Show AI FAB for seller/delivery
+      const fab = document.getElementById('aiFab');
+      if (fab && (role === 'seller' || role === 'delivery')) {
+        fab.style.display = 'flex';
+      }
     };
   }
 });
+
 
 // ══ PWA INSTALL PROMPT ══
 let _deferredPrompt = null;
