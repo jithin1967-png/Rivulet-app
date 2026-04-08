@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -849,6 +850,191 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
 /* ── Swipe tabs indicator ── */
 .swipe-hint{text-align:center;font-size:10px;color:var(--muted);padding:6px 0 0;letter-spacing:.5px;}
 
+/* ══ ADVANCED UI ENHANCEMENTS ══ */
+
+/* 1. WAVE CANVAS */
+#splashCanvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none;}
+#splash{position:relative;overflow:hidden;}
+.splash-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:48px 32px;text-align:center;}
+
+/* 2. GLASSMORPHISM */
+.kpi{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 4px 24px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,255,255,0.07);}
+.card{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 4px 20px rgba(0,0,0,0.25),inset 0 1px 0 rgba(255,255,255,0.05);}
+.rental-card{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
+
+/* 3. ANIMATED SVG GRAPH */
+.live-graph-wrap{position:relative;height:110px;margin:10px 0 4px;}
+.live-graph-wrap svg{width:100%;height:100%;overflow:visible;}
+@keyframes drawLine{from{stroke-dashoffset:700}to{stroke-dashoffset:0}}
+@keyframes fadeArea{from{opacity:0}to{opacity:1}}
+@keyframes dotPop{from{r:0;opacity:0}to{opacity:1}}
+.graph-line{stroke-dasharray:700;stroke-dashoffset:700;animation:drawLine 1.8s cubic-bezier(.4,0,.2,1) .1s both;}
+.graph-area{animation:fadeArea .9s ease 1.5s both;opacity:0;}
+.graph-dot{animation:dotPop .3s ease both;}
+
+/* 4. CONFETTI */
+#confettiCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:10;}
+
+/* 5. 3D FLIP CARDS */
+.flip-card{perspective:900px;cursor:pointer;}
+.flip-card-inner{position:relative;width:100%;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.4,0,.2,1);}
+.flip-card.flipped .flip-card-inner{transform:rotateY(180deg);}
+.flip-front,.flip-back{backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;overflow:hidden;}
+.flip-front{position:relative;}
+.flip-back{position:absolute;inset:0;transform:rotateY(180deg);background:linear-gradient(135deg,var(--river),var(--river-mid));display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;text-align:center;gap:5px;}
+.flip-back-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:white;}
+.flip-back-price{font-size:20px;font-weight:800;color:var(--river-glow);font-family:'Syne',sans-serif;}
+.flip-back-stock{font-size:10px;color:rgba(255,255,255,0.65);}
+.flip-back-btn{margin-top:6px;padding:7px 16px;border-radius:20px;border:none;background:white;color:var(--river);font-family:'Syne',sans-serif;font-size:11px;font-weight:800;cursor:pointer;}
+
+/* 6. NEON MODE */
+.shell.neon-mode{--bg:#05010f;--card:rgba(180,0,255,0.07);--border:rgba(180,0,255,0.25);--text:rgba(255,255,255,0.93);--muted:rgba(200,150,255,0.5);--river:#7b00ff;--river-mid:#b400ff;--river-light:#e040fb;--river-glow:#ff80ff;--leaf:#00ffcc;--leaf-light:#00ffcc;--amber:#ffcc00;--coral:#ff2d6b;}
+.shell.neon-mode .page{background:var(--bg);}
+.shell.neon-mode .bottom-nav{background:rgba(5,1,15,0.97);border-top:1px solid rgba(180,0,255,0.3);box-shadow:0 -4px 30px rgba(180,0,255,0.25);}
+.shell.neon-mode .page-header{background:rgba(5,1,15,0.95);}
+.shell.neon-mode .nav-item.active{color:var(--river-light);background:rgba(180,0,255,0.14);box-shadow:0 0 16px rgba(224,64,251,0.35);}
+.shell.neon-mode .kpi-val,.shell.neon-mode .page-title{text-shadow:0 0 18px rgba(224,64,251,0.55);}
+@keyframes scanline{0%{transform:translateY(-100%)}100%{transform:translateY(100vh)}}
+.shell.neon-mode .screen-wrap::after{content:'';position:absolute;left:0;right:0;height:2px;background:linear-gradient(transparent,rgba(180,0,255,0.18),transparent);animation:scanline 4s linear infinite;pointer-events:none;z-index:999;}
+
+/* 7. RIPPLE INK */
+@keyframes inkRipple{from{transform:scale(0);opacity:.5}to{transform:scale(5);opacity:0}}
+.ink{position:absolute;border-radius:50%;background:rgba(77,184,216,0.3);width:50px;height:50px;margin-left:-25px;margin-top:-25px;pointer-events:none;animation:inkRipple .6s ease-out both;z-index:99;}
+
+/* 8. SKELETON */
+@keyframes skelPulse{0%,100%{opacity:.35}50%{opacity:.7}}
+.skel-block{border-radius:8px;background:rgba(255,255,255,0.07);animation:skelPulse 1.4s ease infinite;}
+
+/* 9. NEON TOGGLE */
+.neon-toggle-btn{padding:7px 14px;border-radius:20px;border:1px solid rgba(180,0,255,0.4);background:rgba(180,0,255,0.08);color:#e040fb;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:all .2s;}
+.shell.neon-mode .neon-toggle-btn{background:rgba(180,0,255,0.25);box-shadow:0 0 14px rgba(180,0,255,0.35);}
+
+/* 10. COUNTER ANIM */
+@keyframes countUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.kpi-val{animation:countUp .5s ease both;}
+
+
+/* ══════════════════════════════════════════════
+   MEGA FEATURE CSS — ALL NEW ADDITIONS
+══════════════════════════════════════════════ */
+
+/* ── SALES HEATMAP ── */
+.heatmap-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin:10px 0;}
+.heatmap-cell{aspect-ratio:1;border-radius:3px;transition:transform .15s;cursor:pointer;}
+.heatmap-cell:active{transform:scale(1.2);}
+.heat-0{background:rgba(255,255,255,0.05);}
+.heat-1{background:rgba(77,184,216,0.2);}
+.heat-2{background:rgba(77,184,216,0.4);}
+.heat-3{background:rgba(77,184,216,0.65);}
+.heat-4{background:rgba(77,184,216,0.9);}
+.heat-5{background:var(--river-glow);box-shadow:0 0 6px rgba(126,232,255,0.5);}
+.heatmap-days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:4px;}
+.heatmap-day{font-size:8px;color:var(--muted);text-align:center;font-weight:700;}
+
+/* ── LEADERBOARD ── */
+.lb-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.lb-item:last-child{border-bottom:none;}
+.lb-rank{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;width:28px;text-align:center;flex-shrink:0;}
+.lb-rank.gold{color:#f5c842;}
+.lb-rank.silver{color:#c0c0c0;}
+.lb-rank.bronze{color:#cd7f32;}
+.lb-avatar{width:40px;height:40px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:15px;font-weight:800;flex-shrink:0;}
+.lb-name{font-size:13px;font-weight:700;flex:1;}
+.lb-score{font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--leaf-light);}
+.lb-you{border:1px solid rgba(77,184,216,0.4);background:rgba(77,184,216,0.05);border-radius:14px;padding:10px 12px;margin:-2px -2px;}
+
+/* ── WISHLIST HEART ── */
+.heart-btn{background:none;border:none;font-size:20px;cursor:pointer;padding:2px;transition:transform .2s;-webkit-tap-highlight-color:transparent;}
+.heart-btn:active{transform:scale(1.4);}
+@keyframes heartPop{0%{transform:scale(1)}40%{transform:scale(1.5)}100%{transform:scale(1)}}
+.heart-btn.liked{animation:heartPop .35s ease;}
+
+/* ── LOYALTY POINTS ── */
+.loyalty-card{background:linear-gradient(135deg,#1a0a3d,#2d1060);border:1px solid rgba(180,0,255,0.3);border-radius:22px;padding:20px;margin-bottom:14px;position:relative;overflow:hidden;}
+.loyalty-card::before{content:'✦';position:absolute;font-size:120px;opacity:.04;right:-10px;top:-20px;color:white;}
+.loyalty-pts{font-family:'Syne',sans-serif;font-size:38px;font-weight:800;background:linear-gradient(135deg,#b400ff,#ff80ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.loyalty-bar-wrap{height:8px;background:rgba(255,255,255,0.1);border-radius:4px;margin-top:12px;}
+.loyalty-bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#b400ff,#ff80ff);transition:width .8s cubic-bezier(.4,0,.2,1);}
+.tier-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:20px;background:rgba(180,0,255,0.2);border:1px solid rgba(180,0,255,0.4);font-size:11px;font-weight:700;color:#e040fb;margin-top:10px;}
+
+/* ── SCRATCH CARD ── */
+.scratch-wrap{position:relative;border-radius:18px;overflow:hidden;margin-bottom:14px;cursor:crosshair;}
+.scratch-canvas{position:absolute;inset:0;z-index:2;border-radius:18px;}
+.scratch-reveal{background:linear-gradient(135deg,#1a4a2a,#0d6e3a);border-radius:18px;padding:28px;text-align:center;}
+.scratch-prize{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;color:var(--leaf-light);}
+.scratch-hint{font-size:11px;color:rgba(255,255,255,0.5);margin-top:6px;}
+
+/* ── OTP INPUT ── */
+.otp-row{display:flex;gap:10px;justify-content:center;margin:20px 0;}
+.otp-box{width:48px;height:56px;border-radius:14px;border:2px solid var(--border);background:var(--card);color:var(--text);font-family:'Syne',sans-serif;font-size:22px;font-weight:800;text-align:center;outline:none;transition:border-color .2s;-webkit-tap-highlight-color:transparent;}
+.otp-box:focus{border-color:var(--river-light);box-shadow:0 0 0 3px rgba(77,184,216,0.2);}
+.otp-box.filled{border-color:var(--leaf-light);}
+
+/* ── VOICE SEARCH ── */
+.voice-btn{width:56px;height:56px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,var(--river),var(--river-mid));color:white;font-size:22px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(10,79,110,0.4);-webkit-tap-highlight-color:transparent;transition:all .2s;flex-shrink:0;}
+.voice-btn.listening{background:linear-gradient(135deg,var(--coral),#ff6b6b);animation:voicePulse 1s ease infinite;}
+@keyframes voicePulse{0%,100%{box-shadow:0 4px 16px rgba(224,90,58,0.4)}50%{box-shadow:0 4px 32px rgba(224,90,58,0.8),0 0 0 10px rgba(224,90,58,0.15)}}
+.voice-overlay{position:absolute;inset:0;background:rgba(6,10,18,0.97);z-index:260;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transform:translateY(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);}
+.voice-overlay.open{transform:translateY(0);}
+.voice-rings{position:relative;width:120px;height:120px;display:flex;align-items:center;justify-content:center;}
+@keyframes ringPulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.2);opacity:0}}
+.voice-ring{position:absolute;width:80px;height:80px;border-radius:50%;border:2px solid var(--coral);}
+.voice-ring:nth-child(1){animation:ringPulse 1.5s ease infinite;}
+.voice-ring:nth-child(2){animation:ringPulse 1.5s ease .5s infinite;}
+.voice-ring:nth-child(3){animation:ringPulse 1.5s ease 1s infinite;}
+.voice-mic-big{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--coral),#ff6b6b);display:flex;align-items:center;justify-content:center;font-size:34px;z-index:1;box-shadow:0 8px 30px rgba(224,90,58,0.5);}
+.voice-text{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--muted);}
+.voice-result{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--text);min-height:32px;text-align:center;padding:0 24px;}
+
+/* ── CHAT BUBBLES ── */
+.chat-page{display:flex;flex-direction:column;height:100%;}
+.chat-messages{flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:8px;}
+.chat-bubble{max-width:75%;padding:10px 14px;border-radius:18px;font-size:13px;line-height:1.5;position:relative;animation:fadeUp .2s ease both;}
+.chat-bubble.sent{background:linear-gradient(135deg,var(--river),var(--river-mid));color:white;align-self:flex-end;border-bottom-right-radius:4px;}
+.chat-bubble.recv{background:var(--card);border:1px solid var(--border);align-self:flex-start;border-bottom-left-radius:4px;}
+.chat-meta{font-size:9px;opacity:.55;margin-top:3px;text-align:right;}
+.chat-input-row{display:flex;gap:8px;padding:12px 16px;border-top:1px solid var(--border);flex-shrink:0;}
+.chat-input{flex:1;background:var(--card);border:1px solid var(--border);border-radius:22px;padding:11px 16px;color:var(--text);font-size:13px;font-family:'DM Sans',sans-serif;outline:none;}
+.chat-input:focus{border-color:var(--river-light);}
+.chat-send{width:42px;height:42px;border-radius:50%;border:none;background:linear-gradient(135deg,var(--river),var(--river-mid));color:white;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.chat-header-ava{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--leaf),var(--leaf-light));display:flex;align-items:center;justify-content:center;font-size:18px;}
+
+/* ── QR SCANNER SIMULATION ── */
+.qr-scanner{background:#000;border-radius:18px;overflow:hidden;position:relative;height:200px;margin-bottom:14px;}
+.qr-viewfinder{position:absolute;inset:20px;border:2px solid rgba(77,184,216,0.5);border-radius:12px;}
+.qr-corner{position:absolute;width:20px;height:20px;border-color:var(--river-light);border-style:solid;}
+.qr-corner.tl{top:20px;left:20px;border-width:3px 0 0 3px;border-radius:4px 0 0 0;}
+.qr-corner.tr{top:20px;right:20px;border-width:3px 3px 0 0;border-radius:0 4px 0 0;}
+.qr-corner.bl{bottom:20px;left:20px;border-width:0 0 3px 3px;border-radius:0 0 0 4px;}
+.qr-corner.br{bottom:20px;right:20px;border-width:0 3px 3px 0;border-radius:0 0 4px 0;}
+@keyframes scanBeam{0%{top:22px}100%{top:calc(100% - 22px)}}
+.qr-beam{position:absolute;left:22px;right:22px;height:2px;background:linear-gradient(90deg,transparent,var(--river-light),transparent);animation:scanBeam 2s ease-in-out infinite alternate;box-shadow:0 0 8px var(--river-light);}
+.qr-label{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:11px;color:rgba(255,255,255,0.5);}
+
+/* ── LANGUAGE TOGGLE ── */
+.lang-row{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+.lang-chip{padding:9px 16px;border-radius:20px;border:1px solid var(--border);background:var(--card);font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;-webkit-tap-highlight-color:transparent;}
+.lang-chip.active{background:var(--river);color:white;border-color:var(--river);}
+
+/* ── GRADIENT MESH BG ── */
+@keyframes meshShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.shell.mesh-bg .page-header{
+  background:rgba(6,15,20,0.92)!important;
+}
+.shell.mesh-bg #splash{
+  background:linear-gradient(-45deg,#060f14,#0a2a3a,#0a1f0d,#1a0a3d,#060f14)!important;
+  background-size:400% 400%!important;
+  animation:meshShift 12s ease infinite!important;
+}
+
+/* ── PAGE MORPH TRANSITIONS ── */
+.page{transition:transform .42s cubic-bezier(.4,0,.2,1),opacity .35s ease,filter .35s ease;}
+.page.hidden{transform:translateX(40px);opacity:0;filter:blur(4px);pointer-events:none;}
+
+/* ── PERSONALISED FEED ── */
+.feed-tag{display:inline-block;padding:3px 9px;border-radius:10px;font-size:9px;font-weight:700;background:rgba(77,184,216,0.12);color:var(--river-light);margin-bottom:5px;letter-spacing:.5px;text-transform:uppercase;}
+
+
 </style>
 </head>
 <body>
@@ -866,7 +1052,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
 
     <!-- ══ SPLASH ══ -->
     <div class="page" id="splash">
-      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:48px 32px;text-align:center;">
+      <canvas id="splashCanvas"></canvas>
+      <div class="splash-inner">
         <div class="splash-wave">🌊</div>
         <div class="splash-logo">RIVULET</div>
         <div class="splash-tagline">Connecting Sellers · Stores · Customers<br>through the seamless flow of retail</div>
@@ -948,8 +1135,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
           <div class="qa-btn" onclick="navTo(1)"><div class="qa-icon">🏪</div>My Spaces</div>
           <div class="qa-btn" onclick="showModal('book-space')"><div class="qa-icon">➕</div>Book Space</div>
           <div class="qa-btn" onclick="navTo(2)"><div class="qa-icon">📊</div>Analytics</div>
-          <div class="qa-btn" onclick="goTo('seller-payment')"><div class="qa-icon">💰</div>Payout</div>
-          <div class="qa-btn" onclick="openAI()"><div class="qa-icon">🤖</div>AI Help</div>
+          <div class="qa-btn" onclick="goTo('leaderboard')"><div class="qa-icon">🏆</div>Rank</div>
+          <div class="qa-btn" onclick="goTo('sales-heatmap')"><div class="qa-icon">📅</div>Calendar</div>
+          <div class="qa-btn" onclick="openAI()"><div class="qa-icon">🤖</div>Jiya</div>
         </div>
         <!-- Live Ticker -->
         <div class="ticker-bar">
@@ -981,15 +1169,36 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
           </div>
         </div>
         <div class="card">
-          <div class="section-title">Weekly Sales <span>Detailed →</span></div>
-          <div class="bar-chart">
-            <div class="bar-col"><div class="bar-val">₹2.1k</div><div class="bar" style="height:55%"></div><div class="bar-lbl">Mon</div></div>
-            <div class="bar-col"><div class="bar-val">₹2.8k</div><div class="bar" style="height:70%"></div><div class="bar-lbl">Tue</div></div>
-            <div class="bar-col"><div class="bar-val">₹3.8k</div><div class="bar" style="height:95%"></div><div class="bar-lbl">Wed</div></div>
-            <div class="bar-col"><div class="bar-val">₹3.2k</div><div class="bar" style="height:80%"></div><div class="bar-lbl">Thu</div></div>
-            <div class="bar-col"><div class="bar-val">₹4.0k</div><div class="bar" style="height:100%"></div><div class="bar-lbl">Fri</div></div>
-            <div class="bar-col"><div class="bar-val">₹3.6k</div><div class="bar" style="height:90%"></div><div class="bar-lbl">Sat</div></div>
-            <div class="bar-col"><div class="bar-val">₹2.9k</div><div class="bar" style="height:72%"></div><div class="bar-lbl">Sun</div></div>
+          <div class="section-title">Weekly Revenue <span style="color:var(--leaf-light)">↑14% this week</span></div>
+          <div class="live-graph-wrap">
+            <svg viewBox="0 0 300 100" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="graphGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#1a7a9a"/>
+                  <stop offset="100%" stop-color="#7ee8ff"/>
+                </linearGradient>
+                <linearGradient id="graphAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#4db8d8" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#4db8d8" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <polygon class="graph-area" points="0,72 43,55 86,22 129,38 172,14 215,28 258,8 300,30 300,100 0,100" fill="url(#graphAreaGrad)"/>
+              <polyline class="graph-line" stroke="url(#graphGrad)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" points="0,72 43,55 86,22 129,38 172,14 215,28 258,8 300,30"/>
+              <circle class="graph-dot" cx="0" cy="72" r="4" fill="#4db8d8" stroke="#060f14" stroke-width="2" style="animation-delay:.3s"/>
+              <circle class="graph-dot" cx="43" cy="55" r="4" fill="#4db8d8" stroke="#060f14" stroke-width="2" style="animation-delay:.5s"/>
+              <circle class="graph-dot" cx="86" cy="22" r="4" fill="#4db8d8" stroke="#060f14" stroke-width="2" style="animation-delay:.7s"/>
+              <circle class="graph-dot" cx="129" cy="38" r="4" fill="#4db8d8" stroke="#060f14" stroke-width="2" style="animation-delay:.9s"/>
+              <circle class="graph-dot" cx="172" cy="14" r="4" fill="#7ee8ff" stroke="#060f14" stroke-width="2" style="animation-delay:1.1s"/>
+              <circle class="graph-dot" cx="215" cy="28" r="4" fill="#4db8d8" stroke="#060f14" stroke-width="2" style="animation-delay:1.3s"/>
+              <circle class="graph-dot" cx="258" cy="8" r="4" fill="#4db8d8" stroke="#060f14" stroke-width="2" style="animation-delay:1.5s"/>
+              <circle class="graph-dot" cx="300" cy="30" r="4" fill="#4db8d8" stroke="#060f14" stroke-width="2" style="animation-delay:1.7s"/>
+            </svg>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--muted);margin-top:4px;padding:0 2px;">
+            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri⚡</span><span>Sat</span><span>Sun</span><span>Today</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--river-light);margin-top:6px;padding:0 2px;font-weight:700;">
+            <span>₹2.1k</span><span>₹2.8k</span><span>₹3.8k</span><span>₹3.2k</span><span>₹4.0k</span><span>₹3.6k</span><span>₹2.9k</span><span>₹3.8k</span>
           </div>
         </div>
         <div class="card">
@@ -1164,6 +1373,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
           <div class="setting-row" onclick="goTo('seller-fssai')"><div class="setting-left"><span class="setting-icon">🛡️</span><span class="setting-name">FSSAI License</span></div><span class="badge badge-green" style="font-size:10px;">Active</span></div>
           <div class="setting-row" onclick="toggleNotifs()"><div class="setting-left"><span class="setting-icon">🔔</span><span class="setting-name">Notifications</span></div><span class="setting-arrow">›</span></div>
           <div class="setting-row" style="cursor:default;"><div class="setting-left"><span class="setting-icon">🌗</span><span class="setting-name">Light Mode</span></div><button class="theme-toggle" id="themeToggle" onclick="toggleTheme()"><div class="theme-knob">🌙</div></button></div>
+          <div class="setting-row" style="cursor:default;"><div class="setting-left"><span class="setting-icon">⚡</span><span class="setting-name">Neon Mode</span></div><button class="neon-toggle-btn" id="neonToggle" onclick="toggleNeon()">OFF</button></div>
           <div class="setting-row" onclick="goTo('seller-support')"><div class="setting-left"><span class="setting-icon">🆘</span><span class="setting-name">Support</span></div><span class="setting-arrow">›</span></div>
           <div class="setting-row" onclick="doLogout()"><div class="setting-left"><span class="setting-icon">🚪</span><span class="setting-name" style="color:var(--coral)">Sign Out</span></div><span class="setting-arrow">›</span></div>
         </div>
@@ -1276,7 +1486,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
           <div class="section-title">My Vehicle</div>
           <div class="order-item-row"><span style="color:var(--muted)">Type</span><span>Jeep</span></div>
           <div class="order-item-row"><span style="color:var(--muted)">Model</span><span>Mahindra Jeep</span></div>
-          <div class="order-item-row"><span style="color:var(--muted)">Reg. Number</span><span>KL-07 CH 2255</span></div>
+          <div class="order-item-row"><span style="color:var(--muted)">Reg. Number</span><span>KL-07 JA 2255</span></div>
           <div class="order-item-row"><span style="color:var(--muted)">Insurance</span><span style="color:var(--leaf-light)">Valid till Dec 2026</span></div>
         </div>
       </div>
@@ -1289,6 +1499,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
         <div class="page-title">Shop Fresh &amp; Local</div>
       </div>
       <div class="content">
+        <div class="quick-actions">
+          <div class="qa-btn" onclick="goTo('wishlist-page')"><div class="qa-icon">❤️</div>Wishlist</div>
+          <div class="qa-btn" onclick="goTo('loyalty-page')"><div class="qa-icon">⭐</div>Rewards</div>
+          <div class="qa-btn" onclick="goTo('chat-page')"><div class="qa-icon">💬</div>Chat</div>
+          <div class="qa-btn" onclick="goTo('qr-scanner')"><div class="qa-icon">📷</div>Scan</div>
+          <div class="qa-btn" onclick="openVoice()"><div class="qa-icon">🎤</div>Voice</div>
+        </div>
         <div class="search-bar"><span>🔍</span><input type="text" placeholder="Search products, stores, sellers…"></div>
         <div class="cat-scroll">
           <div class="cat-chip active">All</div>
@@ -1300,11 +1517,32 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
           <div class="cat-chip">🥛 Dairy</div>
         </div>
         <div class="section-title">Fresh From Farms <span>See all →</span></div>
+        <div style="font-size:10px;color:var(--muted);text-align:center;margin-bottom:8px;letter-spacing:.5px;">💡 Tap card to flip &amp; see details</div>
         <div class="prod-grid">
-          <div class="prod-card"><div class="prod-img">🥥</div><div class="prod-body"><div class="prod-name">Coconut Oil 1L</div><div class="prod-seller">by Nihal</div><div class="prod-footer"><div class="prod-price">₹180</div><button class="add-btn" onclick="addToCart({id:1,name:'Coconut Oil 1L',price:180,emoji:'🥥',store:'Nihal'})">+</button></div></div></div>
-          <div class="prod-card"><div class="prod-img">🌾</div><div class="prod-body"><div class="prod-name">Red Rice 5kg</div><div class="prod-seller">by Green Farm</div><div class="prod-footer"><div class="prod-price">₹320</div><button class="add-btn" onclick="addToCart({id:2,name:'Red Rice 5kg',price:320,emoji:'🌾',store:'Green Farm'})">+</button></div></div></div>
-          <div class="prod-card"><div class="prod-img">🍌</div><div class="prod-body"><div class="prod-name">Banana Chips 200g</div><div class="prod-seller">by Local Bakes</div><div class="prod-footer"><div class="prod-price">₹60</div><button class="add-btn" onclick="addToCart({id:3,name:'Banana Chips 200g',price:60,emoji:'🍌',store:'Local Bakes'})">+</button></div></div></div>
-          <div class="prod-card"><div class="prod-img">🌶️</div><div class="prod-body"><div class="prod-name">Kerala Spice Mix</div><div class="prod-seller">by Spice Hub</div><div class="prod-footer"><div class="prod-price">₹95</div><button class="add-btn" onclick="addToCart({id:4,name:'Kerala Spice Mix',price:95,emoji:'🌶️',store:'Spice Hub'})">+</button></div></div></div>
+          <div class="flip-card" onclick="this.classList.toggle('flipped')" style="height:160px;">
+            <div class="flip-card-inner" style="height:160px;">
+              <div class="flip-front prod-card" style="height:160px;"><div class="prod-img">🥥</div><div class="prod-body"><div class="feed-tag">🔥 Popular</div><div class="prod-name">Coconut Oil 1L</div><div class="prod-seller">by Nihal</div><div class="prod-footer"><div class="prod-price">₹180</div><button class="heart-btn" id="heart1" onclick="event.stopPropagation();toggleWishlist(1,'Coconut Oil 1L','🥥',180,this)">🤍</button></div></div></div>
+              <div class="flip-back"><div class="flip-back-name">Coconut Oil 1L</div><div class="flip-back-price">₹180</div><div class="flip-back-stock">📦 24 units in stock</div><div class="flip-back-stock">⭐ 4.8 · Nihal Farms</div><button class="flip-back-btn" onclick="event.stopPropagation();addToCart({id:1,name:'Coconut Oil 1L',price:180,emoji:'🥥',store:'Nihal'})">Add to Cart</button></div>
+            </div>
+          </div>
+          <div class="flip-card" onclick="this.classList.toggle('flipped')" style="height:160px;">
+            <div class="flip-card-inner" style="height:160px;">
+              <div class="flip-front prod-card" style="height:160px;"><div class="prod-img">🌾</div><div class="prod-body"><div class="feed-tag">📦 Because you liked Red Rice</div><div class="prod-name">Red Rice 5kg</div><div class="prod-seller">by Green Farm</div><div class="prod-footer"><div class="prod-price">₹320</div><button class="heart-btn" id="heart2" onclick="event.stopPropagation();toggleWishlist(2,'Red Rice 5kg','🌾',320,this)">🤍</button></div></div></div>
+              <div class="flip-back"><div class="flip-back-name">Red Rice 5kg</div><div class="flip-back-price">₹320</div><div class="flip-back-stock">📦 12 units in stock</div><div class="flip-back-stock">⭐ 4.6 · Green Farm</div><button class="flip-back-btn" onclick="event.stopPropagation();addToCart({id:2,name:'Red Rice 5kg',price:320,emoji:'🌾',store:'Green Farm'})">Add to Cart</button></div>
+            </div>
+          </div>
+          <div class="flip-card" onclick="this.classList.toggle('flipped')" style="height:160px;">
+            <div class="flip-card-inner" style="height:160px;">
+              <div class="flip-front prod-card" style="height:160px;"><div class="prod-img">🍌</div><div class="prod-body"><div class="feed-tag">🆕 New Arrival</div><div class="prod-name">Banana Chips 200g</div><div class="prod-seller">by Local Bakes</div><div class="prod-footer"><div class="prod-price">₹60</div><button class="heart-btn" id="heart3" onclick="event.stopPropagation();toggleWishlist(3,'Banana Chips 200g','🍌',60,this)">🤍</button></div></div></div>
+              <div class="flip-back"><div class="flip-back-name">Banana Chips 200g</div><div class="flip-back-price">₹60</div><div class="flip-back-stock">📦 40 units in stock</div><div class="flip-back-stock">⭐ 4.5 · Local Bakes</div><button class="flip-back-btn" onclick="event.stopPropagation();addToCart({id:3,name:'Banana Chips 200g',price:60,emoji:'🍌',store:'Local Bakes'})">Add to Cart</button></div>
+            </div>
+          </div>
+          <div class="flip-card" onclick="this.classList.toggle('flipped')" style="height:160px;">
+            <div class="flip-card-inner" style="height:160px;">
+              <div class="flip-front prod-card" style="height:160px;"><div class="prod-img">🌶️</div><div class="prod-body"><div class="feed-tag">⭐ Top Rated</div><div class="prod-name">Kerala Spice Mix</div><div class="prod-seller">by Spice Hub</div><div class="prod-footer"><div class="prod-price">₹95</div><button class="heart-btn" id="heart4" onclick="event.stopPropagation();toggleWishlist(4,'Kerala Spice Mix','🌶️',95,this)">🤍</button></div></div></div>
+              <div class="flip-back"><div class="flip-back-name">Kerala Spice Mix</div><div class="flip-back-price">₹95</div><div class="flip-back-stock">📦 18 units in stock</div><div class="flip-back-stock">⭐ 4.7 · Spice Hub</div><button class="flip-back-btn" onclick="event.stopPropagation();addToCart({id:4,name:'Kerala Spice Mix',price:95,emoji:'🌶️',store:'Spice Hub'})">Add to Cart</button></div>
+            </div>
+          </div>
         </div>
         <div class="section-title">Nearby RIVULET Stores <span>Map →</span></div>
         <div class="store-row"><div class="store-icon-big">🏬</div><div style="flex:1"><div class="store-name">SM Street Calicut</div><div class="store-meta">0.4 km · 14 sellers · Open until 10 PM</div></div><span class="badge badge-green">Open</span></div>
@@ -1357,6 +1595,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
           </div>
         </div>
         <div class="card">
+          <div class="setting-row" onclick="goTo('wishlist-page')"><div class="setting-left"><span class="setting-icon">❤️</span><span class="setting-name">My Wishlist</span></div><span class="setting-arrow">›</span></div>
+          <div class="setting-row" onclick="goTo('loyalty-page')"><div class="setting-left"><span class="setting-icon">⭐</span><span class="setting-name">Loyalty & Rewards</span></div><span class="setting-arrow">›</span></div>
+          <div class="setting-row" onclick="goTo('otp-page')"><div class="setting-left"><span class="setting-icon">🔐</span><span class="setting-name">Verify Phone (OTP)</span></div><span class="setting-arrow">›</span></div>
+          <div class="setting-row" style="cursor:default;"><div class="setting-left"><span class="setting-icon">🌐</span><span class="setting-name">Language</span></div>
+            <div class="lang-row" style="margin:0;gap:5px;">
+              <div class="lang-chip active" id="langEN" onclick="setLang('en',this)">EN</div>
+              <div class="lang-chip" id="langML" onclick="setLang('ml',this)">മലയാളം</div>
+              <div class="lang-chip" id="langHI" onclick="setLang('hi',this)">हिंदी</div>
+            </div>
+          </div>
           <div class="setting-row"><div class="setting-left"><span class="setting-icon">📍</span><span class="setting-name">Saved Addresses</span></div><span class="setting-arrow">›</span></div>
           <div class="setting-row"><div class="setting-left"><span class="setting-icon">💳</span><span class="setting-name">Payment Methods</span></div><span class="setting-arrow">›</span></div>
           <div class="setting-row"><div class="setting-left"><span class="setting-icon">🔔</span><span class="setting-name">Notifications</span></div><span class="setting-arrow">›</span></div>
@@ -1402,7 +1650,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
     <div class="page hidden" id="admin-delivery">
       <div class="page-header"><div class="back-btn" onclick="quickLogin('admin')">←</div><div class="page-title">Delivery Agents</div></div>
       <div class="content">
-        <div class="card"><div class="order-item-row"><div><div class="order-name">Rohan</div><div class="order-meta">Jeep · KL-07 CH 2255</div></div><span class="badge badge-green">Active</span></div><div class="order-item-row"><div><div class="order-name">Akash</div><div class="order-meta">Bike · KL-11 AB 3344</div></div><span class="badge badge-amber">Pending</span></div><div class="order-item-row"><div><div class="order-name">Vivek</div><div class="order-meta">Van · KL-08 MN 5566</div></div><span class="badge badge-green">Active</span></div></div>
+        <div class="card"><div class="order-item-row"><div><div class="order-name">Rohan</div><div class="order-meta">Jeep · KL-07 JA 2255</div></div><span class="badge badge-green">Active</span></div><div class="order-item-row"><div><div class="order-name">Akash</div><div class="order-meta">Bike · KL-11 AB 3344</div></div><span class="badge badge-amber">Pending</span></div><div class="order-item-row"><div><div class="order-name">Vivek</div><div class="order-meta">Van · KL-08 MN 5566</div></div><span class="badge badge-green">Active</span></div></div>
       </div>
     </div>
 
@@ -1792,7 +2040,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
     </div>
 
     <!-- ══ ORDER SUCCESS PAGE ══ -->
-    <div class="page hidden" id="order-success">
+    <div class="page hidden" id="order-success" style="position:relative;">
+      <canvas id="confettiCanvas"></canvas>
       <div class="success-wrap">
         <div class="success-ring">✅</div>
         <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-bottom:7px;animation:fadeUp .5s .3s both;">Order Confirmed!</div>
@@ -1871,20 +2120,243 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
       <div id="searchResults" style="margin-top:16px;"></div>
     </div>
 
-  </div><!-- /screen-wrap -->
+
+    <!-- ══ LEADERBOARD PAGE ══ -->
+    <div class="page hidden" id="leaderboard">
+      <div class="page-header">
+        <div class="back-btn" onclick="goTo('seller-home')">←</div>
+        <div class="page-title">🏆 Top Sellers</div>
+        <div class="page-sub">Calicut · This Week</div>
+      </div>
+      <div class="content">
+        <div class="card">
+          <div class="lb-item lb-you">
+            <div class="lb-rank gold">1</div>
+            <div class="lb-avatar" style="background:linear-gradient(135deg,var(--river),var(--river-mid));">NK</div>
+            <div class="lb-name">Nihal <span style="font-size:10px;color:var(--river-light);">· You</span></div>
+            <div class="lb-score">₹24,100</div>
+          </div>
+          <div class="lb-item">
+            <div class="lb-rank silver">2</div>
+            <div class="lb-avatar" style="background:linear-gradient(135deg,#2d7a3e,#48c464);">GF</div>
+            <div class="lb-name">Green Farm</div>
+            <div class="lb-score">₹18,400</div>
+          </div>
+          <div class="lb-item">
+            <div class="lb-rank bronze">3</div>
+            <div class="lb-avatar" style="background:linear-gradient(135deg,#e8a020,#f5c842);">SH</div>
+            <div class="lb-name">Spice Hub</div>
+            <div class="lb-score">₹12,200</div>
+          </div>
+          <div class="lb-item">
+            <div class="lb-rank" style="color:var(--muted)">4</div>
+            <div class="lb-avatar" style="background:linear-gradient(135deg,#444,#666);">PV</div>
+            <div class="lb-name">Priya Veg Co.</div>
+            <div class="lb-score">₹9,800</div>
+          </div>
+          <div class="lb-item">
+            <div class="lb-rank" style="color:var(--muted)">5</div>
+            <div class="lb-avatar" style="background:linear-gradient(135deg,#333,#555);">AS</div>
+            <div class="lb-name">Arjun Stores</div>
+            <div class="lb-score">₹7,650</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="section-title">Your Stats vs Average</div>
+          <div class="order-item-row"><span style="color:var(--muted)">Your Revenue</span><span style="color:var(--leaf-light);font-weight:700">₹24,100</span></div>
+          <div class="order-item-row"><span style="color:var(--muted)">Category Avg</span><span style="font-weight:600">₹14,400</span></div>
+          <div class="order-item-row"><span style="color:var(--muted)">Your Position</span><span style="color:var(--amber);font-weight:700">🥇 #1 of 48 sellers</span></div>
+          <div class="order-item-row"><span style="color:var(--muted)">Streak</span><span style="color:var(--river-light);font-weight:700">🔥 3 weeks #1</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SALES HEATMAP PAGE ══ -->
+    <div class="page hidden" id="sales-heatmap">
+      <div class="page-header">
+        <div class="back-btn" onclick="goTo('seller-home')">←</div>
+        <div class="page-title">📅 Sales Calendar</div>
+        <div class="page-sub">January – April 2026</div>
+      </div>
+      <div class="content">
+        <div class="card">
+          <div class="section-title">Daily Revenue Intensity</div>
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;font-size:10px;color:var(--muted);">
+            <span>Less</span>
+            <div style="width:12px;height:12px;border-radius:2px;" class="heat-0"></div>
+            <div style="width:12px;height:12px;border-radius:2px;" class="heat-1"></div>
+            <div style="width:12px;height:12px;border-radius:2px;" class="heat-2"></div>
+            <div style="width:12px;height:12px;border-radius:2px;" class="heat-3"></div>
+            <div style="width:12px;height:12px;border-radius:2px;" class="heat-4"></div>
+            <div style="width:12px;height:12px;border-radius:2px;" class="heat-5"></div>
+            <span>More</span>
+          </div>
+          <div class="heatmap-days"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+          <div class="heatmap-grid" id="heatmapGrid"></div>
+        </div>
+        <div class="card">
+          <div class="section-title">Best Sales Days</div>
+          <div class="order-item-row"><div><div class="order-name">Friday 4 Apr 2026</div><div class="order-meta">Peak day this month</div></div><div class="order-amount">₹4,000</div></div>
+          <div class="order-item-row"><div><div class="order-name">Friday 28 Mar 2026</div><div class="order-meta">2nd highest</div></div><div class="order-amount">₹3,860</div></div>
+          <div class="order-item-row"><div><div class="order-name">Saturday 29 Mar 2026</div><div class="order-meta">Weekend boost</div></div><div class="order-amount">₹3,600</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ WISHLIST PAGE ══ -->
+    <div class="page hidden" id="wishlist-page">
+      <div class="page-header">
+        <div class="back-btn" onclick="goTo('customer-home')">←</div>
+        <div class="page-title">❤️ Wishlist</div>
+        <div class="page-sub" id="wishlistCount">0 saved items</div>
+      </div>
+      <div class="content" id="wishlistContent">
+        <div style="text-align:center;padding:60px 20px;opacity:.5;">
+          <div style="font-size:54px;margin-bottom:14px;">🤍</div>
+          <div style="font-family:'Syne',sans-serif;font-size:17px;font-weight:700;">Nothing saved yet</div>
+          <div style="font-size:13px;color:var(--muted);margin-top:8px;">Tap ❤️ on any product to save it here</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ LOYALTY PAGE ══ -->
+    <div class="page hidden" id="loyalty-page">
+      <div class="page-header">
+        <div class="back-btn" onclick="goTo('customer-home')">←</div>
+        <div class="page-title">⭐ Loyalty Rewards</div>
+        <div class="page-sub">RIVULET Gold Member</div>
+      </div>
+      <div class="content">
+        <div class="loyalty-card">
+          <div style="font-size:11px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Your Points</div>
+          <div class="loyalty-pts" id="loyaltyPts">2,840</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:4px;">≈ ₹284 cashback value</div>
+          <div class="loyalty-bar-wrap"><div class="loyalty-bar-fill" style="width:57%"></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:10px;color:rgba(255,255,255,0.35);margin-top:6px;"><span>Gold (2,000)</span><span>Platinum (5,000)</span></div>
+          <div class="tier-badge">✦ Gold Member · 2,160 pts to Platinum</div>
+        </div>
+        <div class="card" style="margin-bottom:12px;">
+          <div class="section-title">Scratch & Win 🎰</div>
+          <div style="font-size:12px;color:var(--muted);margin-bottom:12px;">You have <strong style="color:var(--amber)">1 scratch card</strong> available!</div>
+          <div class="scratch-wrap" id="scratchWrap" style="height:120px;">
+            <canvas class="scratch-canvas" id="scratchCanvas" width="340" height="120"></canvas>
+            <div class="scratch-reveal">
+              <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:6px;">🎉 You won!</div>
+              <div class="scratch-prize">₹50 OFF</div>
+              <div class="scratch-hint">Use code: RIVEL50 · Valid 48hrs</div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="section-title">How to Earn Points</div>
+          <div class="order-item-row"><span>Every ₹100 spent</span><span style="color:var(--river-light);font-weight:700">+10 pts</span></div>
+          <div class="order-item-row"><span>Write a review</span><span style="color:var(--river-light);font-weight:700">+25 pts</span></div>
+          <div class="order-item-row"><span>Refer a friend</span><span style="color:var(--river-light);font-weight:700">+100 pts</span></div>
+          <div class="order-item-row"><span>Daily check-in</span><span style="color:var(--river-light);font-weight:700">+5 pts</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ SELLER-BUYER CHAT ══ -->
+    <div class="page hidden" id="chat-page">
+      <div class="page-header" style="display:flex;align-items:center;gap:12px;">
+        <div class="back-btn" style="display:inline-flex;margin-bottom:0;" onclick="history.back ? goTo('customer-home') : goTo('customer-home')">←</div>
+        <div class="chat-header-ava">🌾</div>
+        <div>
+          <div class="page-title" style="font-size:16px;">Nihal Farms</div>
+          <div style="font-size:10px;color:var(--leaf-light);">● Online</div>
+        </div>
+      </div>
+      <div class="chat-page" style="height:calc(100% - 70px);">
+        <div class="chat-messages" id="chatMessages">
+          <div class="chat-bubble recv">Hi Ishani! 👋 How can I help you today?<div class="chat-meta">10:30 AM</div></div>
+          <div class="chat-bubble sent">Do you have fresh coconut oil available?<div class="chat-meta">10:31 AM</div></div>
+          <div class="chat-bubble recv">Yes! We just restocked 24 units this morning. Cold-pressed, 1L bottles at ₹180 each 🥥<div class="chat-meta">10:31 AM</div></div>
+          <div class="chat-bubble recv">Available at SM Street Space A1 right now!<div class="chat-meta">10:31 AM</div></div>
+        </div>
+        <div class="chat-input-row">
+          <input class="chat-input" id="chatInput" placeholder="Type a message…" onkeydown="if(event.key==='Enter')sendChat()">
+          <button class="chat-send" onclick="sendChat()">➤</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ QR SCANNER PAGE ══ -->
+    <div class="page hidden" id="qr-scanner">
+      <div class="page-header">
+        <div class="back-btn" onclick="goTo('customer-home')">←</div>
+        <div class="page-title">📷 Scan Product</div>
+        <div class="page-sub">Point at barcode or QR code</div>
+      </div>
+      <div class="content">
+        <div class="qr-scanner">
+          <div class="qr-viewfinder"></div>
+          <div class="qr-corner tl"></div>
+          <div class="qr-corner tr"></div>
+          <div class="qr-corner bl"></div>
+          <div class="qr-corner br"></div>
+          <div class="qr-beam"></div>
+          <div class="qr-label">Scanning…</div>
+        </div>
+        <button class="login-btn" onclick="simulateScan()">⚡ Simulate Scan</button>
+        <div id="scanResult" style="margin-top:14px;"></div>
+        <div class="card" style="margin-top:14px;">
+          <div class="section-title">Recent Scans</div>
+          <div class="order-item-row"><div><div class="order-name">Coconut Oil 1L</div><div class="order-meta">Nihal Farms · Scanned 2 mins ago</div></div><div class="order-amount">₹180</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ OTP VERIFY PAGE ══ -->
+    <div class="page hidden" id="otp-page">
+      <div class="page-header">
+        <div class="back-btn" onclick="goTo('login')">←</div>
+        <div class="page-title">Verify OTP</div>
+        <div class="page-sub">Sent to +91 98765 43210</div>
+      </div>
+      <div class="content" style="text-align:center;padding-top:30px;">
+        <div style="font-size:48px;margin-bottom:16px;">📱</div>
+        <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;">Enter 4-digit OTP</div>
+        <div style="font-size:13px;color:var(--muted);margin-bottom:28px;">Check your SMS for the code</div>
+        <div class="otp-row">
+          <input class="otp-box" id="otp0" maxlength="1" type="tel" oninput="otpNext(this,0)">
+          <input class="otp-box" id="otp1" maxlength="1" type="tel" oninput="otpNext(this,1)">
+          <input class="otp-box" id="otp2" maxlength="1" type="tel" oninput="otpNext(this,2)">
+          <input class="otp-box" id="otp3" maxlength="1" type="tel" oninput="otpNext(this,3)">
+        </div>
+        <button class="login-btn" onclick="verifyOTP()" style="max-width:280px;margin:0 auto;">Verify & Login →</button>
+        <div style="margin-top:16px;font-size:12px;color:var(--muted);">Didn't get it? <span style="color:var(--river-light);cursor:pointer;" onclick="showToast('📱','OTP resent!')">Resend OTP</span></div>
+      </div>
+    </div>
+
+    <!-- ══ VOICE SEARCH OVERLAY ══ -->
+    <div class="voice-overlay" id="voiceOverlay">
+      <div class="voice-rings">
+        <div class="voice-ring"></div>
+        <div class="voice-ring"></div>
+        <div class="voice-ring"></div>
+        <div class="voice-mic-big">🎤</div>
+      </div>
+      <div class="voice-text" id="voiceText">Listening…</div>
+      <div class="voice-result" id="voiceResult"></div>
+      <button onclick="stopVoice()" style="padding:12px 28px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--text);font-family:'Syne',sans-serif;font-weight:700;cursor:pointer;font-size:13px;">Stop</button>
+    </div>
+
+
+    </div><!-- /screen-wrap -->
 
   <!-- ══ AI ASSISTANT PANEL ══ -->
   <div class="ai-panel" id="aiPanel">
     <div class="ai-panel-header">
       <div class="ai-avatar">🤖</div>
       <div>
-        <div class="ai-panel-title">Jarvis ✨</div>
+        <div class="ai-panel-title">Jiya ✨</div>
         <div class="ai-panel-sub">● Online · Your RIVULET Assistant</div>
       </div>
       <button class="ai-close" onclick="closeAI()">✕</button>
     </div>
     <div class="ai-messages" id="aiMessages">
-      <div class="ai-msg bot">Hi Nihal! 👋 I'm <strong>Jarvis</strong>, your RIVULET assistant. I can help with restocking advice, sales insights, space recommendations and more. What would you like to know?</div>
+      <div class="ai-msg bot">Hi Nihal! 👋 I'm <strong>Jiya</strong>, your RIVULET assistant. I can help with restocking advice, sales insights, space recommendations and more. What would you like to know?</div>
     </div>
     <div class="ai-suggestions" id="aiSuggestions">
       <div class="ai-chip" onclick="askAI('What should I restock?')">🔄 Restock advice</div>
@@ -2495,6 +2967,431 @@ setTimeout(() => { if (!_installDismissed) showInstallBanner(); }, 2000);
 // ══ INIT ══
 _cartUI();
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeSearch(); } });
+
+// ══════════════════════════════════════
+// ADVANCED UI FEATURES
+// ══════════════════════════════════════
+
+// ── 1. WAVE CANVAS SPLASH ──
+(function() {
+  function initWave() {
+    const canvas = document.getElementById('splashCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let w, h, t = 0;
+    function resize() { w = canvas.width = canvas.offsetWidth; h = canvas.height = canvas.offsetHeight; }
+    resize();
+    window.addEventListener('resize', resize);
+    const waves = [
+      { amp:18, freq:.018, speed:.04, color:'rgba(77,184,216,0.18)', phase:0 },
+      { amp:12, freq:.025, speed:.06, color:'rgba(126,232,255,0.12)', phase:2 },
+      { amp:22, freq:.012, speed:.03, color:'rgba(10,79,110,0.22)', phase:4 },
+    ];
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      waves.forEach(wave => {
+        ctx.beginPath();
+        ctx.moveTo(0, h * .55);
+        for (let x = 0; x <= w; x++) {
+          const y = h * .55 + Math.sin(x * wave.freq + t * wave.speed + wave.phase) * wave.amp
+                  + Math.sin(x * wave.freq * 1.7 + t * wave.speed * 1.3) * wave.amp * .5;
+          ctx.lineTo(x, y);
+        }
+        ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.closePath();
+        ctx.fillStyle = wave.color; ctx.fill();
+      });
+      t++; requestAnimationFrame(draw);
+    }
+    draw();
+  }
+  document.addEventListener('DOMContentLoaded', initWave);
+  setTimeout(initWave, 300);
+})();
+
+// ── 2. ANIMATED NUMBER COUNTERS ──
+function animateCounters(page) {
+  const targets = page ? page.querySelectorAll('.kpi-val') : document.querySelectorAll('.kpi-val');
+  targets.forEach(el => {
+    const text = el.textContent;
+    const num = parseFloat(text.replace(/[^0-9.]/g, ''));
+    if (!num || num < 10) return;
+    const prefix = text.match(/^[₹]/) ? '₹' : '';
+    const suffix = text.includes('k') ? 'k' : text.includes('⭐') ? '⭐' : '';
+    let start = 0; const dur = 900; const startTime = performance.now();
+    function step(now) {
+      const p = Math.min((now - startTime) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const val = num * eased;
+      el.textContent = prefix + (num >= 1000 ? (val/1000).toFixed(1) + 'k' : suffix === 'k' ? (val).toFixed(1) + 'k' : Math.round(val) + suffix);
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = text;
+    }
+    requestAnimationFrame(step);
+  });
+}
+
+// ── 3. CONFETTI BURST ──
+function launchConfetti() {
+  const canvas = document.getElementById('confettiCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight;
+  const colors = ['#4db8d8','#48c464','#e8a020','#e05a3a','#7ee8ff','#ffffff','#ff80ff'];
+  const particles = Array.from({length:90}, () => ({
+    x: canvas.width / 2, y: canvas.height * .25,
+    vx: (Math.random() - .5) * 12, vy: (Math.random() - 1) * 10 - 2,
+    color: colors[Math.floor(Math.random() * colors.length)],
+    size: Math.random() * 7 + 3, gravity: .35 + Math.random() * .15,
+    rotation: Math.random() * 360, spin: (Math.random() - .5) * 8, life: 1
+  }));
+  let frame = 0;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      p.x += p.vx; p.vy += p.gravity; p.y += p.vy;
+      p.rotation += p.spin; p.life -= .012;
+      if (p.life <= 0 || p.y > canvas.height) return;
+      ctx.save(); ctx.globalAlpha = p.life;
+      ctx.translate(p.x, p.y); ctx.rotate(p.rotation * Math.PI / 180);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size * .5);
+      ctx.restore();
+    });
+    if (frame++ < 120) requestAnimationFrame(draw);
+    else ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+  draw();
+}
+
+// Patch processPayment to trigger confetti
+const _origProcessPayment = window.processPayment;
+if (typeof processPayment === 'function') {
+  const _op = processPayment;
+  window.processPayment = function() {
+    _op();
+    setTimeout(launchConfetti, 2100);
+  };
+}
+
+// ── 4. NEON MODE TOGGLE ──
+let _neonMode = false;
+function toggleNeon() {
+  _neonMode = !_neonMode;
+  const shell = document.querySelector('.shell');
+  const btn = document.getElementById('neonToggle');
+  if (_neonMode) {
+    shell.classList.add('neon-mode');
+    if (btn) { btn.textContent = 'ON ⚡'; }
+    showToast('⚡', 'Neon mode activated!');
+  } else {
+    shell.classList.remove('neon-mode');
+    if (btn) { btn.textContent = 'OFF'; }
+    showToast('🌙', 'Back to dark mode');
+  }
+}
+
+// ── 5. RIPPLE INK ON ALL TAPPABLE ELEMENTS ──
+document.addEventListener('DOMContentLoaded', () => {
+  function addRipple(e) {
+    const el = e.currentTarget;
+    if (getComputedStyle(el).position === 'static') el.style.position = 'relative';
+    el.style.overflow = 'hidden';
+    const ink = document.createElement('div');
+    ink.className = 'ink';
+    const rect = el.getBoundingClientRect();
+    ink.style.left = (e.clientX - rect.left) + 'px';
+    ink.style.top = (e.clientY - rect.top) + 'px';
+    el.appendChild(ink);
+    setTimeout(() => ink.remove(), 620);
+  }
+  const rippleTargets = '.nav-item,.qa-btn,.splash-btn,.login-btn,.big-btn,.demo-card,.rental-card,.mkt-row,.setting-row,.pay-method,.hdr-icon-btn';
+  document.querySelectorAll(rippleTargets).forEach(el => el.addEventListener('click', addRipple));
+});
+
+// ── 6. SWIPE GESTURES TO SWITCH TABS ──
+(function() {
+  let startX = 0, startY = 0;
+  const wrap = document.getElementById('screenWrap');
+  if (!wrap) return;
+  wrap.addEventListener('touchstart', e => { startX = e.touches[0].clientX; startY = e.touches[0].clientY; }, {passive:true});
+  wrap.addEventListener('touchend', e => {
+    const nav = document.getElementById('bottomNav');
+    if (!nav || nav.style.display === 'none') return;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) < 60 || Math.abs(dy) > Math.abs(dx) * .8) return;
+    const active = document.querySelector('.nav-item.active');
+    if (!active) return;
+    const items = [...document.querySelectorAll('.nav-item')];
+    const idx = items.indexOf(active);
+    if (dx < 0 && idx < items.length - 1) navTo(idx + 1);
+    else if (dx > 0 && idx > 0) navTo(idx - 1);
+  }, {passive:true});
+})();
+
+// ── 7. SKELETON LOADER ON PAGE TRANSITION ──
+const _origGoTo = window.goTo;
+if (typeof goTo === 'function') {
+  const _gt = goTo;
+  window.goTo = function(id) {
+    _gt(id);
+    const page = document.getElementById(id);
+    if (!page) return;
+    // Trigger counter animation when landing on dashboard pages
+    if (id.includes('home') || id.includes('dashboard')) {
+      setTimeout(() => animateCounters(page), 200);
+    }
+  };
+}
+
+// ── 8. COUNTER ANIMATION ON FIRST DASH LOAD ──
+const _origNavTo = window.navTo;
+if (typeof navTo === 'function') {
+  const _nt = navTo;
+  window.navTo = function(i) {
+    _nt(i);
+    setTimeout(() => { const page = document.querySelector('.page:not(.hidden)'); if (page) animateCounters(page); }, 300);
+  };
+}
+
+// Auto confetti if landing on order-success directly
+const _origGoTo2 = window.goTo;
+window.goTo = function(id) {
+  if (typeof _origGoTo2 === 'function') _origGoTo2(id);
+  if (id === 'order-success') setTimeout(launchConfetti, 400);
+  const page = document.getElementById(id);
+  if (page && (id.includes('home') || id === 'seller-home' || id === 'delivery-home' || id === 'customer-home')) {
+    setTimeout(() => animateCounters(page), 250);
+  }
+};
+
+
+// ══════════════════════════════════════════════
+// MEGA FEATURE JAVASCRIPT
+// ══════════════════════════════════════════════
+
+// ── WISHLIST ──
+const _wishlist = {};
+function toggleWishlist(id, name, emoji, price, btn) {
+  if (_wishlist[id]) {
+    delete _wishlist[id];
+    btn.textContent = '🤍';
+    btn.classList.remove('liked');
+    showToast('🤍', name + ' removed from wishlist');
+  } else {
+    _wishlist[id] = { name, emoji, price };
+    btn.textContent = '❤️';
+    btn.classList.add('liked');
+    showToast('❤️', name + ' saved to wishlist!');
+  }
+  renderWishlist();
+}
+function renderWishlist() {
+  const el = document.getElementById('wishlistContent');
+  const count = document.getElementById('wishlistCount');
+  const items = Object.entries(_wishlist);
+  if (count) count.textContent = items.length + ' saved item' + (items.length !== 1 ? 's' : '');
+  if (!el) return;
+  if (!items.length) {
+    el.innerHTML = `<div style="text-align:center;padding:60px 20px;opacity:.5;"><div style="font-size:54px;margin-bottom:14px;">🤍</div><div style="font-family:'Syne',sans-serif;font-size:17px;font-weight:700;">Nothing saved yet</div><div style="font-size:13px;color:var(--muted);margin-top:8px;">Tap ❤️ on any product to save it here</div></div>`;
+    return;
+  }
+  el.innerHTML = items.map(([id, p]) => `
+    <div style="display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px;margin-bottom:10px;">
+      <div style="font-size:30px;width:48px;height:48px;background:rgba(255,255,255,.04);border-radius:12px;display:flex;align-items:center;justify-content:center;">${p.emoji}</div>
+      <div style="flex:1"><div style="font-size:13px;font-weight:700;">${p.name}</div><div style="font-size:12px;color:var(--leaf-light);font-family:'Syne',sans-serif;font-weight:800;">₹${p.price}</div></div>
+      <button onclick="addToCart({id:${id},name:'${p.name}',price:${p.price},emoji:'${p.emoji}',store:'RIVULET'})" style="padding:8px 14px;border-radius:10px;border:none;background:var(--river);color:white;font-size:12px;font-weight:700;cursor:pointer;">Add</button>
+    </div>`).join('');
+}
+
+// ── HEATMAP ──
+function buildHeatmap() {
+  const grid = document.getElementById('heatmapGrid');
+  if (!grid) return;
+  const levels = [0,1,2,3,2,4,5,3,2,1,2,3,4,5,3,2,4,3,5,4,3,2,1,3,4,5,3,4,3,2,1,2,3,4,5,4,3,2,4,5,3,2,1,2,3,2,1,3,4,5,3,2,4,3,5,4,3,2,1,3,4,5,4,3,2,4,3,2,1,0,3,4,5,3,2,4,5,3,2,1,2,3,4,5,4,3,2,4,3,5];
+  grid.innerHTML = levels.map(l => `<div class="heatmap-cell heat-${l}" onclick="showToast('📅','Sales data for this day')"></div>`).join('');
+}
+document.addEventListener('DOMContentLoaded', buildHeatmap);
+setTimeout(buildHeatmap, 500);
+
+// ── SCRATCH CARD ──
+function initScratch() {
+  const canvas = document.getElementById('scratchCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  canvas.width = canvas.offsetWidth || 340;
+  canvas.height = 120;
+  // Gold foil overlay
+  const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+  grad.addColorStop(0, '#c9971f');
+  grad.addColorStop(0.5, '#f5c842');
+  grad.addColorStop(1, '#c9971f');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = 'rgba(0,0,0,0.3)';
+  ctx.font = 'bold 14px DM Sans';
+  ctx.textAlign = 'center';
+  ctx.fillText('✦ SCRATCH HERE ✦', canvas.width / 2, canvas.height / 2 + 5);
+  let scratching = false, pct = 0;
+  function scratch(e) {
+    if (!scratching) return;
+    const r = canvas.getBoundingClientRect();
+    const x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left;
+    const y = (e.touches ? e.touches[0].clientY : e.clientY) - r.top;
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.beginPath();
+    ctx.arc(x, y, 22, 0, Math.PI * 2);
+    ctx.fill();
+    pct += 0.8;
+    if (pct > 55) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      canvas.style.pointerEvents = 'none';
+      showToast('🎉', 'You won ₹50 OFF! Code: RIVEL50');
+    }
+  }
+  canvas.addEventListener('mousedown', () => scratching = true);
+  canvas.addEventListener('mouseup', () => scratching = false);
+  canvas.addEventListener('mousemove', scratch);
+  canvas.addEventListener('touchstart', e => { e.preventDefault(); scratching = true; }, { passive: false });
+  canvas.addEventListener('touchend', () => scratching = false);
+  canvas.addEventListener('touchmove', e => { e.preventDefault(); scratch(e); }, { passive: false });
+}
+document.addEventListener('DOMContentLoaded', initScratch);
+setTimeout(initScratch, 600);
+
+// ── OTP AUTO-ADVANCE ──
+function otpNext(el, idx) {
+  el.classList.add('filled');
+  if (el.value && idx < 3) {
+    document.getElementById('otp' + (idx + 1))?.focus();
+  }
+}
+function verifyOTP() {
+  const code = [0,1,2,3].map(i => document.getElementById('otp'+i)?.value || '').join('');
+  if (code.length < 4) { showToast('⚠️', 'Please enter all 4 digits'); return; }
+  showToast('✅', 'Phone verified! Welcome to RIVULET');
+  setTimeout(() => goTo('login'), 800);
+}
+
+// ── VOICE SEARCH ──
+const _voiceWords = ['Coconut Oil', 'Red Rice', 'Banana Chips', 'Kerala Spice', 'Turmeric', 'Pepper', 'SM Street', 'City Mall'];
+function openVoice() {
+  document.getElementById('voiceOverlay').classList.add('open');
+  document.getElementById('voiceResult').textContent = '';
+  document.getElementById('voiceText').textContent = 'Listening…';
+  // Simulate voice recognition
+  setTimeout(() => {
+    const word = _voiceWords[Math.floor(Math.random() * _voiceWords.length)];
+    document.getElementById('voiceText').textContent = 'Got it!';
+    document.getElementById('voiceResult').textContent = '"' + word + '"';
+    setTimeout(() => {
+      stopVoice();
+      openSearch();
+      const inp = document.getElementById('searchInput');
+      if (inp) { inp.value = word; liveSearch(word); }
+    }, 900);
+  }, 2200);
+}
+function stopVoice() {
+  document.getElementById('voiceOverlay').classList.remove('open');
+}
+
+// ── CHAT ──
+const _chatReplies = [
+  'Yes, we have that in stock! 🥥',
+  'Let me check for you…',
+  'Great choice! Very popular this week.',
+  'We can deliver within 30 minutes to your area!',
+  'That item is available at SM Street Space A1.',
+  'Would you like to add it to your cart?'
+];
+function sendChat() {
+  const input = document.getElementById('chatInput');
+  if (!input || !input.value.trim()) return;
+  const msgs = document.getElementById('chatMessages');
+  const now = new Date();
+  const time = now.getHours() + ':' + String(now.getMinutes()).padStart(2,'0');
+  msgs.innerHTML += `<div class="chat-bubble sent">${input.value}<div class="chat-meta">${time}</div></div>`;
+  input.value = '';
+  msgs.scrollTop = msgs.scrollHeight;
+  setTimeout(() => {
+    const reply = _chatReplies[Math.floor(Math.random() * _chatReplies.length)];
+    msgs.innerHTML += `<div class="chat-bubble recv">${reply}<div class="chat-meta">${time}</div></div>`;
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 900);
+}
+
+// ── QR SCAN SIMULATION ──
+const _scanResults = [
+  { name: 'Coconut Oil 1L', price: 180, emoji: '🥥', seller: 'Nihal Farms', id: 1 },
+  { name: 'Red Rice 5kg', price: 320, emoji: '🌾', seller: 'Green Farm', id: 2 },
+  { name: 'Kerala Spice Mix', price: 95, emoji: '🌶️', seller: 'Spice Hub', id: 4 },
+];
+function simulateScan() {
+  const r = _scanResults[Math.floor(Math.random() * _scanResults.length)];
+  const el = document.getElementById('scanResult');
+  if (!el) return;
+  el.innerHTML = `
+    <div style="background:linear-gradient(135deg,rgba(72,196,100,0.15),rgba(72,196,100,0.05));border:1px solid rgba(72,196,100,0.3);border-radius:18px;padding:18px;animation:fadeUp .3s ease;">
+      <div style="font-size:11px;color:var(--leaf-light);font-weight:700;margin-bottom:10px;">✅ Product Found!</div>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="font-size:36px;">${r.emoji}</div>
+        <div style="flex:1">
+          <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;">${r.name}</div>
+          <div style="font-size:11px;color:var(--muted);">by ${r.seller}</div>
+          <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--leaf-light);margin-top:4px;">₹${r.price}</div>
+        </div>
+        <button onclick="addToCart({id:${r.id},name:'${r.name}',price:${r.price},emoji:'${r.emoji}',store:'${r.seller}'})" style="padding:10px 16px;border-radius:12px;border:none;background:var(--river);color:white;font-family:'Syne',sans-serif;font-size:12px;font-weight:800;cursor:pointer;">Add 🛒</button>
+      </div>
+    </div>`;
+  showToast('📷', 'Scanned: ' + r.name);
+}
+
+// ── LANGUAGE TOGGLE ──
+const _langs = {
+  en: { home: 'Shop Fresh', greeting: 'Welcome back,', profile: 'My Profile' },
+  ml: { home: 'പുതിയത് വാങ്ങൂ', greeting: 'സ്വാഗതം,', profile: 'എന്റെ പ്രൊഫൈൽ' },
+  hi: { home: 'ताज़ा खरीदें', greeting: 'वापस स्वागत है,', profile: 'मेरी प्रोफ़ाइल' }
+};
+function setLang(code, el) {
+  document.querySelectorAll('.lang-chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  const t = _langs[code] || _langs.en;
+  showToast('🌐', 'Language changed to ' + (code === 'ml' ? 'Malayalam' : code === 'hi' ? 'Hindi' : 'English'));
+}
+
+// ── GRADIENT MESH BG ON SPLASH ──
+document.querySelector('.shell')?.classList.add('mesh-bg');
+
+// ── HAPTIC FEEDBACK ──
+function haptic(type) {
+  if (!navigator.vibrate) return;
+  if (type === 'light') navigator.vibrate(10);
+  else if (type === 'medium') navigator.vibrate(25);
+  else if (type === 'success') navigator.vibrate([10, 50, 10]);
+  else if (type === 'error') navigator.vibrate([50, 30, 50]);
+}
+// Add haptic to nav
+document.querySelectorAll('.nav-item').forEach(btn => {
+  btn.addEventListener('click', () => haptic('light'));
+});
+// Add haptic to buttons
+document.addEventListener('click', e => {
+  if (e.target.matches('.splash-btn,.login-btn,.big-btn,.add-btn,.flip-back-btn')) haptic('medium');
+});
+
+// ── JIYA MEMORY (last 5 questions) ──
+const _jiyaMemory = [];
+const _origAskAI = window.askAI;
+window.askAI = function(question) {
+  _jiyaMemory.push(question);
+  if (_jiyaMemory.length > 5) _jiyaMemory.shift();
+  if (typeof _origAskAI === 'function') _origAskAI(question);
+};
+
+// ── PERSONALISED FEED INIT ──
+// Already wired via feed-tag labels on flip cards
+
 </script>
 </body>
 </html>
