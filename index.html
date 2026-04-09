@@ -2029,10 +2029,10 @@ function showFBStatus(connected) {
 // Simulate realtime order stream
 function startRealtimeSync() {
   const orders = [
-    {item:'Coconut Oil 1L ×3', store:'SM Street', amt:'₹540', time:'Just now'},
-    {item:'Red Rice 5kg ×1', store:'City Mall', amt:'₹320', time:'1m ago'},
-    {item:'Kerala Spice Mix ×5', store:'More Supermarket', amt:'₹475', time:'2m ago'},
-    {item:'Banana Chips ×8', store:'SM Street', amt:'₹480', time:'3m ago'},
+    {item:'Surf Excel Liquid 1L ×3', store:'SM Street', amt:'₹540', time:'Just now'},
+    {item:'Dove Body Wash 200ml ×1', store:'City Mall', amt:'₹320', time:'1m ago'},
+    {item:'Lifebuoy Handwash ×5', store:'More Supermarket', amt:'₹475', time:'2m ago'},
+    {item:'Brooke Bond Red Label ×8', store:'SM Street', amt:'₹480', time:'3m ago'},
   ];
   let idx = 0;
   function showFeed() {
@@ -2328,7 +2328,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <div class="demo-card" onclick="quickLogin('brand')" style="border-color:rgba(184,120,26,0.25);background:rgba(184,120,26,0.05);position:relative;">
               <div style="position:absolute;top:-6px;right:6px;background:linear-gradient(135deg,var(--gold),var(--amber));color:white;font-size:8px;font-weight:800;padding:2px 7px;border-radius:8px;letter-spacing:.5px;">PRO</div>
               <div class="demo-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><polyline points="22 12 18 8 14 12"/></svg></div>
-              <div class="demo-card-name">KeralaFood</div>
+              <div class="demo-card-name">Hindustan Unilever</div>
               <div class="demo-card-role">Brand Analytics</div>
             </div>
           </div>
@@ -2381,7 +2381,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
           </div>
           <div class="qa-btn" onclick="openAI()">
             <div class="qa-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-            Jiya AI
+            Jiya Jarvis
           </div>
         </div>
         <!-- Streak + check-in row -->
@@ -2458,15 +2458,15 @@ function doDailyCheckIn(el){doCheckIn(2);}
         <div class="card">
           <div class="section-title">Recent Orders <span>All orders →</span></div>
           <div class="order-item-row">
-            <div><div class="order-name">Coconut Oil 1L ×5</div><div class="order-meta">SM Street · 10:32 AM</div></div>
+            <div><div class="order-name">Surf Excel Liquid 1L ×5</div><div class="order-meta">SM Street · 10:32 AM</div></div>
             <div style="text-align:right"><div class="order-amount">₹900</div><span class="badge badge-green">Delivered</span></div>
           </div>
           <div class="order-item-row">
-            <div><div class="order-name">Red Rice 5kg ×3</div><div class="order-meta">More Market · 9:15 AM</div></div>
+            <div><div class="order-name">Dove Body Wash 200ml ×3</div><div class="order-meta">More Market · 9:15 AM</div></div>
             <div style="text-align:right"><div class="order-amount">₹960</div><span class="badge badge-amber">In Transit</span></div>
           </div>
           <div class="order-item-row">
-            <div><div class="order-name">Banana Chips ×12</div><div class="order-meta">City Mall · 8:50 AM</div></div>
+            <div><div class="order-name">Brooke Bond Red Label ×12</div><div class="order-meta">City Mall · 8:50 AM</div></div>
             <div style="text-align:right"><div class="order-amount">₹720</div><span class="badge badge-blue">Processing</span></div>
           </div>
         </div>
@@ -2564,7 +2564,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <div class="donut-labels">
               <div class="donut-item"><div class="donut-dot" style="background:var(--river-light)"></div>Coconut Oil — 42%</div>
               <div class="donut-item"><div class="donut-dot" style="background:var(--leaf-light)"></div>Red Rice — 25%</div>
-              <div class="donut-item"><div class="donut-dot" style="background:var(--amber)"></div>Banana Chips — 20%</div>
+              <div class="donut-item"><div class="donut-dot" style="background:var(--amber)"></div>Brooke Bond Red Label — 20%</div>
               <div class="donut-item"><div class="donut-dot" style="background:var(--coral)"></div>Others — 13%</div>
             </div>
           </div>
@@ -2643,10 +2643,10 @@ function doDailyCheckIn(el){doCheckIn(2);}
       </div>
       <div class="content">
         <div class="card">
-          <div class="order-item-row"><div><div class="order-name">🥥 Coconut Oil 1L</div><div class="order-meta">24 units · ₹180 each</div></div><span class="badge badge-green">Active</span></div>
-          <div class="order-item-row"><div><div class="order-name">🌾 Red Rice 5kg</div><div class="order-meta">7 units · ₹320 each</div></div><span class="badge badge-amber">Low Stock</span></div>
-          <div class="order-item-row"><div><div class="order-name">🍌 Banana Chips 200g</div><div class="order-meta">18 units · ₹60 each</div></div><span class="badge badge-green">Active</span></div>
-          <div class="order-item-row"><div><div class="order-name">🌶️ Kerala Spice Mix</div><div class="order-meta">18 units · ₹95 each</div></div><span class="badge badge-green">Active</span></div>
+          <div class="order-item-row"><div><div class="order-name">🥥 Surf Excel Liquid 1L</div><div class="order-meta">24 units · ₹180 each</div></div><span class="badge badge-green">Active</span></div>
+          <div class="order-item-row"><div><div class="order-name">🌾 Dove Body Wash 200ml</div><div class="order-meta">7 units · ₹320 each</div></div><span class="badge badge-amber">Low Stock</span></div>
+          <div class="order-item-row"><div><div class="order-name">🍌 Brooke Bond Red Label 250g</div><div class="order-meta">18 units · ₹60 each</div></div><span class="badge badge-green">Active</span></div>
+          <div class="order-item-row"><div><div class="order-name">🌶️ Lifebuoy Handwash</div><div class="order-meta">18 units · ₹95 each</div></div><span class="badge badge-green">Active</span></div>
           <div class="order-item-row"><div><div class="order-name">🥥 Coconut Powder 500g</div><div class="order-meta">12 units · ₹120 each</div></div><span class="badge badge-green">Active</span></div>
           <div class="order-item-row"><div><div class="order-name">🌿 Turmeric Powder 200g</div><div class="order-meta">30 units · ₹80 each</div></div><span class="badge badge-green">Active</span></div>
           <div class="order-item-row"><div><div class="order-name">🫙 Pickle 500g</div><div class="order-meta">9 units · ₹140 each</div></div><span class="badge badge-blue">New</span></div>
@@ -2747,7 +2747,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
           <div class="section-title">Active Deliveries</div>
           <div class="delivery-card">
             <div class="del-header"><div class="del-icon">🚴</div><div style="flex:1"><div class="del-id">DEL-2026-0847</div><div class="del-route">Nihal Farm → SM Street, Calicut</div></div><span class="badge badge-amber">Moving</span></div>
-            <div style="font-size:11px;color:var(--muted);margin-bottom:8px;">Coconut Oil ×5 · Banana Chips ×12 · 2.4 km</div>
+            <div style="font-size:11px;color:var(--muted);margin-bottom:8px;">Coconut Oil ×5 · Brooke Bond Red Label ×12 · 2.4 km</div>
             <div class="del-progress"><div class="del-fill" style="width:70%"></div></div>
             <div class="del-footer"><span style="font-size:11px;color:var(--muted)">70% complete · ETA 8 min</span><div class="del-fee">₹120</div></div>
           </div>
@@ -2758,8 +2758,8 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <div class="del-footer"><span style="font-size:11px;color:var(--muted)">Heading to pickup</span><div class="del-fee">₹80</div></div>
           </div>
           <div class="delivery-card">
-            <div class="del-header"><div class="del-icon">🌾</div><div style="flex:1"><div class="del-id">DEL-2026-0862</div><div class="del-route">Green Farm → City Mall</div></div><span class="badge" style="background:rgba(255,255,255,0.08);color:var(--muted)">Scheduled</span></div>
-            <div style="font-size:11px;color:var(--muted);margin-bottom:8px;">Red Rice 5kg ×4 · 3.8 km · Starts 1:00 PM</div>
+            <div class="del-header"><div class="del-icon">🫧</div><div style="flex:1"><div class="del-id">DEL-2026-0862</div><div class="del-route">Green Farm → City Mall</div></div><span class="badge" style="background:rgba(255,255,255,0.08);color:var(--muted)">Scheduled</span></div>
+            <div style="font-size:11px;color:var(--muted);margin-bottom:8px;">Dove Body Wash 200ml ×4 · 3.8 km · Starts 1:00 PM</div>
             <div class="del-progress"><div class="del-fill" style="width:0%"></div></div>
             <div class="del-footer"><span style="font-size:11px;color:var(--muted)">Not started</span><div class="del-fee">₹160</div></div>
           </div>
@@ -2965,7 +2965,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
               <div class="deal-sub">Save up to ₹80</div>
               <button class="deal-cta" onclick="showToast('🌶️','Browsing spices!')">Grab Deal</button>
             </div>
-            <div class="deal-emoji">🌶️</div>
+            <div class="deal-emoji">🧼</div>
           </div>
           <div class="deal-slide" style="background:linear-gradient(135deg,#1a3a5c,#2d5c8a);">
             <div class="deal-slide-content">
@@ -2992,15 +2992,15 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <span>Veggies</span>
           </div>
           <div class="cat-tile" onclick="filterCat('grains')">
-            <div class="cat-tile-icon" style="background:linear-gradient(135deg,#5c4a1a,#8a6e2d);">🌾</div>
+            <div class="cat-tile-icon" style="background:linear-gradient(135deg,#5c4a1a,#8a6e2d);">🫧</div>
             <span>Grains</span>
           </div>
           <div class="cat-tile" onclick="filterCat('coconut')">
-            <div class="cat-tile-icon" style="background:linear-gradient(135deg,#5c3a1a,#8a572d);">🥥</div>
+            <div class="cat-tile-icon" style="background:linear-gradient(135deg,#5c3a1a,#8a572d);">🧴</div>
             <span>Coconut</span>
           </div>
           <div class="cat-tile" onclick="filterCat('spices')">
-            <div class="cat-tile-icon" style="background:linear-gradient(135deg,#5c1a1a,#8a2d2d);">🌶️</div>
+            <div class="cat-tile-icon" style="background:linear-gradient(135deg,#5c1a1a,#8a2d2d);">🧼</div>
             <span>Spices</span>
           </div>
           <div class="cat-tile" onclick="filterCat('snacks')">
@@ -3054,7 +3054,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
               <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--amber)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               DEAL OF THE DAY
             </div>
-            <div class="dotd-name">Nihal Farms<br>Coconut Oil 1L</div>
+            <div class="dotd-name">Nihal Farms<br>Surf Excel Liquid 1L</div>
             <div class="dotd-prices">
               <span class="dotd-price">₹180</span>
               <span class="dotd-mrp">₹250</span>
@@ -3068,12 +3068,12 @@ function doDailyCheckIn(el){doCheckIn(2);}
               <svg width="11" height="11" viewBox="0 0 24 24" fill="var(--amber)" style="clip-path:inset(0 50% 0 0)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <span style="font-size:10px;color:var(--muted);margin-left:3px;">4.8 (312)</span>
             </div>
-            <button class="dotd-btn" onclick="addToCart({id:1,name:'Coconut Oil 1L',price:180,emoji:'🥥',store:'Nihal'})">
+            <button class="dotd-btn" onclick="addToCart({id:1,name:'Surf Excel Liquid 1L',price:180,emoji:'🥥',store:'Nihal'})">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 001.97-1.67L23 6H6"/></svg>
               Add to Cart
             </button>
           </div>
-          <div class="dotd-img">🥥</div>
+          <div class="dotd-img">🧴</div>
         </div>
 
         <!-- ── FRESH FROM FARMS (with discount, rating, Flipkart card style) ── -->
@@ -3085,10 +3085,10 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <div class="flip-card-inner" style="height:200px;">
               <div class="flip-front prod-card-v2" style="height:200px;">
                 <div class="disc-badge">28% OFF</div>
-                <div class="prod-img-v2">🥥</div>
+                <div class="prod-img-v2">🧴</div>
                 <div class="prod-body-v2">
                   <div class="feed-tag">🔥 Popular</div>
-                  <div class="prod-name-v2">Coconut Oil 1L</div>
+                  <div class="prod-name-v2">Surf Excel Liquid 1L</div>
                   <div class="prod-seller-v2">by Nihal Farms</div>
                   <div class="star-row-v2">
                     <span style="color:var(--amber);font-size:11px;">★★★★★</span>
@@ -3097,13 +3097,13 @@ function doDailyCheckIn(el){doCheckIn(2);}
                   <div class="prod-price-row">
                     <span class="prod-price-v2">₹180</span>
                     <span class="prod-mrp-v2">₹250</span>
-                    <button class="heart-btn" id="heart1" onclick="event.stopPropagation();toggleWishlist(1,'Coconut Oil 1L','🥥',180,this)">
+                    <button class="heart-btn" id="heart1" onclick="event.stopPropagation();toggleWishlist(1,'Surf Excel Liquid 1L','🥥',180,this)">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
                     </button>
                   </div>
                 </div>
               </div>
-              <div class="flip-back"><div class="flip-back-name">Coconut Oil 1L</div><div class="flip-back-price">₹180</div><div class="flip-back-stock">📦 24 units in stock</div><div class="flip-back-stock">⭐ 4.8 · Nihal Farms</div><div class="flip-back-stock">🚚 Free delivery above ₹299</div><button class="flip-back-btn" onclick="event.stopPropagation();addToCart({id:1,name:'Coconut Oil 1L',price:180,emoji:'🥥',store:'Nihal'})">Add to Cart</button></div>
+              <div class="flip-back"><div class="flip-back-name">Surf Excel Liquid 1L</div><div class="flip-back-price">₹180</div><div class="flip-back-stock">📦 24 units in stock</div><div class="flip-back-stock">⭐ 4.8 · Nihal Farms</div><div class="flip-back-stock">🚚 Free delivery above ₹299</div><button class="flip-back-btn" onclick="event.stopPropagation();addToCart({id:1,name:'Surf Excel Liquid 1L',price:180,emoji:'🥥',store:'Nihal'})">Add to Cart</button></div>
             </div>
           </div>
           <!-- Card 2 -->
@@ -3111,10 +3111,10 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <div class="flip-card-inner" style="height:200px;">
               <div class="flip-front prod-card-v2" style="height:200px;">
                 <div class="disc-badge" style="background:var(--leaf-light);">15% OFF</div>
-                <div class="prod-img-v2">🌾</div>
+                <div class="prod-img-v2">🫧</div>
                 <div class="prod-body-v2">
                   <div class="feed-tag">📦 You May Like</div>
-                  <div class="prod-name-v2">Red Rice 5kg</div>
+                  <div class="prod-name-v2">Dove Body Wash 200ml</div>
                   <div class="prod-seller-v2">by Green Farm</div>
                   <div class="star-row-v2">
                     <span style="color:var(--amber);font-size:11px;">★★★★½</span>
@@ -3123,13 +3123,13 @@ function doDailyCheckIn(el){doCheckIn(2);}
                   <div class="prod-price-row">
                     <span class="prod-price-v2">₹320</span>
                     <span class="prod-mrp-v2">₹375</span>
-                    <button class="heart-btn" id="heart2" onclick="event.stopPropagation();toggleWishlist(2,'Red Rice 5kg','🌾',320,this)">
+                    <button class="heart-btn" id="heart2" onclick="event.stopPropagation();toggleWishlist(2,'Dove Body Wash 200ml','🌾',320,this)">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
                     </button>
                   </div>
                 </div>
               </div>
-              <div class="flip-back"><div class="flip-back-name">Red Rice 5kg</div><div class="flip-back-price">₹320</div><div class="flip-back-stock">📦 12 units in stock</div><div class="flip-back-stock">⭐ 4.6 · Green Farm</div><div class="flip-back-stock">🌿 Organic certified</div><button class="flip-back-btn" onclick="event.stopPropagation();addToCart({id:2,name:'Red Rice 5kg',price:320,emoji:'🌾',store:'Green Farm'})">Add to Cart</button></div>
+              <div class="flip-back"><div class="flip-back-name">Dove Body Wash 200ml</div><div class="flip-back-price">₹320</div><div class="flip-back-stock">📦 12 units in stock</div><div class="flip-back-stock">⭐ 4.6 · Green Farm</div><div class="flip-back-stock">🌿 Organic certified</div><button class="flip-back-btn" onclick="event.stopPropagation();addToCart({id:2,name:'Dove Body Wash 200ml',price:320,emoji:'🌾',store:'Green Farm'})">Add to Cart</button></div>
             </div>
           </div>
           <!-- Card 3 -->
@@ -3140,7 +3140,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
                 <div class="prod-img-v2">🍌</div>
                 <div class="prod-body-v2">
                   <div class="feed-tag">🆕 New Arrival</div>
-                  <div class="prod-name-v2">Banana Chips 200g</div>
+                  <div class="prod-name-v2">Brooke Bond Red Label 250g</div>
                   <div class="prod-seller-v2">by Local Bakes</div>
                   <div class="star-row-v2">
                     <span style="color:var(--amber);font-size:11px;">★★★★½</span>
@@ -3149,13 +3149,13 @@ function doDailyCheckIn(el){doCheckIn(2);}
                   <div class="prod-price-row">
                     <span class="prod-price-v2">₹60</span>
                     <span class="prod-mrp-v2">₹80</span>
-                    <button class="heart-btn" id="heart3" onclick="event.stopPropagation();toggleWishlist(3,'Banana Chips 200g','🍌',60,this)">
+                    <button class="heart-btn" id="heart3" onclick="event.stopPropagation();toggleWishlist(3,'Brooke Bond Red Label 250g','🍌',60,this)">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
                     </button>
                   </div>
                 </div>
               </div>
-              <div class="flip-back"><div class="flip-back-name">Banana Chips 200g</div><div class="flip-back-price">₹60</div><div class="flip-back-stock">📦 40 units in stock</div><div class="flip-back-stock">⭐ 4.5 · Local Bakes</div><div class="flip-back-stock">🏠 Home-made authentic</div><button class="flip-back-btn" onclick="event.stopPropagation();addToCart({id:3,name:'Banana Chips 200g',price:60,emoji:'🍌',store:'Local Bakes'})">Add to Cart</button></div>
+              <div class="flip-back"><div class="flip-back-name">Brooke Bond Red Label 250g</div><div class="flip-back-price">₹60</div><div class="flip-back-stock">📦 40 units in stock</div><div class="flip-back-stock">⭐ 4.5 · Local Bakes</div><div class="flip-back-stock">🏠 Home-made authentic</div><button class="flip-back-btn" onclick="event.stopPropagation();addToCart({id:3,name:'Brooke Bond Red Label 250g',price:60,emoji:'🍌',store:'Local Bakes'})">Add to Cart</button></div>
             </div>
           </div>
           <!-- Card 4 -->
@@ -3163,10 +3163,10 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <div class="flip-card-inner" style="height:200px;">
               <div class="flip-front prod-card-v2" style="height:200px;">
                 <div class="disc-badge" style="background:var(--coral);">20% OFF</div>
-                <div class="prod-img-v2">🌶️</div>
+                <div class="prod-img-v2">🧼</div>
                 <div class="prod-body-v2">
                   <div class="feed-tag">⭐ Top Rated</div>
-                  <div class="prod-name-v2">Kerala Spice Mix</div>
+                  <div class="prod-name-v2">Lifebuoy Handwash</div>
                   <div class="prod-seller-v2">by Spice Hub</div>
                   <div class="star-row-v2">
                     <span style="color:var(--amber);font-size:11px;">★★★★★</span>
@@ -3175,13 +3175,13 @@ function doDailyCheckIn(el){doCheckIn(2);}
                   <div class="prod-price-row">
                     <span class="prod-price-v2">₹95</span>
                     <span class="prod-mrp-v2">₹120</span>
-                    <button class="heart-btn" id="heart4" onclick="event.stopPropagation();toggleWishlist(4,'Kerala Spice Mix','🌶️',95,this)">
+                    <button class="heart-btn" id="heart4" onclick="event.stopPropagation();toggleWishlist(4,'Lifebuoy Handwash','🌶️',95,this)">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
                     </button>
                   </div>
                 </div>
               </div>
-              <div class="flip-back"><div class="flip-back-name">Kerala Spice Mix</div><div class="flip-back-price">₹95</div><div class="flip-back-stock">📦 18 units in stock</div><div class="flip-back-stock">⭐ 4.7 · Spice Hub</div><div class="flip-back-stock">🌶️ Premium blend</div><button class="flip-back-btn" onclick="event.stopPropagation();addToCart({id:4,name:'Kerala Spice Mix',price:95,emoji:'🌶️',store:'Spice Hub'})">Add to Cart</button></div>
+              <div class="flip-back"><div class="flip-back-name">Lifebuoy Handwash</div><div class="flip-back-price">₹95</div><div class="flip-back-stock">📦 18 units in stock</div><div class="flip-back-stock">⭐ 4.7 · Spice Hub</div><div class="flip-back-stock">🌶️ Premium blend</div><button class="flip-back-btn" onclick="event.stopPropagation();addToCart({id:4,name:'Lifebuoy Handwash',price:95,emoji:'🌶️',store:'Spice Hub'})">Add to Cart</button></div>
             </div>
           </div>
         </div>
@@ -3282,7 +3282,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
           <div style="text-align:center;padding:10px 0 16px;">
             <div style="font-size:40px;margin-bottom:8px;">🚗</div>
             <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;">Order #ORD-2026-0341</div>
-            <div style="font-size:12px;color:var(--muted)">Coconut Oil 1L + Banana Chips — ₹240</div>
+            <div style="font-size:12px;color:var(--muted)">Surf Excel Liquid 1L + Brooke Bond Red Label — ₹240</div>
             <div style="margin:12px 0 16px;">
             <!-- Zomato-style step tracker -->
             <div class="zomato-tracker">
@@ -3324,7 +3324,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
         </div>
         <div class="card">
           <div class="section-title">Past Orders</div>
-          <div class="order-item-row"><div><div class="order-name">Red Rice 5kg + Spice Mix</div><div class="order-meta">30 Mar 2026 · SM Street</div></div><div style="text-align:right"><div class="order-amount">₹415</div><span class="badge badge-green">Delivered</span></div></div>
+          <div class="order-item-row"><div><div class="order-name">Dove Body Wash 200ml + Spice Mix</div><div class="order-meta">30 Mar 2026 · SM Street</div></div><div style="text-align:right"><div class="order-amount">₹415</div><span class="badge badge-green">Delivered</span></div></div>
           <div class="order-item-row"><div><div class="order-name">Coconut Oil ×2</div><div class="order-meta">28 Mar 2026 · More Market</div></div><div style="text-align:right"><div class="order-amount">₹360</div><span class="badge badge-green">Delivered</span></div></div>
         </div>
       </div>
@@ -3741,6 +3741,60 @@ function doDailyCheckIn(el){doCheckIn(2);}
           </div>
         </div>
 
+        <!-- FMCG Subscription Revenue -->
+        <div class="card" style="animation-delay:.26s;margin-bottom:12px;background:linear-gradient(135deg,rgba(45,138,78,0.07),rgba(255,252,244,0.95));border-color:rgba(45,138,78,0.22);">
+          <div class="section-title">📦 FMCG Subscription Revenue <span style="color:var(--leaf-light);">↑ 31% MoM</span></div>
+          <!-- KPI strip -->
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px;">
+            <div style="background:rgba(45,138,78,0.08);border:1px solid rgba(45,138,78,0.18);border-radius:12px;padding:10px;text-align:center;">
+              <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:900;color:var(--leaf-light);">₹1.24L</div>
+              <div style="font-size:9px;color:var(--muted);margin-top:2px;font-weight:600;">Monthly Sub Rev</div>
+            </div>
+            <div style="background:rgba(108,63,197,0.07);border:1px solid rgba(108,63,197,0.16);border-radius:12px;padding:10px;text-align:center;">
+              <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:900;color:var(--river-light);">312</div>
+              <div style="font-size:9px;color:var(--muted);margin-top:2px;font-weight:600;">Active Subs</div>
+            </div>
+            <div style="background:rgba(184,120,26,0.07);border:1px solid rgba(184,120,26,0.16);border-radius:12px;padding:10px;text-align:center;">
+              <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:900;color:var(--gold);">94.2%</div>
+              <div style="font-size:9px;color:var(--muted);margin-top:2px;font-weight:600;">Renewal Rate</div>
+            </div>
+          </div>
+          <!-- Top subscription plans -->
+          <div class="order-item-row" style="align-items:center;">
+            <div style="display:flex;align-items:center;gap:9px;flex:1;">
+              <div style="width:32px;height:32px;border-radius:9px;background:rgba(45,138,78,0.12);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">🧴</div>
+              <div><div style="font-size:12px;font-weight:700;">Coconut Oil – Monthly Pack</div><div style="font-size:10px;color:var(--muted);">4L × 4 · ₹680/mo · 148 subs</div></div>
+            </div>
+            <div style="text-align:right;"><div class="order-amount">₹1.0L</div><span class="badge badge-green">↑ 18%</span></div>
+          </div>
+          <div class="order-item-row" style="align-items:center;">
+            <div style="display:flex;align-items:center;gap:9px;flex:1;">
+              <div style="width:32px;height:32px;border-radius:9px;background:rgba(108,63,197,0.10);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">🫧</div>
+              <div><div style="font-size:12px;font-weight:700;">Rice + Spice Combo Bundle</div><div style="font-size:10px;color:var(--muted);">5kg + 250g × monthly · ₹395/mo · 96 subs</div></div>
+            </div>
+            <div style="text-align:right;"><div class="order-amount">₹37.9k</div><span class="badge badge-blue">↑ 42%</span></div>
+          </div>
+          <div class="order-item-row" style="border:none;align-items:center;">
+            <div style="display:flex;align-items:center;gap:9px;flex:1;">
+              <div style="width:32px;height:32px;border-radius:9px;background:rgba(232,160,32,0.10);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">🍌</div>
+              <div><div style="font-size:12px;font-weight:700;">Snack Basket – Weekly</div><div style="font-size:10px;color:var(--muted);">4 packs/week · ₹220/mo · 68 subs</div></div>
+            </div>
+            <div style="text-align:right;"><div class="order-amount">₹14.9k</div><span class="badge badge-amber">↑ 9%</span></div>
+          </div>
+          <!-- Progress to target -->
+          <div style="margin-top:10px;">
+            <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-bottom:5px;"><span>Monthly Target Progress</span><span style="color:var(--leaf-light);font-weight:700;">₹1.24L / ₹1.50L</span></div>
+            <div class="progress-bar" style="margin:0;"><div class="progress-fill" style="width:83%;background:linear-gradient(90deg,var(--leaf),var(--leaf-light));box-shadow:0 0 8px rgba(45,138,78,0.3);"></div></div>
+            <div style="font-size:10px;color:var(--muted);margin-top:4px;">83% of target · ₹26k to go this month</div>
+          </div>
+          <!-- Churn alert -->
+          <div style="margin-top:10px;background:rgba(192,57,43,0.06);border:1px solid rgba(192,57,43,0.15);border-radius:10px;padding:9px 12px;display:flex;align-items:center;gap:8px;">
+            <span style="font-size:15px;">⚠️</span>
+            <div style="flex:1;font-size:11px;color:var(--muted);">18 subscriptions due for renewal in <strong style="color:var(--text);">3 days</strong> · ₹6,840 at risk</div>
+            <button onclick="showToast('📧','Renewal reminders sent to 18 subscribers!')" style="padding:5px 12px;border-radius:8px;border:none;background:var(--coral);color:white;font-size:10px;font-weight:700;cursor:pointer;white-space:nowrap;">Send Reminders</button>
+          </div>
+        </div>
+
         <!-- Recent Activity -->
         <div class="card" style="animation-delay:.28s;margin-bottom:12px;">
           <div class="section-title">Recent Activity</div>
@@ -3806,21 +3860,21 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <div class="section-title">All Platform Orders <span style="color:var(--leaf-light)">Live</span></div>
             <div class="order-item-row">
               <div style="display:flex;align-items:center;gap:10px;flex:1;">
-                <div style="width:34px;height:34px;border-radius:10px;background:rgba(45,138,78,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🥥</div>
+                <div style="width:34px;height:34px;border-radius:10px;background:rgba(45,138,78,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🧴</div>
                 <div><div class="order-name">ORD-2026-1248</div><div class="order-meta">Nihal Farms → Ishani · Beach Road</div></div>
               </div>
               <div style="text-align:right;"><div class="order-amount">₹240</div><span class="badge badge-green">Delivered</span></div>
             </div>
             <div class="order-item-row">
               <div style="display:flex;align-items:center;gap:10px;flex:1;">
-                <div style="width:34px;height:34px;border-radius:10px;background:rgba(108,63,197,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🌶️</div>
+                <div style="width:34px;height:34px;border-radius:10px;background:rgba(108,63,197,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🧼</div>
                 <div><div class="order-name">ORD-2026-1247</div><div class="order-meta">Spice Hub → Arjun K. · Mavoor Rd</div></div>
               </div>
               <div style="text-align:right;"><div class="order-amount">₹190</div><span class="badge badge-amber">In Transit</span></div>
             </div>
             <div class="order-item-row">
               <div style="display:flex;align-items:center;gap:10px;flex:1;">
-                <div style="width:34px;height:34px;border-radius:10px;background:rgba(232,160,32,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🌾</div>
+                <div style="width:34px;height:34px;border-radius:10px;background:rgba(232,160,32,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🫧</div>
                 <div><div class="order-name">ORD-2026-1246</div><div class="order-meta">Green Farm → Meera S. · City Mall</div></div>
               </div>
               <div style="text-align:right;"><div class="order-amount">₹320</div><span class="badge badge-blue">Processing</span></div>
@@ -4059,7 +4113,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
           <div>
             <div style="font-size:10px;font-weight:700;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:2px;">Brand Analytics · PRO</div>
-            <div style="font-family:'Outfit',sans-serif;font-size:20px;font-weight:900;background:linear-gradient(135deg,#b8781a,#d4a03c,#6c3fc5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">KeralaFood Co.</div>
+            <div style="font-family:'Outfit',sans-serif;font-size:20px;font-weight:900;background:linear-gradient(135deg,#b8781a,#d4a03c,#6c3fc5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Hindustan Unilever</div>
             <div style="font-size:10px;color:var(--muted);margin-top:1px;"><span class="live-dot"></span> Live Data · RIVULET Network</div>
           </div>
           <div style="display:flex;gap:8px;align-items:center;">
@@ -4109,7 +4163,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <span onclick="navTo(1)" style="color:var(--gold);">Full Report →</span>
           </div>
           <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;">
-            <div style="width:8px;height:8px;border-radius:2px;background:var(--river);"></div><span style="font-size:10px;color:var(--muted)">KeralaFood</span>
+            <div style="width:8px;height:8px;border-radius:2px;background:var(--river);"></div><span style="font-size:10px;color:var(--muted)">Hindustan Unilever</span>
             <div style="width:8px;height:8px;border-radius:2px;background:rgba(175,145,105,0.4);margin-left:8px;"></div><span style="font-size:10px;color:var(--muted)">Category Avg</span>
           </div>
           <div class="brand-chart">
@@ -4128,8 +4182,8 @@ function doDailyCheckIn(el){doCheckIn(2);}
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--river),var(--gold));display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🤖</div>
             <div style="flex:1;">
-              <div style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:800;margin-bottom:2px;">Jiya AI · 3 New Insights</div>
-              <div style="font-size:11px;color:rgba(255,255,255,0.65);line-height:1.4;">"Coconut Oil demand spikes <strong style="color:#ffe066;">+42%</strong> Fridays at SM Street — restock by Thursday noon."</div>
+              <div style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:800;margin-bottom:2px;">Jiya Jarvis · 3 New Insights</div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.65);line-height:1.4;">"Surf Excel demand +42% Fridays at SM Street — restock by Thursday noon."</div>
             </div>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
           </div>
@@ -4140,32 +4194,32 @@ function doDailyCheckIn(el){doCheckIn(2);}
           <div class="section-title">Top SKUs This Week <span onclick="navTo(3)" style="color:var(--gold);">All SKUs →</span></div>
           <div class="brand-sku-row">
             <div class="brand-sku-rank gold-rank">1</div>
-            <div style="font-size:22px;width:38px;height:38px;background:rgba(184,120,26,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;">🥥</div>
-            <div style="flex:1;"><div style="font-size:13px;font-weight:700;">Coconut Oil 1L</div><div style="font-size:10px;color:var(--muted);">1,240 units · ₹2.23L</div></div>
+            <div style="font-size:22px;width:38px;height:38px;background:rgba(184,120,26,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;">🧴</div>
+            <div style="flex:1;"><div style="font-size:13px;font-weight:700;">Surf Excel Liquid 1L</div><div style="font-size:10px;color:var(--muted);">1,240 units · ₹2.23L</div></div>
             <div style="text-align:right;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--leaf-light);">₹2.23L</div><div class="kpi-change up" style="font-size:10px;">↑ 22%</div></div>
           </div>
           <div class="brand-sku-row">
             <div class="brand-sku-rank silver-rank">2</div>
-            <div style="font-size:22px;width:38px;height:38px;background:rgba(108,63,197,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;">🌾</div>
-            <div style="flex:1;"><div style="font-size:13px;font-weight:700;">Red Rice 5kg</div><div style="font-size:10px;color:var(--muted);">680 units · ₹2.18L</div></div>
+            <div style="font-size:22px;width:38px;height:38px;background:rgba(108,63,197,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;">🫧</div>
+            <div style="flex:1;"><div style="font-size:13px;font-weight:700;">Dove Body Wash 200ml</div><div style="font-size:10px;color:var(--muted);">680 units · ₹2.18L</div></div>
             <div style="text-align:right;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--leaf-light);">₹2.18L</div><div class="kpi-change up" style="font-size:10px;">↑ 14%</div></div>
           </div>
           <div class="brand-sku-row" style="border:none;">
             <div class="brand-sku-rank bronze-rank">3</div>
-            <div style="font-size:22px;width:38px;height:38px;background:rgba(45,138,78,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;">🌶️</div>
-            <div style="flex:1;"><div style="font-size:13px;font-weight:700;">Kerala Spice Mix</div><div style="font-size:10px;color:var(--muted);">512 units · ₹48.6k</div></div>
+            <div style="font-size:22px;width:38px;height:38px;background:rgba(45,138,78,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;">🧼</div>
+            <div style="flex:1;"><div style="font-size:13px;font-weight:700;">Lifebuoy Handwash</div><div style="font-size:10px;color:var(--muted);">512 units · ₹48.6k</div></div>
             <div style="text-align:right;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--leaf-light);">₹48.6k</div><div class="kpi-change up" style="font-size:10px;">↑ 8%</div></div>
           </div>
         </div>
 
         <!-- Subscription Banner -->
-        <div style="background:linear-gradient(135deg,#2a1a0a,#4a2c10);border:1px solid rgba(184,120,26,0.4);border-radius:18px;padding:16px;margin-bottom:12px;display:flex;align-items:center;gap:14px;">
+        <div style="background:linear-gradient(135deg,#001f5b,#003399);border:1px solid rgba(0,82,204,0.4);border-radius:18px;padding:16px;margin-bottom:12px;display:flex;align-items:center;gap:14px;">
           <div style="font-size:28px;">👑</div>
           <div style="flex:1;">
-            <div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:#ffe066;">PRO Plan Active</div>
-            <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px;">₹5,000/month · Renews May 10, 2026</div>
+            <div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:#ffe066;">ENTERPRISE PRO Active</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px;">₹48,000/year · Renews Apr 10, 2027</div>
           </div>
-          <button onclick="showToast('📊','Your PRO plan includes: Sales trends, AI insights, demand forecasting & store analytics!')" style="padding:8px 14px;border-radius:10px;border:none;background:rgba(184,120,26,0.25);color:#ffe066;font-size:11px;font-weight:700;cursor:pointer;">Manage</button>
+          <button onclick="goTo('brand-insights')" style="padding:8px 14px;border-radius:10px;border:none;background:rgba(255,200,0,0.2);color:#ffe066;font-size:11px;font-weight:700;cursor:pointer;">🤖 Jiya Jarvis</button>
         </div>
       </div>
     </div>
@@ -4193,7 +4247,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <div class="brand-bar-wrap"><div class="brand-bar" style="height:85%;"></div><div class="brand-bar-ref" style="height:57%;"></div><div class="brand-bar-lbl">W4</div></div>
           </div>
           <div style="display:flex;gap:14px;margin-top:8px;">
-            <div style="display:flex;align-items:center;gap:5px;font-size:10px;color:var(--muted);"><div style="width:10px;height:10px;border-radius:3px;background:var(--river);"></div>KeralaFood</div>
+            <div style="display:flex;align-items:center;gap:5px;font-size:10px;color:var(--muted);"><div style="width:10px;height:10px;border-radius:3px;background:var(--river);"></div>Hindustan Unilever</div>
             <div style="display:flex;align-items:center;gap:5px;font-size:10px;color:var(--muted);"><div style="width:10px;height:10px;border-radius:3px;background:rgba(175,145,105,0.45);"></div>Category Avg</div>
           </div>
         </div>
@@ -4292,7 +4346,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
           <div class="progress-label"><span>Shelf utilisation</span><span>91% / 100%</span></div>
           <div style="margin-top:10px;padding:8px 10px;background:rgba(184,120,26,0.08);border-radius:10px;border:1px solid rgba(184,120,26,0.18);">
             <div style="font-size:11px;font-weight:700;color:var(--gold);">⚠️ Restock Alert</div>
-            <div style="font-size:10px;color:var(--muted);margin-top:2px;">Coconut Oil 1L → only 4 units left · Restock by tomorrow</div>
+            <div style="font-size:10px;color:var(--muted);margin-top:2px;">Surf Excel Liquid 1L → only 4 units left · Restock by tomorrow</div>
           </div>
         </div>
 
@@ -4334,28 +4388,28 @@ function doDailyCheckIn(el){doCheckIn(2);}
           <div class="section-title">SKU Ranking · This Week</div>
 
           <!-- SKU rows -->
-          <div class="brand-sku-row" onclick="showToast('📦','Coconut Oil 1L: Best-selling SKU. 22% growth vs last week.')">
+          <div class="brand-sku-row" onclick="showToast('📦','Surf Excel Liquid 1L: Best-selling SKU. 22% growth vs last week.')">
             <div class="brand-sku-rank gold-rank">1</div>
-            <div style="font-size:20px;">🥥</div>
-            <div style="flex:1;"><div style="font-size:12px;font-weight:700;">Coconut Oil 1L</div><div style="font-size:9px;color:var(--muted);">SM Street · City Mall</div></div>
+            <div style="font-size:20px;">🧴</div>
+            <div style="flex:1;"><div style="font-size:12px;font-weight:700;">Surf Excel Liquid 1L</div><div style="font-size:9px;color:var(--muted);">SM Street · City Mall</div></div>
             <div style="text-align:right;"><div style="font-size:12px;font-weight:800;color:var(--leaf-light);">₹2.23L</div><div style="font-size:10px;" class="up">↑ 22%</div></div>
           </div>
-          <div class="brand-sku-row" onclick="showToast('📦','Red Rice 5kg: Strong demand from SM Street. Fri/Sat peak.')">
+          <div class="brand-sku-row" onclick="showToast('📦','Dove Body Wash 200ml: Strong demand from SM Street. Fri/Sat peak.')">
             <div class="brand-sku-rank silver-rank">2</div>
-            <div style="font-size:20px;">🌾</div>
-            <div style="flex:1;"><div style="font-size:12px;font-weight:700;">Red Rice 5kg</div><div style="font-size:9px;color:var(--muted);">All 3 stores</div></div>
+            <div style="font-size:20px;">🫧</div>
+            <div style="flex:1;"><div style="font-size:12px;font-weight:700;">Dove Body Wash 200ml</div><div style="font-size:9px;color:var(--muted);">All 3 stores</div></div>
             <div style="text-align:right;"><div style="font-size:12px;font-weight:800;color:var(--leaf-light);">₹2.18L</div><div style="font-size:10px;" class="up">↑ 14%</div></div>
           </div>
-          <div class="brand-sku-row" onclick="showToast('📦','Kerala Spice Mix: Steady growth. Bundling opportunity detected.')">
+          <div class="brand-sku-row" onclick="showToast('📦','Lifebuoy Handwash: Steady growth. Bundling opportunity detected.')">
             <div class="brand-sku-rank bronze-rank">3</div>
-            <div style="font-size:20px;">🌶️</div>
-            <div style="flex:1;"><div style="font-size:12px;font-weight:700;">Kerala Spice Mix</div><div style="font-size:9px;color:var(--muted);">SM Street · More Mkt</div></div>
+            <div style="font-size:20px;">🧼</div>
+            <div style="flex:1;"><div style="font-size:12px;font-weight:700;">Lifebuoy Handwash</div><div style="font-size:9px;color:var(--muted);">SM Street · More Mkt</div></div>
             <div style="text-align:right;"><div style="font-size:12px;font-weight:800;color:var(--leaf-light);">₹48.6k</div><div style="font-size:10px;" class="up">↑ 8%</div></div>
           </div>
-          <div class="brand-sku-row" onclick="showToast('📦','Banana Chips 200g: Snack segment leader. Weekend surge +35%.')">
+          <div class="brand-sku-row" onclick="showToast('📦','Brooke Bond Red Label 250g: Snack segment leader. Weekend surge +35%.')">
             <div class="brand-sku-rank" style="color:var(--muted);font-size:12px;">4</div>
             <div style="font-size:20px;">🍌</div>
-            <div style="flex:1;"><div style="font-size:12px;font-weight:700;">Banana Chips 200g</div><div style="font-size:9px;color:var(--muted);">City Mall · SM Street</div></div>
+            <div style="flex:1;"><div style="font-size:12px;font-weight:700;">Brooke Bond Red Label 250g</div><div style="font-size:9px;color:var(--muted);">City Mall · SM Street</div></div>
             <div style="text-align:right;"><div style="font-size:12px;font-weight:800;color:var(--leaf-light);">₹38.4k</div><div style="font-size:10px;" class="up">↑ 35%</div></div>
           </div>
           <div class="brand-sku-row" onclick="showToast('📦','Turmeric Powder: Below target. Consider price promotion.')">
@@ -4376,10 +4430,10 @@ function doDailyCheckIn(el){doCheckIn(2);}
         <div class="card">
           <div class="section-title">Sales Velocity (units/day)</div>
           <div style="display:flex;flex-direction:column;gap:8px;">
-            <div><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;"><span>🥥 Coconut Oil</span><span style="color:var(--leaf-light);font-weight:700;">177/day</span></div><div class="progress-bar" style="margin:0;"><div class="progress-fill" style="width:100%;"></div></div></div>
-            <div><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;"><span>🌾 Red Rice</span><span style="color:var(--leaf-light);font-weight:700;">97/day</span></div><div class="progress-bar" style="margin:0;"><div class="progress-fill" style="width:55%;"></div></div></div>
-            <div><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;"><span>🍌 Banana Chips</span><span style="color:var(--amber);font-weight:700;">73/day</span></div><div class="progress-bar" style="margin:0;"><div class="progress-fill" style="width:41%;background:linear-gradient(90deg,var(--amber),var(--gold));"></div></div></div>
-            <div><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;"><span>🌶️ Spice Mix</span><span style="color:var(--river-light);font-weight:700;">48/day</span></div><div class="progress-bar" style="margin:0;"><div class="progress-fill" style="width:27%;background:linear-gradient(90deg,var(--river-mid),var(--river-light));"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;"><span>🧴 Surf Excel</span><span style="color:var(--leaf-light);font-weight:700;">177/day</span></div><div class="progress-bar" style="margin:0;"><div class="progress-fill" style="width:100%;"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;"><span>🧴 Dove Body</span><span style="color:var(--leaf-light);font-weight:700;">97/day</span></div><div class="progress-bar" style="margin:0;"><div class="progress-fill" style="width:55%;"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;"><span>🍌 Brooke Bond Red Label</span><span style="color:var(--amber);font-weight:700;">73/day</span></div><div class="progress-bar" style="margin:0;"><div class="progress-fill" style="width:41%;background:linear-gradient(90deg,var(--amber),var(--gold));"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;"><span>🧼 Lifebuoy Mix</span><span style="color:var(--river-light);font-weight:700;">48/day</span></div><div class="progress-bar" style="margin:0;"><div class="progress-fill" style="width:27%;background:linear-gradient(90deg,var(--river-mid),var(--river-light));"></div></div></div>
             <div><div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px;"><span>🫚 Cardamom</span><span style="color:var(--coral);font-weight:700;">2/day</span></div><div class="progress-bar" style="margin:0;"><div class="progress-fill" style="width:5%;background:var(--coral);"></div></div></div>
           </div>
         </div>
@@ -4392,7 +4446,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
           <div style="width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--river),var(--gold));display:flex;align-items:center;justify-content:center;font-size:18px;">🤖</div>
           <div>
-            <div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:900;background:linear-gradient(135deg,var(--river-light),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Jiya AI Insights</div>
+            <div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:900;background:linear-gradient(135deg,var(--river-light),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Jiya Jarvis Insights</div>
             <div style="font-size:10px;color:var(--muted);"><span class="live-dot"></span> Updated 4 min ago · FMCG Intelligence</div>
           </div>
         </div>
@@ -4409,7 +4463,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
             </div>
             <span class="badge badge-blue" style="font-size:9px;white-space:nowrap;">High Impact</span>
           </div>
-          <div style="font-size:12px;color:var(--muted);line-height:1.6;margin:10px 0;">Demand for <strong style="color:var(--text);">Coconut Oil 1L</strong> at SM Street spikes <strong style="color:var(--river-light);">+42%</strong> every Friday. Based on 8 weeks of data, you should restock <strong style="color:var(--text);">at least 180 units</strong> by Thursday noon to avoid stockouts.</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.6;margin:10px 0;">Demand for <strong style="color:var(--text);">Surf Excel Liquid 1L</strong> at SM Street spikes <strong style="color:var(--river-light);">+42%</strong> every Friday. Based on 8 weeks of data, you should restock <strong style="color:var(--text);">at least 180 units</strong> by Thursday noon to avoid stockouts.</div>
           <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;background:rgba(108,63,197,0.06);border-radius:10px;border:1px solid rgba(108,63,197,0.12);margin-bottom:10px;">
             <span style="font-size:11px;color:var(--muted);">Expected units this Fri:</span>
             <span style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--river-light);">~296 units</span>
@@ -4441,11 +4495,11 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <div class="brand-insight-icon" style="background:rgba(45,138,78,0.12);">🗺️</div>
             <div style="flex:1;">
               <div style="font-size:9px;color:var(--leaf-light);font-weight:700;text-transform:uppercase;letter-spacing:.8px;">Shelf Placement</div>
-              <div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;margin-top:2px;">Move Banana Chips to Eye Level</div>
+              <div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;margin-top:2px;">Move Brooke Bond Red Label to Eye Level</div>
             </div>
             <span class="badge badge-green" style="font-size:9px;">Quick Win</span>
           </div>
-          <div style="font-size:12px;color:var(--muted);line-height:1.6;margin:10px 0;">Banana Chips are currently on the <strong style="color:var(--text);">bottom shelf at More Supermarket</strong>. Eye-level placement at City Mall drove <strong style="color:var(--leaf-light);">+35% sales</strong> for the same SKU. Moving to eye level at More Mkt is projected to yield <strong style="color:var(--leaf-light);">+₹8,400/month</strong>.</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.6;margin:10px 0;">Brooke Bond Red Label are currently on the <strong style="color:var(--text);">bottom shelf at More Supermarket</strong>. Eye-level placement at City Mall drove <strong style="color:var(--leaf-light);">+35% sales</strong> for the same SKU. Moving to eye level at More Mkt is projected to yield <strong style="color:var(--leaf-light);">+₹8,400/month</strong>.</div>
           <button onclick="showToast('🗺️','Shelf relocation request sent to More Supermarket store manager!')" class="brand-action-btn" style="background:linear-gradient(135deg,var(--leaf),var(--leaf-light));">Request Shelf Move</button>
         </div>
 
@@ -4459,13 +4513,43 @@ function doDailyCheckIn(el){doCheckIn(2);}
             </div>
             <span class="badge badge-red" style="font-size:9px;">New</span>
           </div>
-          <div style="font-size:12px;color:var(--muted);line-height:1.6;margin:10px 0;">Customers who buy <strong style="color:var(--text);">Red Rice</strong> have a <strong style="color:var(--river-light);">67% co-purchase rate</strong> with <strong style="color:var(--text);">Kerala Spice Mix</strong>. A bundled offer at <strong style="color:var(--text);">₹380 (vs ₹415 individual)</strong> could generate an estimated <strong style="color:var(--leaf-light);">₹2.1L additional revenue</strong> per month.</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.6;margin:10px 0;">Customers who buy <strong style="color:var(--text);">Red Rice</strong> have a <strong style="color:var(--river-light);">67% co-purchase rate</strong> with <strong style="color:var(--text);">Lifebuoy Handwash</strong>. A bundled offer at <strong style="color:var(--text);">₹380 (vs ₹415 individual)</strong> could generate an estimated <strong style="color:var(--leaf-light);">₹2.1L additional revenue</strong> per month.</div>
           <button onclick="showToast('🎁','Bundle offer created: Red Rice + Spice Mix at ₹380!')" class="brand-action-btn" style="background:linear-gradient(135deg,var(--coral),var(--magenta));">Create Bundle Offer</button>
+        </div>
+
+        <!-- Jiya Jarvis Interactive Chat -->
+        <div style="background:linear-gradient(135deg,rgba(108,63,197,0.07),rgba(108,63,197,0.02));border:1px solid rgba(108,63,197,0.18);border-radius:20px;margin-bottom:14px;overflow:hidden;">
+          <div style="padding:14px 16px;border-bottom:1px solid rgba(108,63,197,0.12);display:flex;align-items:center;gap:10px;">
+            <div style="width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--river),var(--river-light));display:flex;align-items:center;justify-content:center;font-size:14px;">✨</div>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:var(--river);">Jiya Jarvis · Brand Intelligence</div>
+              <div style="font-size:10px;color:var(--muted);">● Analysing HUL Kerala data</div>
+            </div>
+          </div>
+          <div id="jiyaMessages" style="padding:14px;display:flex;flex-direction:column;gap:10px;max-height:300px;overflow-y:auto;">
+            <div style="background:rgba(108,63,197,0.08);border:1px solid rgba(108,63,197,0.15);border-radius:14px 14px 14px 4px;padding:12px 14px;">
+              <div style="font-size:12px;font-weight:700;color:var(--river);margin-bottom:4px;">✨ Jiya Jarvis</div>
+              <div style="font-size:13px;color:var(--text);line-height:1.55;">Hello Hindustan Unilever! 👋 I've analysed your April 2026 data. Here's your executive summary:</div>
+              <div style="margin-top:8px;display:flex;flex-direction:column;gap:5px;">
+                <div style="font-size:12px;color:var(--text);">📈 <strong>Revenue up 18.4%</strong> — best month since launch</div>
+                <div style="font-size:12px;color:var(--text);">🥥 <strong>Coconut Oil is your star</strong> — demand spike detected</div>
+                <div style="font-size:12px;color:var(--coral);">⚠️ <strong>Red Rice critical</strong> — stockout in ~4 days</div>
+                <div style="font-size:12px;color:var(--text);">🏬 <strong>City Mall underperforming</strong> — suggest promotion</div>
+              </div>
+            </div>
+          </div>
+          <!-- Quick prompt chips -->
+          <div style="padding:10px 14px;border-top:1px solid rgba(108,63,197,0.1);display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;">
+            <button onclick="jiyaAsk('demand')" style="white-space:nowrap;padding:7px 12px;border-radius:20px;border:1px solid rgba(108,63,197,0.2);background:rgba(108,63,197,0.06);color:var(--river);font-size:11px;font-weight:700;cursor:pointer;flex-shrink:0;">📈 Demand Forecast</button>
+            <button onclick="jiyaAsk('pricing')" style="white-space:nowrap;padding:7px 12px;border-radius:20px;border:1px solid rgba(184,120,26,0.2);background:rgba(184,120,26,0.06);color:var(--gold);font-size:11px;font-weight:700;cursor:pointer;flex-shrink:0;">💰 Pricing Tips</button>
+            <button onclick="jiyaAsk('restock')" style="white-space:nowrap;padding:7px 12px;border-radius:20px;border:1px solid rgba(192,57,43,0.2);background:rgba(192,57,43,0.06);color:var(--coral);font-size:11px;font-weight:700;cursor:pointer;flex-shrink:0;">📦 Restock Plan</button>
+            <button onclick="jiyaAsk('growth')" style="white-space:nowrap;padding:7px 12px;border-radius:20px;border:1px solid rgba(45,138,78,0.2);background:rgba(45,138,78,0.06);color:var(--leaf-light);font-size:11px;font-weight:700;cursor:pointer;flex-shrink:0;">🚀 Growth Plan</button>
+          </div>
         </div>
 
         <!-- AI chat input -->
         <div class="card" style="padding:14px;">
-          <div class="section-title" style="margin-bottom:10px;">Ask Jiya AI</div>
+          <div class="section-title" style="margin-bottom:10px;">Ask Jiya Jarvis</div>
           <div style="display:flex;gap:8px;">
             <input id="brandAIInput" class="field" style="margin:0;flex:1;padding:12px 14px;font-size:13px;" placeholder="e.g. Which store needs restocking?">
             <button onclick="sendBrandAI()" style="padding:12px 16px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--river),var(--gold));color:white;font-weight:800;cursor:pointer;flex-shrink:0;">
@@ -4482,166 +4566,257 @@ function doDailyCheckIn(el){doCheckIn(2);}
 
       </div>
     </div>
-    <!-- ══ END BRAND DASHBOARD ══ -->
-
-    <!-- ══ SELLER PRODUCTS ══ -->
-    <div class="page hidden" id="seller-products">
-      <div class="page-header"><div class="back-btn" onclick="goTo('seller-profile')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div><div class="page-title">My Products</div><div class="page-sub">Products you are selling</div></div>
-      <div class="content">
-        <div class="card">
-          <div class="order-item-row"><div><div class="order-name">Coconut Oil 1L</div><div class="order-meta">Stock: 24 units</div></div><div class="order-amount">₹180</div></div>
-          <div class="order-item-row"><div><div class="order-name">Red Rice 5kg</div><div class="order-meta">Stock: 12 units</div></div><div class="order-amount">₹320</div></div>
-          <div class="order-item-row"><div><div class="order-name">Banana Chips 200g</div><div class="order-meta">Stock: 40 units</div></div><div class="order-amount">₹60</div></div>
-          <div class="order-item-row"><div><div class="order-name">Kerala Spice Mix</div><div class="order-meta">Stock: 18 units</div></div><div class="order-amount">₹95</div></div>
-          <div class="order-item-row"><div><div class="order-name">Coconut Powder</div><div class="order-meta">Stock: 15 units</div></div><div class="order-amount">₹120</div></div>
-          <div class="order-item-row"><div><div class="order-name">Turmeric Powder</div><div class="order-meta">Stock: 22 units</div></div><div class="order-amount">₹80</div></div>
-          <div class="order-item-row"><div><div class="order-name">Pepper</div><div class="order-meta">Stock: 10 units</div></div><div class="order-amount">₹140</div></div>
-          <div class="order-item-row"><div><div class="order-name">Cardamom</div><div class="order-meta">Stock: 8 units</div></div><div class="order-amount">₹220</div></div>
-        </div>
-        <button class="login-btn" onclick="goTo('seller-add-product')">+ Add New Product</button>
-      </div>
-    </div>
-
-    <!-- ══ SELLER ADD PRODUCT ══ -->
-    <div class="page hidden" id="seller-add-product">
-      <div class="page-header"><div class="back-btn" onclick="goTo('seller-products')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div><div class="page-title">Add Product</div><div class="page-sub">Add a new product to your shelf</div></div>
-      <div class="content">
-        <div class="field-label">Product Name</div>
-        <input class="field" type="text" placeholder="Eg: Coconut Oil 1L">
-        <div class="field-label">Category</div>
-        <input class="field" type="text" placeholder="Eg: Coconut / Grains / Spices">
-        <div class="field-label">Price (₹)</div>
-        <input class="field" type="number" placeholder="Enter price">
-        <div class="field-label">Stock Quantity</div>
-        <input class="field" type="number" placeholder="Enter stock">
-        <div class="field-label">Shelf Location</div>
-        <input class="field" type="text" placeholder="Eg: SM Street A1">
-        <div class="field-label">Description</div>
-        <input class="field" type="text" placeholder="Product description">
-        <button class="login-btn" style="margin-top:4px;">Add Product</button>
-        <button class="login-btn" onclick="goTo('seller-products')" style="margin-top:10px;background:transparent;border:1px solid var(--border);color:var(--muted);">Cancel</button>
-      </div>
-    </div>
-
-    <!-- ══ SELLER PAYMENT ══ -->
-    <div class="page hidden" id="seller-payment">
-      <div class="page-header"><div class="back-btn" onclick="goTo('seller-profile')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div><div class="page-title">Payment Settings</div><div class="page-sub">Payout &amp; bank details</div></div>
-      <div class="content">
-        <div class="card"><div class="section-title">Bank Account</div><div class="order-item-row"><span style="color:var(--muted)">Account Name</span><span>Nihal</span></div><div class="order-item-row"><span style="color:var(--muted)">Bank</span><span>SBI</span></div><div class="order-item-row"><span style="color:var(--muted)">Account No</span><span>XXXX4321</span></div><div class="order-item-row"><span style="color:var(--muted)">IFSC</span><span>SBIN0001234</span></div></div>
-        <div class="card"><div class="section-title">UPI ID</div><div style="color:var(--river-light);font-weight:600">nihal@upi</div></div>
-        <div class="card"><div class="section-title">Payout Schedule</div><div style="color:var(--muted);font-size:13px;">Weekly Settlement · Every Sunday Night</div></div>
-        <div class="card"><div class="section-title">Pending Payout</div><div style="font-family:'Outfit',sans-serif;font-size:28px;font-weight:800;color:var(--leaf-light)">₹11,220</div></div>
-        <button class="login-btn">Update Payment Details</button>
-      </div>
-    </div>
-
-    <!-- ══ SELLER AGREEMENTS ══ -->
-    <div class="page hidden" id="seller-agreements">
-      <div class="page-header"><div class="back-btn" onclick="goTo('seller-profile')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div><div class="page-title">My Agreements</div><div class="page-sub">Contracts &amp; platform agreements</div></div>
-      <div class="content">
-        <div class="card"><div class="section-title">Shelf Rental Agreement</div><div class="order-item-row"><span style="color:var(--muted)">Store</span><span>SM Street</span></div><div class="order-item-row"><span style="color:var(--muted)">Space</span><span>A1</span></div><div class="order-item-row"><span style="color:var(--muted)">Rent</span><span>₹1,400 / week</span></div><div class="order-item-row"><span style="color:var(--muted)">Period</span><span>16 Mar – 30 Apr 2026</span></div><div class="order-item-row"><span style="color:var(--muted)">Status</span><span style="color:var(--leaf-light)">Active</span></div></div>
-        <div class="card"><div class="section-title">Platform Commission Agreement</div><div class="order-item-row"><span style="color:var(--muted)">Commission</span><span>0.5% per sale</span></div><div class="order-item-row"><span style="color:var(--muted)">Settlement</span><span>Weekly</span></div><div class="order-item-row"><span style="color:var(--muted)">Signed</span><span>Jan 2026</span></div></div>
-        <div class="card"><div class="section-title">Terms &amp; Conditions</div><div style="font-size:13px;color:var(--muted)">Standard RIVULET seller agreement accepted · Jan 2026</div></div>
-        <button class="login-btn">Download Agreement PDF</button>
-      </div>
-    </div>
-
-    <!-- ══ NOTIFICATIONS ══ -->
-    <div class="page hidden" id="notifications">
-      <div class="page-header"><div class="back-btn" onclick="goTo('seller-profile')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div><div class="page-title">Notifications</div><div class="page-sub">Updates, alerts &amp; platform messages</div></div>
-      <div class="content">
-        <div class="card">
-          <div class="section-title">Today</div>
-          <div class="order-item-row"><div><div class="order-name">New Order Received</div><div class="order-meta">Coconut Oil ×5 · SM Street · 10:32 AM</div></div><span class="badge badge-green">Order</span></div>
-          <div class="order-item-row"><div><div class="order-name">Delivery Picked Up</div><div class="order-meta">DEL-2026-0847 · 9:50 AM</div></div><span class="badge badge-blue">Delivery</span></div>
-          <div class="order-item-row"><div><div class="order-name">Shelf Rent Due Soon</div><div class="order-meta">City Mall Space C3 · 2 days left</div></div><span class="badge badge-amber">Alert</span></div>
-        </div>
-        <div class="card">
-          <div class="section-title">This Week</div>
-          <div class="order-item-row"><div><div class="order-name">Weekly Payout Processed</div><div class="order-meta">₹8,420 credited to bank</div></div><span class="badge badge-green">Payout</span></div>
-          <div class="order-item-row"><div><div class="order-name">Low Stock Warning</div><div class="order-meta">Red Rice only 7 units left</div></div><span class="badge badge-red">Stock</span></div>
-          <div class="order-item-row"><div><div class="order-name">Sales Report Ready</div><div class="order-meta">March analytics available</div></div><span class="badge badge-blue">Report</span></div>
+    <!-- ══ BRAND ACCOUNT / PROFILE ══ -->
+    <div class="page hidden" id="brand-account">
+      <div class="page-header" style="padding:0;border:none;background:none;">
+        <div style="background:linear-gradient(135deg,#001f5b 0%,#003399 40%,#0052cc 70%,#001f5b 100%);padding:20px 20px 18px;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-20px;right:-20px;width:100px;height:100px;background:radial-gradient(circle,rgba(255,255,255,0.06),transparent 70%);pointer-events:none;"></div>
+          <div style="position:absolute;bottom:-15px;left:-10px;width:80px;height:80px;background:radial-gradient(circle,rgba(255,200,0,0.12),transparent 70%);pointer-events:none;"></div>
+          <div style="position:relative;z-index:2;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+              <div style="display:flex;align-items:center;gap:12px;">
+                <!-- HUL Logo representation -->
+                <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#0052cc,#003399);border:2px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,50,180,0.4);">
+                  <span style="font-size:22px;">🏭</span>
+                </div>
+                <div>
+                  <div style="font-size:9px;color:rgba(255,255,255,0.5);letter-spacing:2px;text-transform:uppercase;font-weight:700;">FMCG BRAND · ENTERPRISE</div>
+                  <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:900;color:#fff;">Hindustan Unilever</div>
+                  <div style="font-size:10px;color:rgba(255,255,255,0.55);margin-top:1px;">NSE: HINDUNILVR · FMCG Leader</div>
+                </div>
+              </div>
+              <button onclick="doLogout()" style="display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:12px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.85);font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;cursor:pointer;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                Sign Out
+              </button>
+            </div>
+            <!-- Key metrics strip -->
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+              <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:9px;text-align:center;">
+                <div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:900;color:#ffe066;">₹5.82L</div>
+                <div style="font-size:8px;color:rgba(255,255,255,0.4);margin-top:1px;font-weight:600;">7-DAY GMV</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:9px;text-align:center;">
+                <div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:900;color:#6ee7b7;">47</div>
+                <div style="font-size:8px;color:rgba(255,255,255,0.4);margin-top:1px;font-weight:600;">ACTIVE SKUs</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:9px;text-align:center;">
+                <div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:900;color:#93c5fd;">3</div>
+                <div style="font-size:8px;color:rgba(255,255,255,0.4);margin-top:1px;font-weight:600;">LOCATIONS</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- ══ SELLER SUPPORT ══ -->
-    <div class="page hidden" id="seller-support">
-      <div class="page-header"><div class="back-btn" onclick="goTo('seller-profile')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div><div class="page-title">Support</div><div class="page-sub">Help &amp; assistance</div></div>
-      <div class="content">
-        <div class="card"><div class="section-title">Contact Us</div><div class="order-item-row"><span style="color:var(--muted)">Phone</span><span style="color:var(--river-light)">+91 98765 00001</span></div><div class="order-item-row"><span style="color:var(--muted)">Email</span><span style="color:var(--river-light)"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d9aaaca9a9b6abad99abb0afacb5bcadf7b0b7">[email&#160;protected]</a></span></div><div class="order-item-row"><span style="color:var(--muted)">WhatsApp</span><span style="color:var(--leaf-light)">Available 9AM–9PM</span></div></div>
-        <div class="card"><div class="section-title">Raise Support Ticket</div><div style="font-size:13px;color:var(--muted);margin-bottom:12px;">Describe your issue and our team will contact you within 24 hours.</div><button class="login-btn">Create Ticket</button></div>
-        <div class="card"><div class="section-title">FAQ</div><div class="order-item-row"><span>How to rent shelf space?</span><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div><div class="order-item-row"><span>When do I receive payouts?</span><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div><div class="order-item-row"><span>How is commission calculated?</span><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div><div class="order-item-row"><span>How does delivery work?</span><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div></div>
-      </div>
-    </div>
+      <div class="content" style="padding-top:14px;">
 
-  
+        <!-- Membership / Subscription Plan -->
+        <div class="card" style="background:linear-gradient(135deg,rgba(0,82,204,0.08),rgba(255,252,244,0.95));border-color:rgba(0,82,204,0.2);">
+          <div class="section-title" style="margin-bottom:12px;">👑 Membership Plan</div>
+          <div style="background:linear-gradient(135deg,#001f5b,#003399);border-radius:16px;padding:16px;margin-bottom:12px;position:relative;overflow:hidden;">
+            <div style="position:absolute;top:-10px;right:-10px;font-size:60px;opacity:0.06;">🏭</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+              <div>
+                <div style="font-size:9px;color:rgba(255,255,255,0.5);letter-spacing:1.5px;text-transform:uppercase;font-weight:700;">Current Plan</div>
+                <div style="font-family:'Outfit',sans-serif;font-size:20px;font-weight:900;color:#ffe066;">ENTERPRISE PRO</div>
+              </div>
+              <div style="background:rgba(255,200,0,0.15);border:1px solid rgba(255,200,0,0.3);border-radius:10px;padding:6px 12px;text-align:center;">
+                <div style="font-size:9px;color:rgba(255,200,0,0.7);font-weight:700;">ANNUAL</div>
+                <div style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:900;color:#ffe066;">₹48,000/yr</div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:12px;">
+              <div style="font-size:11px;color:rgba(255,255,255,0.65);display:flex;align-items:center;gap:6px;"><span style="color:#6ee7b7;">✓</span> Real-time sales analytics across all RIVULET stores</div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.65);display:flex;align-items:center;gap:6px;"><span style="color:#6ee7b7;">✓</span> Jiya Jarvis AI demand forecasting (unlimited queries)</div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.65);display:flex;align-items:center;gap:6px;"><span style="color:#6ee7b7;">✓</span> Competitor shelf tracking & market share reports</div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.65);display:flex;align-items:center;gap:6px;"><span style="color:#6ee7b7;">✓</span> Dedicated account manager + priority support</div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.65);display:flex;align-items:center;gap:6px;"><span style="color:#6ee7b7;">✓</span> API access for ERP/SAP integration</div>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <div style="flex:1;background:rgba(255,255,255,0.07);border-radius:10px;padding:8px;text-align:center;">
+                <div style="font-size:9px;color:rgba(255,255,255,0.4);font-weight:600;">RENEWS</div>
+                <div style="font-size:12px;font-weight:800;color:#fff;">Apr 10, 2027</div>
+              </div>
+              <div style="flex:1;background:rgba(255,255,255,0.07);border-radius:10px;padding:8px;text-align:center;">
+                <div style="font-size:9px;color:rgba(255,255,255,0.4);font-weight:600;">NEXT INVOICE</div>
+                <div style="font-size:12px;font-weight:800;color:#ffe066;">₹48,000</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <button onclick="showToast('📊','Plan features: Analytics, AI, Competitor Tracking, API, Priority Support')" style="flex:1;padding:10px;border-radius:12px;border:none;background:rgba(0,82,204,0.1);color:var(--river);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;">View Features</button>
+            <button onclick="showToast('⬆️','Upgrade to Enterprise MAX — contact sales@rivulet.in')" style="flex:1;padding:10px;border-radius:12px;border:none;background:linear-gradient(135deg,#0052cc,#003399);color:white;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;">Upgrade Plan</button>
+          </div>
+        </div>
 
+        <!-- Active Contracts -->
+        <div class="card">
+          <div class="section-title" style="margin-bottom:12px;">📄 Active Contracts <span style="color:var(--leaf-light);">3 active</span></div>
+          <div class="order-item-row" style="align-items:center;">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(45,138,78,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;margin-right:10px;">📝</div>
+            <div style="flex:1;">
+              <div style="font-size:13px;font-weight:700;">Distribution Agreement — SM Street</div>
+              <div style="font-size:10px;color:var(--muted);">28 shelf spaces · ₹42,000/quarter · Valid till Dec 2026</div>
+            </div>
+            <span class="badge badge-green">Active</span>
+          </div>
+          <div class="order-item-row" style="align-items:center;">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(108,63,197,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;margin-right:10px;">📝</div>
+            <div style="flex:1;">
+              <div style="font-size:13px;font-weight:700;">Exclusive Zone — City Mall Calicut</div>
+              <div style="font-size:10px;color:var(--muted);">Premium gondola end · ₹28,000/quarter · Valid till Sep 2026</div>
+            </div>
+            <span class="badge badge-blue">Active</span>
+          </div>
+          <div class="order-item-row" style="border:none;align-items:center;">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(232,160,32,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;margin-right:10px;">📝</div>
+            <div style="flex:1;">
+              <div style="font-size:13px;font-weight:700;">Co-marketing — More Supermarket</div>
+              <div style="font-size:10px;color:var(--muted);">In-store promotions · ₹15,000/quarter · Renewal: Jul 2026</div>
+            </div>
+            <span class="badge badge-amber">Up for Renewal</span>
+          </div>
+          <button onclick="showToast('📑','Contract renewal request sent to RIVULET admin for More Supermarket!')" style="width:100%;margin-top:10px;padding:10px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--text);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;">+ Request New Contract</button>
+        </div>
 
-
-    <!-- ══ FSSAI LICENSE ══ -->
-    <div class="page hidden" id="seller-fssai">
-      <div class="page-header">
-        <div class="back-btn" onclick="goTo('seller-profile')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div>
-        <div class="page-title">FSSAI License</div>
-        <div class="page-sub">Food Safety &amp; Standards Authority of India</div>
-      </div>
-      <div class="content">
-        <div style="background:linear-gradient(135deg,#2d0060,#3d0080,#4a0099);border:1px solid rgba(139,61,255,0.3);border-radius:22px;padding:22px;margin-bottom:16px;position:relative;overflow:hidden;">
-          <div style="position:absolute;top:-20px;right:-20px;font-size:80px;opacity:0.07;">🛡️</div>
-          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
-            <div style="width:48px;height:48px;border-radius:14px;background:rgba(72,196,100,0.2);border:1px solid rgba(72,196,100,0.4);display:flex;align-items:center;justify-content:center;font-size:24px;">🛡️</div>
+        <!-- Product Portfolio (HUL in Kerala) -->
+        <div class="card">
+          <div class="section-title" style="margin-bottom:12px;">🏭 Product Portfolio in Kerala <span style="color:var(--river-light);">47 SKUs</span></div>
+          <!-- Category breakdown -->
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px;">
             <div>
-              <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:800;">FSSAI License</div>
-              <div style="font-size:11px;color:rgba(72,196,100,0.9);margin-top:2px;">✅ Verified &amp; Active</div>
+              <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;"><span style="font-weight:700;">🧴 Home Care (Surf Excel, Vim, Domex)</span><span style="color:var(--leaf-light);font-weight:700;">₹2.4L</span></div>
+              <div class="progress-bar" style="margin:0;"><div class="progress-fill" style="width:78%;background:linear-gradient(90deg,#0052cc,#3b82f6);"></div></div>
+              <div style="font-size:9px;color:var(--muted);margin-top:2px;">18 SKUs · 78% of quarterly target</div>
             </div>
-            <span class="badge badge-green" style="margin-left:auto;">Valid</span>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;"><span style="font-weight:700;">🧼 Personal Care (Dove, Lifebuoy, Lux)</span><span style="color:var(--leaf-light);font-weight:700;">₹1.9L</span></div>
+              <div class="progress-bar" style="margin:0;"><div class="progress-fill" style="width:65%;"></div></div>
+              <div style="font-size:9px;color:var(--muted);margin-top:2px;">14 SKUs · 65% of quarterly target</div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;"><span style="font-weight:700;">🍵 Foods &amp; Refreshments (Brooke Bond, Knorr)</span><span style="color:var(--amber);font-weight:700;">₹84.6k</span></div>
+              <div class="progress-bar" style="margin:0;"><div class="progress-fill" style="width:42%;background:linear-gradient(90deg,var(--amber),var(--gold));"></div></div>
+              <div style="font-size:9px;color:var(--muted);margin-top:2px;">8 SKUs · 42% of quarterly target · Needs push</div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;"><span style="font-weight:700;">💄 Beauty (Lakme, Simple, TRESemmé)</span><span style="color:var(--river-light);font-weight:700;">₹62.4k</span></div>
+              <div class="progress-bar" style="margin:0;"><div class="progress-fill" style="width:55%;background:linear-gradient(90deg,var(--river-mid),var(--river-light));"></div></div>
+              <div style="font-size:9px;color:var(--muted);margin-top:2px;">7 SKUs · 55% · Beauty category growing in Kerala</div>
+            </div>
           </div>
-          <div style="background:rgba(0,0,0,0.2);border-radius:14px;padding:16px;margin-bottom:14px;">
-            <div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">License Number</div>
-            <div style="font-family:'Outfit',sans-serif;font-size:20px;font-weight:800;letter-spacing:3px;color:var(--leaf-light);">11224999000754</div>
+          <button onclick="showToast('📦','Full SKU catalog for Kerala — 47 products across 4 categories loaded!')" style="width:100%;padding:10px;border-radius:12px;border:none;background:linear-gradient(135deg,#0052cc,#003399);color:white;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;">View Full SKU Catalog</button>
+        </div>
+
+        <!-- New Product Ideas / Pipeline -->
+        <div class="card" style="background:linear-gradient(135deg,rgba(108,63,197,0.06),rgba(255,252,244,0.95));border-color:rgba(108,63,197,0.18);">
+          <div class="section-title" style="margin-bottom:12px;">💡 New Product Ideas for Kerala Market
+            <span style="font-size:9px;background:rgba(108,63,197,0.12);color:var(--river-light);padding:2px 8px;border-radius:8px;font-weight:700;border:1px solid rgba(108,63,197,0.2);">AI Suggested</span>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-            <div style="background:rgba(0,0,0,0.15);border-radius:12px;padding:12px;">
-              <div style="font-size:9px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;">Issue Date</div>
-              <div style="font-size:13px;font-weight:700;">15 Jan 2026</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="background:rgba(45,138,78,0.06);border:1px solid rgba(45,138,78,0.18);border-radius:14px;padding:12px;">
+              <div style="display:flex;align-items:flex-start;gap:10px;">
+                <div style="width:36px;height:36px;border-radius:10px;background:rgba(45,138,78,0.12);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🧴</div>
+                <div style="flex:1;">
+                  <div style="font-size:12px;font-weight:800;margin-bottom:3px;">Surf Excel Coconut Variant — Kerala Edition</div>
+                  <div style="font-size:11px;color:var(--muted);line-height:1.5;">Localized coconut-fragrance detergent. Kerala consumers show 3.2x preference for coconut-scented products. Estimated ₹12L/yr revenue opportunity in Calicut cluster alone.</div>
+                  <div style="display:flex;gap:6px;margin-top:8px;">
+                    <span class="badge badge-green" style="font-size:9px;">High Potential</span>
+                    <span style="font-size:10px;color:var(--muted);align-self:center;">Est. ROI: 340%</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div style="background:rgba(0,0,0,0.15);border-radius:12px;padding:12px;">
-              <div style="font-size:9px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;">Expiry Date</div>
-              <div style="font-size:13px;font-weight:700;color:var(--amber);">14 Jan 2027</div>
+            <div style="background:rgba(0,82,204,0.05);border:1px solid rgba(0,82,204,0.15);border-radius:14px;padding:12px;">
+              <div style="display:flex;align-items:flex-start;gap:10px;">
+                <div style="width:36px;height:36px;border-radius:10px;background:rgba(0,82,204,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🍵</div>
+                <div style="flex:1;">
+                  <div style="font-size:12px;font-weight:800;margin-bottom:3px;">Brooke Bond Masala Chai — Kerala Spice Blend</div>
+                  <div style="font-size:11px;color:var(--muted);line-height:1.5;">Premium chai with Kerala cardamom & ginger. Kerala is India's 4th largest tea market. Competitor Wagh Bakri holds 28% here — a flanker SKU can capture 8–12% share.</div>
+                  <div style="display:flex;gap:6px;margin-top:8px;">
+                    <span class="badge badge-blue" style="font-size:9px;">Medium Term</span>
+                    <span style="font-size:10px;color:var(--muted);align-self:center;">Est. ROI: 210%</span>
+                  </div>
+                </div>
+              </div>
             </div>
+            <div style="background:rgba(184,120,26,0.05);border:1px solid rgba(184,120,26,0.18);border-radius:14px;padding:12px;">
+              <div style="display:flex;align-items:flex-start;gap:10px;">
+                <div style="width:36px;height:36px;border-radius:10px;background:rgba(184,120,26,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🧴</div>
+                <div style="flex:1;">
+                  <div style="font-size:12px;font-weight:800;margin-bottom:3px;">Dove Ayurvedic Moisturiser — South India SKU</div>
+                  <div style="font-size:11px;color:var(--muted);line-height:1.5;">Dove + Ayurvedic positioning. Kerala Ayurveda tourism drives awareness. Premium moisturiser ₹220 price point. Competing with Himalaya & Forest Essentials in the ₹150–300 segment.</div>
+                  <div style="display:flex;gap:6px;margin-top:8px;">
+                    <span class="badge badge-amber" style="font-size:9px;">Explore</span>
+                    <span style="font-size:10px;color:var(--muted);align-self:center;">Est. ROI: 180%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:12px;">
+            <button onclick="showToast('📤','New product ideas submitted to HUL R&D team for review!')" style="flex:1;padding:10px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--river),var(--river-mid));color:white;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;">Submit to R&amp;D</button>
+            <button onclick="showToast('📊','Generating full market opportunity report for Kerala...')" style="flex:1;padding:10px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--text);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;">Market Report</button>
           </div>
         </div>
+
+        <!-- Account Details & Team -->
         <div class="card">
-          <div class="section-title">License Details</div>
-          <div class="order-item-row"><span style="color:var(--muted)">Business Name</span><span style="font-weight:600">Nihal Farms</span></div>
-          <div class="order-item-row"><span style="color:var(--muted)">License Type</span><span style="font-weight:600">Basic Registration</span></div>
-          <div class="order-item-row"><span style="color:var(--muted)">Category</span><span style="font-weight:600">Food Retailer</span></div>
-          <div class="order-item-row"><span style="color:var(--muted)">State</span><span style="font-weight:600">Kerala</span></div>
-          <div class="order-item-row"><span style="color:var(--muted)">Address</span><span style="font-weight:600;text-align:right;max-width:55%;">SM Street, Mavoor Road, Calicut – 673001</span></div>
+          <div class="section-title" style="margin-bottom:12px;">👤 Account Details</div>
+          <div class="order-item-row"><span style="color:var(--muted)">Company</span><span style="font-weight:700;">Hindustan Unilever Ltd.</span></div>
+          <div class="order-item-row"><span style="color:var(--muted)">Region Manager</span><span style="font-weight:700;">Pradeep R. Nair</span></div>
+          <div class="order-item-row"><span style="color:var(--muted)">Email</span><span style="color:var(--river-light);font-weight:600;">pradeep.nair@hul.co.in</span></div>
+          <div class="order-item-row"><span style="color:var(--muted)">Region</span><span style="font-weight:600;">Kerala · South India</span></div>
+          <div class="order-item-row"><span style="color:var(--muted)">RIVULET ID</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--river-light);">HUL-KL-2024-001</span></div>
+          <div class="order-item-row" style="border:none;"><span style="color:var(--muted)">Member Since</span><span style="font-weight:600;">January 2024</span></div>
         </div>
-        <div class="card">
-          <div class="section-title">Permitted Food Categories</div>
-          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:4px;">
-            <span class="badge badge-green">🥥 Coconut Products</span>
-            <span class="badge badge-blue">🌾 Grains &amp; Cereals</span>
-            <span class="badge badge-amber">🌶️ Spices &amp; Condiments</span>
-            <span class="badge badge-green">🍌 Processed Snacks</span>
-            <span class="badge badge-blue">🌿 Herbs &amp; Dry Goods</span>
+
+        <!-- Support & Billing -->
+        <div class="card" style="margin-bottom:14px;">
+          <div class="section-title" style="margin-bottom:12px;">⚙️ Quick Actions</div>
+          <div class="setting-row" onclick="showToast('📧','Your dedicated account manager Vikram has been notified. Response within 2 hrs.')">
+            <div class="setting-left">
+              <span class="setting-icon" style="background:rgba(45,138,78,0.1);border-radius:10px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--leaf-light)" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.64 19.79 19.79 0 01.06 1.12 2 2 0 012 .06h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.96v1.96z"/></svg>
+              </span>
+              <div><div class="setting-name">Contact Account Manager</div><div style="font-size:10px;color:var(--muted);">Vikram S. · Available Mon–Sat, 9AM–6PM</div></div>
+            </div>
+            <span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg></span>
+          </div>
+          <div class="setting-row" onclick="showToast('💳','Invoice for April 2026 — ₹4,000. Paid via NEFT on Apr 1, 2026.')">
+            <div class="setting-left">
+              <span class="setting-icon" style="background:rgba(108,63,197,0.1);border-radius:10px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--river-light)" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+              </span>
+              <div><div class="setting-name">Billing & Invoices</div><div style="font-size:10px;color:var(--muted);">Next invoice: ₹4,000 · May 1, 2026</div></div>
+            </div>
+            <span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg></span>
+          </div>
+          <div class="setting-row" onclick="showToast('🔑','API credentials sent to pradeep.nair@hul.co.in')" style="cursor:pointer;">
+            <div class="setting-left">
+              <span class="setting-icon" style="background:rgba(184,120,26,0.1);border-radius:10px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+              </span>
+              <div><div class="setting-name">API Keys & Integration</div><div style="font-size:10px;color:var(--muted);">SAP · Salesforce · Export to Excel</div></div>
+            </div>
+            <span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg></span>
+          </div>
+          <div class="setting-row" style="border:none;" onclick="doLogout()">
+            <div class="setting-left">
+              <span class="setting-icon" style="background:rgba(192,57,43,0.08);border-radius:10px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="2" stroke-linecap="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              </span>
+              <div><div class="setting-name" style="color:var(--coral);">Sign Out</div><div style="font-size:10px;color:var(--muted);">pradeep.nair@hul.co.in</div></div>
+            </div>
+            <span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg></span>
           </div>
         </div>
-        <div style="background:rgba(232,160,32,0.1);border:1px solid rgba(232,160,32,0.3);border-radius:16px;padding:16px;margin-bottom:12px;display:flex;gap:12px;align-items:flex-start;">
-          <div style="font-size:22px;">⏰</div>
-          <div>
-            <div style="font-size:13px;font-weight:700;margin-bottom:3px;">Renewal Due in 9 months</div>
-            <div style="font-size:11px;color:var(--muted);line-height:1.5;">Your FSSAI license expires on 14 Jan 2027. RIVULET will remind you 30 days before expiry.</div>
-          </div>
-        </div>
-        <button class="login-btn" onclick="showToast('📄','FSSAI certificate downloaded!')">⬇️ Download Certificate</button>
-        <button class="login-btn" onclick="showToast('🔄','Renewal request submitted to FSSAI portal')" style="margin-top:10px;background:transparent;border:1px solid rgba(72,196,100,0.3);color:var(--leaf-light);">🔄 Apply for Renewal</button>
+
       </div>
     </div>
 
+    <!-- ══ END BRAND DASHBOARD ══ -->
     <!-- ══ REGISTER PAGE ══ -->
     <div class="page hidden auth-scroll" id="register">
       <div class="auth-inner">
@@ -4904,11 +5079,11 @@ function doDailyCheckIn(el){doCheckIn(2);}
       </div>
       <div class="search-recent">Recent Searches</div>
       <div>
-        <span class="search-chip" onclick="fillSearch('Coconut Oil')">🥥 Coconut Oil</span>
-        <span class="search-chip" onclick="fillSearch('Red Rice')">🌾 Red Rice</span>
+        <span class="search-chip" onclick="fillSearch('Coconut Oil')">🧴 Surf Excel</span>
+        <span class="search-chip" onclick="fillSearch('Red Rice')">🧴 Dove Body</span>
         <span class="search-chip" onclick="fillSearch('City Mall')">City Mall</span>
-        <span class="search-chip" onclick="fillSearch('Spices')">🌶️ Spices</span>
-        <span class="search-chip" onclick="fillSearch('Banana Chips')">🍌 Banana Chips</span>
+        <span class="search-chip" onclick="fillSearch('Spices')">🧼 Lifebuoys</span>
+        <span class="search-chip" onclick="fillSearch('Brooke Bond Red Label')">🍌 Brooke Bond Red Label</span>
       </div>
       <div id="searchResults" style="margin-top:16px;"></div>
     </div>
@@ -5054,7 +5229,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
     <div class="page hidden" id="chat-page">
       <div class="page-header" style="display:flex;align-items:center;gap:12px;">
         <div class="back-btn" style="display:inline-flex;margin-bottom:0;" onclick="history.back ? goTo('customer-home') : goTo('customer-home')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div>
-        <div class="chat-header-ava">🌾</div>
+        <div class="chat-header-ava">🫧</div>
         <div>
           <div class="page-title" style="font-size:16px;">Nihal Farms</div>
           <div style="font-size:10px;color:var(--leaf-light);">● Online</div>
@@ -5095,7 +5270,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
         <div id="scanResult" style="margin-top:14px;"></div>
         <div class="card" style="margin-top:14px;">
           <div class="section-title">Recent Scans</div>
-          <div class="order-item-row"><div><div class="order-name">Coconut Oil 1L</div><div class="order-meta">Nihal Farms · Scanned 2 mins ago</div></div><div class="order-amount">₹180</div></div>
+          <div class="order-item-row"><div><div class="order-name">Surf Excel Liquid 1L</div><div class="order-meta">Nihal Farms · Scanned 2 mins ago</div></div><div class="order-amount">₹180</div></div>
         </div>
       </div>
     </div>
@@ -5315,7 +5490,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
                   </div>
                   <span class="badge badge-amber">New</span>
                 </div>
-                <div style="font-size:11px;color:var(--text);margin-bottom:4px;">📦 Coconut Oil ×5, Banana Chips ×12</div>
+                <div style="font-size:11px;color:var(--text);margin-bottom:4px;">📦 Coconut Oil ×5, Brooke Bond Red Label ×12</div>
                 <div style="font-size:11px;color:var(--muted);margin-bottom:10px;">👤 Customer: Arjun K. · 📍 Beach Road, Calicut · 💳 UPI Paid</div>
                 <div style="display:flex;gap:8px;">
                   <button onclick="showToast('✅','Order ORD-2026-1024 accepted!')" style="flex:1;padding:9px;border-radius:10px;border:none;background:var(--leaf);color:white;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;">✅ Accept</button>
@@ -5330,7 +5505,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
                   </div>
                   <span class="badge badge-amber">New</span>
                 </div>
-                <div style="font-size:11px;color:var(--text);margin-bottom:4px;">📦 Kerala Spice Mix ×8</div>
+                <div style="font-size:11px;color:var(--text);margin-bottom:4px;">📦 Lifebuoy Handwash ×8</div>
                 <div style="font-size:11px;color:var(--muted);margin-bottom:10px;">👤 Customer: Meera S. · 📍 City Mall, Calicut · 💳 COD</div>
                 <div style="display:flex;gap:8px;">
                   <button onclick="showToast('✅','Order ORD-2026-1031 accepted!')" style="flex:1;padding:9px;border-radius:10px;border:none;background:var(--leaf);color:white;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;">✅ Accept</button>
@@ -5347,7 +5522,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <div class="section-title">Ongoing Deliveries <span>2 active</span></div>
             <div class="delivery-card">
               <div class="del-header"><div class="del-icon">🚴</div><div style="flex:1"><div class="del-id">DEL-2026-0847</div><div class="del-route">Nihal Farm → SM Street</div></div><span class="badge badge-amber">Moving</span></div>
-              <div style="font-size:11px;color:var(--muted);margin-bottom:6px;">📦 Coconut Oil ×5 · Banana Chips ×12</div>
+              <div style="font-size:11px;color:var(--muted);margin-bottom:6px;">📦 Coconut Oil ×5 · Brooke Bond Red Label ×12</div>
               <div style="font-size:11px;color:var(--text);margin-bottom:6px;">👤 Arjun K. · 📍 Beach Road · 💳 UPI Paid · ₹120</div>
               <div class="del-progress"><div class="del-fill" style="width:70%"></div></div>
               <div class="del-footer"><span style="font-size:11px;color:var(--muted)">70% · ETA 8 min</span><button onclick="showToast('✅','Marked as delivered!')" style="padding:6px 14px;border-radius:8px;border:none;background:var(--leaf);color:white;font-size:10px;font-weight:700;cursor:pointer;">Mark Delivered</button></div>
@@ -5397,543 +5572,6 @@ function doDailyCheckIn(el){doCheckIn(2);}
 
     </div><!-- /screen-wrap -->
 
-    <!-- ══════════════════════════════════════════════
-         BRAND / ANALYTICS DASHBOARD — FMCG PRO PLAN
-    ══════════════════════════════════════════════ -->
-
-    <!-- ══ BRAND HOME ══ -->
-    <div class="page hidden" id="brand-home">
-      <div class="page-header" style="background:linear-gradient(135deg,rgba(184,120,26,0.12),rgba(250,246,240,0.97));border-bottom:1px solid rgba(184,120,26,0.22);">
-        <div style="display:flex;justify-content:space-between;align-items:center;">
-          <div>
-            <div style="font-size:10px;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:2px;">⭐ PRO · ₹5,000/month</div>
-            <div style="font-family:'Outfit',sans-serif;font-size:20px;font-weight:900;background:linear-gradient(135deg,#7a4500,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">KeralaFood Co.</div>
-            <div style="font-size:11px;color:var(--muted);margin-top:2px;"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--leaf-light);margin-right:4px;vertical-align:middle;box-shadow:0 0 6px var(--leaf-light);"></span>Live data · RIVULET Network</div>
-          </div>
-          <div style="display:flex;gap:8px;align-items:center;">
-            <div style="text-align:right;">
-              <div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;">Plan</div>
-              <div style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:800;color:var(--gold);">FMCG Pro</div>
-            </div>
-            <div style="width:40px;height:40px;border-radius:14px;background:linear-gradient(135deg,var(--gold),var(--amber));display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 4px 16px rgba(184,120,26,0.35);">🌾</div>
-          </div>
-        </div>
-      </div>
-      <div class="content" style="padding-top:12px;">
-
-        <!-- Revenue Hero Card -->
-        <div style="background:linear-gradient(135deg,#7a4500 0%,#b8781a 45%,#d4a03c 100%);border-radius:22px;padding:22px 20px;margin-bottom:14px;position:relative;overflow:hidden;box-shadow:0 12px 40px rgba(184,120,26,0.35);">
-          <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.06);pointer-events:none;"></div>
-          <div style="position:absolute;bottom:-20px;left:-20px;width:90px;height:90px;border-radius:50%;background:rgba(255,255,255,0.04);pointer-events:none;"></div>
-          <div style="font-size:10px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-weight:700;">Total Revenue (April 2026)</div>
-          <div style="font-family:'Outfit',sans-serif;font-size:38px;font-weight:900;color:white;letter-spacing:-1px;line-height:1;">₹5,82,400</div>
-          <div style="display:flex;align-items:center;gap:6px;margin-top:6px;">
-            <span style="background:rgba(255,255,255,0.18);color:white;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;">↑ +18.4% vs March</span>
-            <span style="font-size:11px;color:rgba(255,255,255,0.55);">across 3 stores</span>
-          </div>
-          <!-- Mini bar chart -->
-          <div style="display:flex;align-items:flex-end;gap:4px;margin-top:16px;height:36px;">
-            <div style="flex:1;background:rgba(255,255,255,0.2);border-radius:3px;height:55%;"></div>
-            <div style="flex:1;background:rgba(255,255,255,0.2);border-radius:3px;height:70%;"></div>
-            <div style="flex:1;background:rgba(255,255,255,0.2);border-radius:3px;height:62%;"></div>
-            <div style="flex:1;background:rgba(255,255,255,0.2);border-radius:3px;height:88%;"></div>
-            <div style="flex:1;background:rgba(255,255,255,0.2);border-radius:3px;height:74%;"></div>
-            <div style="flex:1;background:rgba(255,255,255,0.2);border-radius:3px;height:93%;"></div>
-            <div style="flex:1;background:rgba(255,255,255,0.35);border-radius:3px;height:100%;box-shadow:0 0 8px rgba(255,255,255,0.3);"></div>
-          </div>
-          <div style="display:flex;justify-content:space-between;font-size:8px;color:rgba(255,255,255,0.4);margin-top:4px;"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Today</span></div>
-        </div>
-
-        <!-- KPI row -->
-        <div class="kpi-row" style="margin-bottom:14px;">
-          <div class="kpi" style="border-color:rgba(184,120,26,0.22);">
-            <div class="kpi-label">Units Sold</div>
-            <div class="kpi-val" style="color:var(--gold);" data-count="3842">3,842</div>
-            <div class="kpi-change up">↑ 12% this week</div>
-          </div>
-          <div class="kpi" style="border-color:rgba(45,138,78,0.22);">
-            <div class="kpi-label">Active SKUs</div>
-            <div class="kpi-val" style="color:var(--leaf-light);" data-count="24">24</div>
-            <div class="kpi-change neutral">across 3 stores</div>
-          </div>
-          <div class="kpi" style="border-color:rgba(108,63,197,0.22);">
-            <div class="kpi-label">Shelf Fill Rate</div>
-            <div class="kpi-val" style="color:var(--river-light);" data-count="91">91%</div>
-            <div class="kpi-change up">↑ 4% vs last wk</div>
-          </div>
-          <div class="kpi" style="border-color:rgba(192,57,43,0.18);">
-            <div class="kpi-label">Out of Stock</div>
-            <div class="kpi-val" style="color:var(--coral);" data-count="3">3</div>
-            <div class="kpi-change down">↓ needs restock</div>
-          </div>
-        </div>
-
-        <!-- AI Insight Banner -->
-        <div onclick="navTo(4)" style="background:linear-gradient(135deg,rgba(108,63,197,0.1),rgba(108,63,197,0.04));border:1px solid rgba(108,63,197,0.2);border-radius:18px;padding:16px;margin-bottom:14px;cursor:pointer;display:flex;align-items:center;gap:14px;">
-          <div style="width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--river),var(--river-light));display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;box-shadow:0 4px 14px rgba(108,63,197,0.3);">✨</div>
-          <div style="flex:1;">
-            <div style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:800;color:var(--river);">Jiya AI has 3 new insights</div>
-            <div style="font-size:11px;color:var(--muted);margin-top:2px;">Coconut Oil demand spike detected in SM Street</div>
-          </div>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--river-light)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-        </div>
-
-        <!-- Top Performing SKUs -->
-        <div class="card">
-          <div class="section-title">🔥 Top SKUs This Week <span onclick="navTo(3)">All SKUs →</span></div>
-          <div class="order-item-row">
-            <div style="display:flex;align-items:center;gap:10px;flex:1;">
-              <div style="width:36px;height:36px;border-radius:10px;background:rgba(184,120,26,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;">🥥</div>
-              <div><div class="order-name">Coconut Oil 1L</div><div class="order-meta">SKU: KF-001 · SM Street</div></div>
-            </div>
-            <div style="text-align:right;"><div class="order-amount">₹1,26,000</div><span class="badge badge-green">↑ 22%</span></div>
-          </div>
-          <div class="order-item-row">
-            <div style="display:flex;align-items:center;gap:10px;flex:1;">
-              <div style="width:36px;height:36px;border-radius:10px;background:rgba(45,138,78,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;">🌾</div>
-              <div><div class="order-name">Red Rice 5kg</div><div class="order-meta">SKU: KF-002 · City Mall</div></div>
-            </div>
-            <div style="text-align:right;"><div class="order-amount">₹98,400</div><span class="badge badge-blue">↑ 8%</span></div>
-          </div>
-          <div class="order-item-row" style="border:none;">
-            <div style="display:flex;align-items:center;gap:10px;flex:1;">
-              <div style="width:36px;height:36px;border-radius:10px;background:rgba(192,57,43,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;">🌶️</div>
-              <div><div class="order-name">Kerala Spice Mix 250g</div><div class="order-meta">SKU: KF-004 · All Stores</div></div>
-            </div>
-            <div style="text-align:right;"><div class="order-amount">₹84,750</div><span class="badge badge-amber">↑ 15%</span></div>
-          </div>
-        </div>
-
-        <!-- Quick Actions -->
-        <div class="card" style="margin-bottom:12px;">
-          <div class="section-title">Quick Actions</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-            <button onclick="navTo(1)" style="padding:14px 10px;border-radius:14px;border:1px solid rgba(184,120,26,0.2);background:rgba(184,120,26,0.06);color:var(--gold);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-              Sales Trends
-            </button>
-            <button onclick="navTo(2)" style="padding:14px 10px;border-radius:14px;border:1px solid rgba(108,63,197,0.2);background:rgba(108,63,197,0.06);color:var(--river-light);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l1-4h16l1 4"/><path d="M5 9v11h14V9"/></svg>
-              Store Performance
-            </button>
-            <button onclick="showToast('📊','Downloading brand report PDF…')" style="padding:14px 10px;border-radius:14px;border:1px solid rgba(45,138,78,0.2);background:rgba(45,138,78,0.06);color:var(--leaf-light);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Export Report
-            </button>
-            <button onclick="navTo(4)" style="padding:14px 10px;border-radius:14px;border:1px solid rgba(184,120,26,0.2);background:linear-gradient(135deg,rgba(108,63,197,0.08),rgba(184,120,26,0.06));color:var(--river);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;">
-              <span style="font-size:16px;">✨</span>
-              AI Insights
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ══ BRAND SALES ══ -->
-    <div class="page hidden" id="brand-sales">
-      <div class="page-header">
-        <div class="page-title">📈 Sales Trends</div>
-        <div class="page-sub">April 2026 · KeralaFood Co.</div>
-      </div>
-      <div class="content">
-
-        <!-- Period selector -->
-        <div style="display:flex;gap:6px;margin-bottom:16px;background:rgba(255,252,244,0.9);padding:4px;border-radius:14px;border:1px solid var(--border);">
-          <button id="bst-week" onclick="switchBrandPeriod('week',this)" style="flex:1;padding:9px 6px;border-radius:10px;border:none;background:var(--gold);color:white;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;cursor:pointer;">Week</button>
-          <button id="bst-month" onclick="switchBrandPeriod('month',this)" style="flex:1;padding:9px 6px;border-radius:10px;border:none;background:none;color:var(--muted);font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;cursor:pointer;">Month</button>
-          <button id="bst-quarter" onclick="switchBrandPeriod('quarter',this)" style="flex:1;padding:9px 6px;border-radius:10px;border:none;background:none;color:var(--muted);font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;cursor:pointer;">Quarter</button>
-        </div>
-
-        <!-- Revenue Trend Chart -->
-        <div class="card">
-          <div class="section-title">Revenue Trend</div>
-          <div style="display:flex;align-items:flex-end;gap:5px;height:120px;margin-bottom:8px;" id="brandSalesChart">
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;">
-              <div style="font-size:8px;color:var(--muted);margin-bottom:2px;">58k</div>
-              <div style="width:100%;border-radius:5px 5px 0 0;background:linear-gradient(to top,var(--gold),#f5c842);height:58%;"></div>
-              <div style="font-size:8px;color:var(--muted);margin-top:3px;">Mon</div>
-            </div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;">
-              <div style="font-size:8px;color:var(--muted);margin-bottom:2px;">72k</div>
-              <div style="width:100%;border-radius:5px 5px 0 0;background:linear-gradient(to top,var(--gold),#f5c842);height:72%;"></div>
-              <div style="font-size:8px;color:var(--muted);margin-top:3px;">Tue</div>
-            </div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;">
-              <div style="font-size:8px;color:var(--muted);margin-bottom:2px;">65k</div>
-              <div style="width:100%;border-radius:5px 5px 0 0;background:linear-gradient(to top,var(--gold),#f5c842);height:65%;"></div>
-              <div style="font-size:8px;color:var(--muted);margin-top:3px;">Wed</div>
-            </div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;">
-              <div style="font-size:8px;color:var(--muted);margin-bottom:2px;">89k</div>
-              <div style="width:100%;border-radius:5px 5px 0 0;background:linear-gradient(to top,var(--gold),#f5c842);height:89%;"></div>
-              <div style="font-size:8px;color:var(--muted);margin-top:3px;">Thu</div>
-            </div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;">
-              <div style="font-size:8px;color:var(--muted);margin-bottom:2px;">96k</div>
-              <div style="width:100%;border-radius:5px 5px 0 0;background:linear-gradient(to top,var(--amber),#ffcc44);height:96%;box-shadow:0 0 10px rgba(184,120,26,0.4);"></div>
-              <div style="font-size:8px;color:var(--gold);margin-top:3px;font-weight:700;">Fri⚡</div>
-            </div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;">
-              <div style="font-size:8px;color:var(--muted);margin-bottom:2px;">82k</div>
-              <div style="width:100%;border-radius:5px 5px 0 0;background:linear-gradient(to top,var(--gold),#f5c842);height:82%;"></div>
-              <div style="font-size:8px;color:var(--muted);margin-top:3px;">Sat</div>
-            </div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;">
-              <div style="font-size:8px;color:var(--muted);margin-bottom:2px;">78k</div>
-              <div style="width:100%;border-radius:5px 5px 0 0;background:rgba(184,120,26,0.3);border:1px dashed var(--gold);height:78%;"></div>
-              <div style="font-size:8px;color:var(--muted);margin-top:3px;">Sun</div>
-            </div>
-          </div>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;">
-            <span style="font-size:11px;color:var(--muted);">Peak: <strong style="color:var(--gold);">Friday ₹96k</strong></span>
-            <span style="font-size:11px;color:var(--muted);">Avg daily: <strong style="color:var(--text);">₹77k</strong></span>
-          </div>
-        </div>
-
-        <!-- Category Split -->
-        <div class="card">
-          <div class="section-title">Category Split</div>
-          <div class="donut-section">
-            <div class="donut" style="background:conic-gradient(var(--gold) 0% 38%,var(--leaf-light) 38% 62%,var(--river-light) 62% 78%,var(--coral) 78% 100%);">
-              <div class="donut-center" style="font-size:11px;color:var(--text);">₹5.8L</div>
-            </div>
-            <div class="donut-labels">
-              <div class="donut-item"><div class="donut-dot" style="background:var(--gold)"></div>Coconut Products 38%</div>
-              <div class="donut-item"><div class="donut-dot" style="background:var(--leaf-light)"></div>Grains & Rice 24%</div>
-              <div class="donut-item"><div class="donut-dot" style="background:var(--river-light)"></div>Spices 16%</div>
-              <div class="donut-item"><div class="donut-dot" style="background:var(--coral)"></div>Snacks 22%</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Month-over-Month -->
-        <div class="card">
-          <div class="section-title">Month-over-Month</div>
-          <div class="order-item-row"><span style="color:var(--muted)">Jan 2026</span><div style="display:flex;align-items:center;gap:8px;"><div style="width:80px;height:6px;background:rgba(175,145,105,0.15);border-radius:3px;"><div style="width:60%;height:100%;background:var(--gold);border-radius:3px;"></div></div><span style="font-weight:700;">₹3.5L</span></div></div>
-          <div class="order-item-row"><span style="color:var(--muted)">Feb 2026</span><div style="display:flex;align-items:center;gap:8px;"><div style="width:80px;height:6px;background:rgba(175,145,105,0.15);border-radius:3px;"><div style="width:72%;height:100%;background:var(--gold);border-radius:3px;"></div></div><span style="font-weight:700;">₹4.2L</span></div></div>
-          <div class="order-item-row"><span style="color:var(--muted)">Mar 2026</span><div style="display:flex;align-items:center;gap:8px;"><div style="width:80px;height:6px;background:rgba(175,145,105,0.15);border-radius:3px;"><div style="width:84%;height:100%;background:var(--gold);border-radius:3px;"></div></div><span style="font-weight:700;">₹4.9L</span></div></div>
-          <div class="order-item-row" style="border:none;"><span style="color:var(--gold);font-weight:700;">Apr 2026 ↑</span><div style="display:flex;align-items:center;gap:8px;"><div style="width:80px;height:6px;background:rgba(175,145,105,0.15);border-radius:3px;"><div style="width:100%;height:100%;background:linear-gradient(90deg,var(--gold),#f5c842);border-radius:3px;box-shadow:0 0 6px rgba(184,120,26,0.4);"></div></div><span style="font-weight:800;color:var(--gold);">₹5.8L</span></div></div>
-        </div>
-
-        <!-- Demand Insights -->
-        <div class="card">
-          <div class="section-title">📡 Demand Insights</div>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="background:rgba(45,138,78,0.06);border:1px solid rgba(45,138,78,0.18);border-radius:12px;padding:12px;display:flex;align-items:center;gap:10px;">
-              <span style="font-size:20px;">📈</span>
-              <div style="flex:1;"><div style="font-size:12px;font-weight:700;">Coconut Oil demand up 22%</div><div style="font-size:10px;color:var(--muted);">Easter season + health trend driving demand</div></div>
-              <span class="badge badge-green">High</span>
-            </div>
-            <div style="background:rgba(232,160,32,0.06);border:1px solid rgba(232,160,32,0.18);border-radius:12px;padding:12px;display:flex;align-items:center;gap:10px;">
-              <span style="font-size:20px;">⚠️</span>
-              <div style="flex:1;"><div style="font-size:12px;font-weight:700;">Banana Chips slow at City Mall</div><div style="font-size:10px;color:var(--muted);">Competitor pricing pressure · Consider promotion</div></div>
-              <span class="badge badge-amber">Watch</span>
-            </div>
-            <div style="background:rgba(108,63,197,0.06);border:1px solid rgba(108,63,197,0.15);border-radius:12px;padding:12px;display:flex;align-items:center;gap:10px;">
-              <span style="font-size:20px;">🌾</span>
-              <div style="flex:1;"><div style="font-size:12px;font-weight:700;">Red Rice stockout risk in 4 days</div><div style="font-size:10px;color:var(--muted);">Reorder now to avoid shelf gap</div></div>
-              <span class="badge badge-red">Alert</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ══ BRAND STORES ══ -->
-    <div class="page hidden" id="brand-stores">
-      <div class="page-header">
-        <div class="page-title">🏬 Store Performance</div>
-        <div class="page-sub">3 RIVULET locations · Live</div>
-      </div>
-      <div class="content">
-
-        <!-- SM Street -->
-        <div style="background:linear-gradient(135deg,rgba(184,120,26,0.1),rgba(184,120,26,0.03));border:1px solid rgba(184,120,26,0.22);border-radius:20px;padding:18px;margin-bottom:12px;">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">
-            <div style="display:flex;align-items:center;gap:12px;">
-              <div style="width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--gold),var(--amber));display:flex;align-items:center;justify-content:center;font-size:22px;">🏬</div>
-              <div>
-                <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:800;">SM Street Calicut</div>
-                <div style="font-size:11px;color:var(--muted);">Mavoor Road · Space A1 + B2</div>
-              </div>
-            </div>
-            <span class="badge badge-green">Best</span>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px;">
-            <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;color:var(--gold);">₹2.1L</div><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;">Revenue</div></div>
-            <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;color:var(--leaf-light);">1,842</div><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;">Units Sold</div></div>
-            <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;color:var(--river-light);">94%</div><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;">Shelf Fill</div></div>
-          </div>
-          <div class="progress-bar"><div class="progress-fill" style="width:78%;background:linear-gradient(90deg,var(--gold),#f5c842);"></div></div>
-          <div class="progress-label"><span>78% of monthly target</span><span style="color:var(--gold);">₹2.7L target</span></div>
-          <div style="margin-top:12px;display:flex;gap:8px;">
-            <button onclick="showToast('📊','SM Street detailed report loading…')" style="flex:1;padding:9px;border-radius:10px;border:none;background:rgba(184,120,26,0.12);color:var(--gold);font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;cursor:pointer;">View Details</button>
-            <button onclick="showToast('🌾','Restocking request sent to SM Street seller')" style="flex:1;padding:9px;border-radius:10px;border:none;background:var(--gold);color:white;font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;cursor:pointer;">Restock →</button>
-          </div>
-        </div>
-
-        <!-- More Supermarket -->
-        <div style="background:linear-gradient(135deg,rgba(108,63,197,0.08),rgba(108,63,197,0.02));border:1px solid rgba(108,63,197,0.18);border-radius:20px;padding:18px;margin-bottom:12px;">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">
-            <div style="display:flex;align-items:center;gap:12px;">
-              <div style="width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--river),var(--river-mid));display:flex;align-items:center;justify-content:center;font-size:22px;">🛒</div>
-              <div>
-                <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:800;">More Supermarket</div>
-                <div style="font-size:11px;color:var(--muted);">SM Street Area · Space C1</div>
-              </div>
-            </div>
-            <span class="badge badge-blue">Growing</span>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px;">
-            <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;color:var(--river-light);">₹1.9L</div><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;">Revenue</div></div>
-            <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;color:var(--leaf-light);">1,248</div><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;">Units Sold</div></div>
-            <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;color:var(--amber);">87%</div><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;">Shelf Fill</div></div>
-          </div>
-          <div class="progress-bar"><div class="progress-fill" style="width:63%;"></div></div>
-          <div class="progress-label"><span>63% of monthly target</span><span style="color:var(--river-light);">₹3.0L target</span></div>
-          <div style="margin-top:12px;display:flex;gap:8px;">
-            <button onclick="showToast('📊','More Supermarket report loading…')" style="flex:1;padding:9px;border-radius:10px;border:none;background:rgba(108,63,197,0.1);color:var(--river);font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;cursor:pointer;">View Details</button>
-            <button onclick="showToast('📣','Promo request sent for More Supermarket!')" style="flex:1;padding:9px;border-radius:10px;border:none;background:var(--river);color:white;font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;cursor:pointer;">Run Promo →</button>
-          </div>
-        </div>
-
-        <!-- City Mall -->
-        <div style="background:linear-gradient(135deg,rgba(45,138,78,0.08),rgba(45,138,78,0.02));border:1px solid rgba(45,138,78,0.18);border-radius:20px;padding:18px;margin-bottom:12px;">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">
-            <div style="display:flex;align-items:center;gap:12px;">
-              <div style="width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--leaf),var(--leaf-light));display:flex;align-items:center;justify-content:center;font-size:22px;">🏪</div>
-              <div>
-                <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:800;">City Mall</div>
-                <div style="font-size:11px;color:var(--muted);">Calicut Centre · Space D2 + D4</div>
-              </div>
-            </div>
-            <span class="badge badge-amber">Needs Boost</span>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px;">
-            <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;color:var(--leaf-light);">₹1.82L</div><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;">Revenue</div></div>
-            <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;color:var(--leaf-light);">752</div><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;">Units Sold</div></div>
-            <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;color:var(--coral);">79%</div><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;">Shelf Fill</div></div>
-          </div>
-          <div class="progress-bar"><div class="progress-fill" style="width:51%;background:linear-gradient(90deg,var(--leaf),var(--leaf-light));"></div></div>
-          <div class="progress-label"><span>51% of monthly target</span><span style="color:var(--leaf-light);">₹3.6L target</span></div>
-          <div style="margin-top:12px;display:flex;gap:8px;">
-            <button onclick="showToast('📊','City Mall report loading…')" style="flex:1;padding:9px;border-radius:10px;border:none;background:rgba(45,138,78,0.1);color:var(--leaf-light);font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;cursor:pointer;">View Details</button>
-            <button onclick="showToast('⚡','Flash deal activated for City Mall!')" style="flex:1;padding:9px;border-radius:10px;border:none;background:var(--leaf);color:white;font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;cursor:pointer;">Flash Deal →</button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ══ BRAND PRODUCTS (SKUs) ══ -->
-    <div class="page hidden" id="brand-products">
-      <div class="page-header">
-        <div class="page-title">📦 SKU Performance</div>
-        <div class="page-sub">24 active products · April 2026</div>
-      </div>
-      <div class="content">
-        <!-- Filter tabs -->
-        <div style="display:flex;gap:6px;overflow-x:auto;margin-bottom:14px;padding-bottom:2px;">
-          <div onclick="filterBrandSKU('all',this)" style="padding:7px 14px;border-radius:20px;background:var(--gold);color:white;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;">All SKUs</div>
-          <div onclick="filterBrandSKU('top',this)" style="padding:7px 14px;border-radius:20px;border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;">🔥 Top</div>
-          <div onclick="filterBrandSKU('risk',this)" style="padding:7px 14px;border-radius:20px;border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;">⚠️ At Risk</div>
-          <div onclick="filterBrandSKU('oos',this)" style="padding:7px 14px;border-radius:20px;border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;">🔴 OOS</div>
-        </div>
-
-        <div id="brandSKUList">
-          <!-- SKU Cards -->
-          <div class="card" style="padding:14px;margin-bottom:10px;">
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
-              <div style="width:44px;height:44px;border-radius:12px;background:rgba(184,120,26,0.12);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">🥥</div>
-              <div style="flex:1;">
-                <div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;">Coconut Oil 1L</div>
-                <div style="font-size:10px;color:var(--muted);">KF-001 · Cold Pressed · ₹180/unit</div>
-              </div>
-              <span class="badge badge-green">↑ 22%</span>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:10px;">
-              <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--gold);">700</div><div style="font-size:8px;color:var(--muted);">UNITS</div></div>
-              <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--leaf-light);">₹1.26L</div><div style="font-size:8px;color:var(--muted);">REVENUE</div></div>
-              <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--river-light);">4.8⭐</div><div style="font-size:8px;color:var(--muted);">RATING</div></div>
-              <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--amber);">84</div><div style="font-size:8px;color:var(--muted);">STOCK</div></div>
-            </div>
-            <div class="progress-bar" style="margin-top:0;"><div class="progress-fill" style="width:84%;background:linear-gradient(90deg,var(--gold),#f5c842);"></div></div>
-            <div class="progress-label"><span style="font-size:9px;">84 units in stock</span><span style="font-size:9px;color:var(--leaf-light);">Healthy ✓</span></div>
-          </div>
-
-          <div class="card" style="padding:14px;margin-bottom:10px;">
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
-              <div style="width:44px;height:44px;border-radius:12px;background:rgba(45,138,78,0.1);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">🌾</div>
-              <div style="flex:1;">
-                <div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;">Red Rice 5kg</div>
-                <div style="font-size:10px;color:var(--muted);">KF-002 · Palakkad Matta · ₹320/unit</div>
-              </div>
-              <span class="badge badge-red">⚠️ Low</span>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:10px;">
-              <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--leaf-light);">307</div><div style="font-size:8px;color:var(--muted);">UNITS</div></div>
-              <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--leaf-light);">₹98.4k</div><div style="font-size:8px;color:var(--muted);">REVENUE</div></div>
-              <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--river-light);">4.6⭐</div><div style="font-size:8px;color:var(--muted);">RATING</div></div>
-              <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--coral);">7</div><div style="font-size:8px;color:var(--muted);">STOCK</div></div>
-            </div>
-            <div class="progress-bar" style="margin-top:0;"><div class="progress-fill" style="width:7%;background:var(--coral);"></div></div>
-            <div class="progress-label"><span style="font-size:9px;color:var(--coral);">⚠️ Only 7 units left</span><span style="font-size:9px;"><button onclick="showToast('📦','Restock order placed for Red Rice!')" style="border:none;background:var(--coral);color:white;padding:3px 10px;border-radius:8px;font-size:9px;font-weight:700;cursor:pointer;">Restock Now</button></span></div>
-          </div>
-
-          <div class="card" style="padding:14px;margin-bottom:10px;">
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
-              <div style="width:44px;height:44px;border-radius:12px;background:rgba(192,57,43,0.1);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">🌶️</div>
-              <div style="flex:1;">
-                <div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;">Kerala Spice Mix 250g</div>
-                <div style="font-size:10px;color:var(--muted);">KF-004 · Blend No.7 · ₹95/unit</div>
-              </div>
-              <span class="badge badge-blue">↑ 15%</span>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:10px;">
-              <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--river-light);">892</div><div style="font-size:8px;color:var(--muted);">UNITS</div></div>
-              <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--river-light);">₹84.7k</div><div style="font-size:8px;color:var(--muted);">REVENUE</div></div>
-              <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--amber);">4.7⭐</div><div style="font-size:8px;color:var(--muted);">RATING</div></div>
-              <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--leaf-light);">142</div><div style="font-size:8px;color:var(--muted);">STOCK</div></div>
-            </div>
-            <div class="progress-bar" style="margin-top:0;"><div class="progress-fill" style="width:65%;"></div></div>
-            <div class="progress-label"><span style="font-size:9px;">142 units in stock</span><span style="font-size:9px;color:var(--leaf-light);">Good ✓</span></div>
-          </div>
-
-          <div class="card" style="padding:14px;margin-bottom:10px;">
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
-              <div style="width:44px;height:44px;border-radius:12px;background:rgba(232,160,32,0.1);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">🍌</div>
-              <div style="flex:1;">
-                <div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;">Banana Chips 200g</div>
-                <div style="font-size:10px;color:var(--muted);">KF-007 · Nendran · ₹60/unit</div>
-              </div>
-              <span class="badge badge-amber">↓ Slow</span>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:10px;">
-              <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--amber);">480</div><div style="font-size:8px;color:var(--muted);">UNITS</div></div>
-              <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--amber);">₹28.8k</div><div style="font-size:8px;color:var(--muted);">REVENUE</div></div>
-              <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--muted);">4.2⭐</div><div style="font-size:8px;color:var(--muted);">RATING</div></div>
-              <div style="text-align:center;"><div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:800;color:var(--text);">230</div><div style="font-size:8px;color:var(--muted);">STOCK</div></div>
-            </div>
-            <div class="progress-bar" style="margin-top:0;"><div class="progress-fill" style="width:38%;background:var(--amber);"></div></div>
-            <div class="progress-label"><span style="font-size:9px;color:var(--amber);">Selling slower than target</span><span style="font-size:9px;"><button onclick="showToast('📣','Promo activated for Banana Chips!')" style="border:none;background:var(--amber);color:white;padding:3px 10px;border-radius:8px;font-size:9px;font-weight:700;cursor:pointer;">Promote</button></span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ══ BRAND INSIGHTS (AI) ══ -->
-    <div class="page hidden" id="brand-insights">
-      <div class="page-header" style="background:linear-gradient(135deg,rgba(108,63,197,0.1),rgba(250,246,240,0.97));border-bottom:1px solid rgba(108,63,197,0.18);">
-        <div style="display:flex;align-items:center;gap:12px;">
-          <div style="width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--river),var(--river-light));display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 14px rgba(108,63,197,0.3);">✨</div>
-          <div>
-            <div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:900;background:linear-gradient(135deg,var(--river),var(--river-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Jiya AI Insights</div>
-            <div style="font-size:11px;color:var(--muted);">Powered by RIVULET Intelligence · Live</div>
-          </div>
-        </div>
-      </div>
-      <div class="content">
-
-        <!-- AI Chat Interface -->
-        <div style="background:linear-gradient(135deg,rgba(108,63,197,0.07),rgba(108,63,197,0.02));border:1px solid rgba(108,63,197,0.18);border-radius:20px;margin-bottom:14px;overflow:hidden;">
-          <div style="padding:14px 16px;border-bottom:1px solid rgba(108,63,197,0.12);display:flex;align-items:center;gap:10px;">
-            <div style="width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--river),var(--river-light));display:flex;align-items:center;justify-content:center;font-size:14px;">✨</div>
-            <div>
-              <div style="font-size:13px;font-weight:700;color:var(--river);">Jiya · Brand Intelligence</div>
-              <div style="font-size:10px;color:var(--muted);">● Analysing KeralaFood Co. data</div>
-            </div>
-          </div>
-          <div id="jiayMessages" style="padding:14px;display:flex;flex-direction:column;gap:10px;max-height:300px;overflow-y:auto;">
-            <div style="background:rgba(108,63,197,0.08);border:1px solid rgba(108,63,197,0.15);border-radius:14px 14px 14px 4px;padding:12px 14px;">
-              <div style="font-size:12px;font-weight:700;color:var(--river);margin-bottom:4px;">✨ Jiya AI</div>
-              <div style="font-size:13px;color:var(--text);line-height:1.55;">Hello KeralaFood! 👋 I've analysed your April 2026 data. Here's your executive summary:</div>
-              <div style="margin-top:8px;display:flex;flex-direction:column;gap:5px;">
-                <div style="font-size:12px;color:var(--text);">📈 <strong>Revenue up 18.4%</strong> — best month since launch</div>
-                <div style="font-size:12px;color:var(--text);">🥥 <strong>Coconut Oil is your star</strong> — demand spike detected</div>
-                <div style="font-size:12px;color:var(--coral);">⚠️ <strong>Red Rice critical</strong> — stockout in ~4 days</div>
-                <div style="font-size:12px;color:var(--text);">🏬 <strong>City Mall underperforming</strong> — suggest promotion</div>
-              </div>
-            </div>
-          </div>
-          <!-- Quick prompt chips -->
-          <div style="padding:10px 14px;border-top:1px solid rgba(108,63,197,0.1);display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;">
-            <button onclick="jiyaAsk('demand')" style="white-space:nowrap;padding:7px 12px;border-radius:20px;border:1px solid rgba(108,63,197,0.2);background:rgba(108,63,197,0.06);color:var(--river);font-size:11px;font-weight:700;cursor:pointer;flex-shrink:0;">📈 Demand Forecast</button>
-            <button onclick="jiyaAsk('pricing')" style="white-space:nowrap;padding:7px 12px;border-radius:20px;border:1px solid rgba(184,120,26,0.2);background:rgba(184,120,26,0.06);color:var(--gold);font-size:11px;font-weight:700;cursor:pointer;flex-shrink:0;">💰 Pricing Tips</button>
-            <button onclick="jiyaAsk('restock')" style="white-space:nowrap;padding:7px 12px;border-radius:20px;border:1px solid rgba(192,57,43,0.2);background:rgba(192,57,43,0.06);color:var(--coral);font-size:11px;font-weight:700;cursor:pointer;flex-shrink:0;">📦 Restock Plan</button>
-            <button onclick="jiyaAsk('growth')" style="white-space:nowrap;padding:7px 12px;border-radius:20px;border:1px solid rgba(45,138,78,0.2);background:rgba(45,138,78,0.06);color:var(--leaf-light);font-size:11px;font-weight:700;cursor:pointer;flex-shrink:0;">🚀 Growth Plan</button>
-          </div>
-        </div>
-
-        <!-- Insights Cards -->
-        <div class="section-title" style="margin-bottom:12px;">📋 Latest Recommendations</div>
-
-        <div style="border-left:3px solid var(--leaf-light);background:rgba(45,138,78,0.05);border-radius:0 14px 14px 0;padding:14px;margin-bottom:10px;">
-          <div style="display:flex;align-items:flex-start;gap:10px;">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(45,138,78,0.12);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">📈</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:700;margin-bottom:3px;">Increase Coconut Oil shelf space</div>
-              <div style="font-size:12px;color:var(--muted);line-height:1.5;">Demand is 22% above seasonal average. Request an additional shelf slot at SM Street A1 to capture peak demand before the Easter weekend.</div>
-              <div style="margin-top:8px;display:flex;gap:8px;">
-                <button onclick="showToast('📩','Request sent to SM Street seller!')" style="padding:6px 14px;border-radius:10px;border:none;background:var(--leaf-light);color:white;font-size:11px;font-weight:700;cursor:pointer;">Request Space</button>
-                <button onclick="showToast('📊','Forecast report opened')" style="padding:6px 14px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:11px;font-weight:700;cursor:pointer;">See Data</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="border-left:3px solid var(--coral);background:rgba(192,57,43,0.05);border-radius:0 14px 14px 0;padding:14px;margin-bottom:10px;">
-          <div style="display:flex;align-items:flex-start;gap:10px;">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(192,57,43,0.12);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🚨</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:700;margin-bottom:3px;">Red Rice — Emergency Restock</div>
-              <div style="font-size:12px;color:var(--muted);line-height:1.5;">Only 7 units remaining. At current sell-through rate (52 units/week) you'll hit zero in ~1 day. Place a 200-unit order immediately.</div>
-              <div style="margin-top:8px;display:flex;gap:8px;">
-                <button onclick="showToast('📦','Restock order placed — 200 units!')" style="padding:6px 14px;border-radius:10px;border:none;background:var(--coral);color:white;font-size:11px;font-weight:700;cursor:pointer;">Order Now</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="border-left:3px solid var(--gold);background:rgba(184,120,26,0.05);border-radius:0 14px 14px 0;padding:14px;margin-bottom:10px;">
-          <div style="display:flex;align-items:flex-start;gap:10px;">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(184,120,26,0.12);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">💰</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:700;margin-bottom:3px;">Price Banana Chips at ₹55 for City Mall</div>
-              <div style="font-size:12px;color:var(--muted);line-height:1.5;">Competitor "Calicut Crunch" is selling at ₹58. A ₹5 reduction (8%) historically drives 30–40% volume increase in premium mall locations.</div>
-              <div style="margin-top:8px;display:flex;gap:8px;">
-                <button onclick="showToast('✅','Price update sent to City Mall seller!')" style="padding:6px 14px;border-radius:10px;border:none;background:var(--gold);color:white;font-size:11px;font-weight:700;cursor:pointer;">Apply Pricing</button>
-                <button onclick="showToast('📊','Competitor analysis opened')" style="padding:6px 14px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:11px;font-weight:700;cursor:pointer;">Compare</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="border-left:3px solid var(--river-light);background:rgba(108,63,197,0.05);border-radius:0 14px 14px 0;padding:14px;margin-bottom:10px;">
-          <div style="display:flex;align-items:flex-start;gap:10px;">
-            <div style="width:36px;height:36px;border-radius:10px;background:rgba(108,63,197,0.12);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🚀</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:700;margin-bottom:3px;">Expand to More Supermarket Calicut North</div>
-              <div style="font-size:12px;color:var(--muted);line-height:1.5;">Your competitor density is lowest in Calicut North. RIVULET data shows 1,200+ daily footfall with no FMCG brand presence. Estimated ₹1.2L/month opportunity.</div>
-              <div style="margin-top:8px;display:flex;gap:8px;">
-                <button onclick="showToast('📋','Expansion proposal sent to RIVULET admin!')" style="padding:6px 14px;border-radius:10px;border:none;background:var(--river);color:white;font-size:11px;font-weight:700;cursor:pointer;">Explore</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Plan info -->
-        <div style="background:linear-gradient(135deg,rgba(184,120,26,0.08),rgba(184,120,26,0.03));border:1px solid rgba(184,120,26,0.2);border-radius:16px;padding:16px;margin-top:4px;text-align:center;">
-          <div style="font-size:11px;color:var(--muted);margin-bottom:4px;">FMCG Brand Pro Plan</div>
-          <div style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:900;color:var(--gold);">₹5,000 / month</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:4px;">Unlimited AI insights · Real-time data · 3 stores</div>
-          <button onclick="showToast('⭐','Your plan is active until 10 May 2026!')" style="margin-top:12px;padding:10px 24px;border-radius:14px;border:none;background:linear-gradient(135deg,var(--gold),var(--amber));color:white;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(184,120,26,0.3);">⭐ Plan Active · Renews May 10</button>
-        </div>
-
-      </div>
-    </div>
-
   <!-- ══ AI ASSISTANT PANEL ══ -->
   <div class="ai-panel" id="aiPanel">
     <div class="ai-panel-header">
@@ -5941,13 +5579,13 @@ function doDailyCheckIn(el){doCheckIn(2);}
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><circle cx="9" cy="10" r="1" fill="white" stroke="none"/><circle cx="12" cy="10" r="1" fill="white" stroke="none"/><circle cx="15" cy="10" r="1" fill="white" stroke="none"/></svg>
       </div>
       <div>
-        <div class="ai-panel-title">Jiya ✨</div>
+        <div class="ai-panel-title">Jiya Jarvis ✨</div>
         <div class="ai-panel-sub">● Online · Your RIVULET Assistant</div>
       </div>
       <button class="ai-close" onclick="closeAI()">✕</button>
     </div>
     <div class="ai-messages" id="aiMessages">
-      <div class="ai-msg bot">Hi Nihal! 👋 I'm <strong>Jiya</strong>, your RIVULET assistant. I can help with restocking advice, sales insights, space recommendations and more. What would you like to know?</div>
+      <div class="ai-msg bot">Hi Nihal! 👋 I'm <strong>Jiya Jarvis</strong>, your RIVULET assistant. I can help with restocking advice, sales insights, space recommendations and more. What would you like to know?</div>
     </div>
     <div class="ai-suggestions" id="aiSuggestions">
       <div class="ai-chip" onclick="askAI('What should I restock?')">🔄 Restock advice</div>
@@ -5966,6 +5604,32 @@ function doDailyCheckIn(el){doCheckIn(2);}
   <!-- AI FAB -->
   <button class="ai-fab" id="aiFab" onclick="openAI()">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><circle cx="9" cy="10" r="1" fill="white" stroke="none"/><circle cx="12" cy="10" r="1" fill="white" stroke="none"/><circle cx="15" cy="10" r="1" fill="white" stroke="none"/></svg>
+  </button>
+
+  <!-- Brand-only: Jiya Jarvis floating button -->
+  <button id="brandJiyaFab" onclick="goTo('brand-insights')"
+    style="display:none;position:absolute;bottom:156px;right:16px;z-index:50;
+    width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;
+    background:linear-gradient(135deg,#003399,#0052cc);
+    color:white;font-size:20px;
+    box-shadow:0 6px 24px rgba(0,82,204,0.5);
+    align-items:center;justify-content:center;
+    transition:all .2s;-webkit-tap-highlight-color:transparent;
+    animation:fabPop .4s cubic-bezier(.34,1.56,.64,1) both;">
+    🤖
+  </button>
+
+  <!-- Brand-only: Sign Out floating button -->
+  <button id="brandSignOutFab" onclick="doLogout()"
+    style="display:none;position:absolute;bottom:100px;right:16px;z-index:50;
+    width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;
+    background:linear-gradient(135deg,#c0392b,#e74c3c);
+    color:white;font-size:18px;
+    box-shadow:0 6px 24px rgba(192,57,43,0.45);
+    align-items:center;justify-content:center;
+    transition:all .2s;-webkit-tap-highlight-color:transparent;
+    animation:fabPop .5s cubic-bezier(.34,1.56,.64,1) .1s both;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
   </button>
 
   <!-- BOTTOM NAV -->
@@ -6044,7 +5708,7 @@ const roleNavs = {
   delivery: {pages:['delivery-home','delivery-earnings','map-page','delivery-orders','delivery-profile'],   svgs:['home','earnings','map','packages','profile'],       labels:['Home','Earnings','Map','Orders','Profile']},
   customer: {pages:['customer-home','customer-orders','map-page','cart-page','customer-profile'],     svgs:['home','orders','map','cart','profile'],         labels:['Home','Orders','Map','Cart','Profile']},
   admin:    {pages:['admin-dashboard','admin-sellers','admin-bookings','admin-spaces','admin-rules'],  svgs:['home','sellers','bookings','spacesmgt','reports'],labels:['Home','Sellers','Orders','Spaces','Rules']},
-  brand:    {pages:['brand-home','brand-sales','brand-stores','brand-products','brand-insights'],     svgs:['home','analytics','stores','orders','reports'],  labels:['Home','Sales','Stores','SKUs','AI Insights']},
+  brand:    {pages:['brand-home','brand-sales','brand-stores','brand-products','brand-account'],     svgs:['home','analytics','stores','orders','profile'],  labels:['Home','Sales','Stores','SKUs','Account']},
 };
 const noNavPages = ['splash','login','register'];
 
@@ -6176,6 +5840,14 @@ function quickLogin(role){
   currentNav=0; updateNavActive();
   goTo(nav.pages[0]);
   _cartUI();
+  // Show brand FABs only for brand role
+  const jFab=document.getElementById('brandJiyaFab');
+  const sFab=document.getElementById('brandSignOutFab');
+  if(jFab) jFab.style.display = role==='brand'?'flex':'none';
+  if(sFab) sFab.style.display = role==='brand'?'flex':'none';
+  // Hide general AI fab for brand users (they have Jiya Jarvis)
+  const aiFab=document.getElementById('aiFab');
+  if(aiFab) aiFab.style.display = role==='brand'?'none':'';
 }
 
 function navTo(idx){
@@ -6385,10 +6057,10 @@ function fillSearch(val){
   liveSearch(val);
 }
 const _searchItems=[
-  {icon:'🥥',name:'Coconut Oil 1L',cat:'Product',price:'₹180'},
-  {icon:'🌾',name:'Red Rice 5kg',cat:'Product',price:'₹320'},
-  {icon:'🍌',name:'Banana Chips 200g',cat:'Product',price:'₹60'},
-  {icon:'🌶️',name:'Kerala Spice Mix',cat:'Product',price:'₹95'},
+  {icon:'🥥',name:'Surf Excel Liquid 1L',cat:'Product',price:'₹180'},
+  {icon:'🌾',name:'Dove Body Wash 200ml',cat:'Product',price:'₹320'},
+  {icon:'🍌',name:'Brooke Bond Red Label 250g',cat:'Product',price:'₹60'},
+  {icon:'🌶️',name:'Lifebuoy Handwash',cat:'Product',price:'₹95'},
   {icon:'🏬',name:'SM Street Calicut',cat:'Store',price:'0.4 km'},
   {icon:'🛒',name:'More Supermarket',cat:'Store',price:'1.2 km'},
   {icon:'🏪',name:'City Mall',cat:'Store',price:'2.1 km'},
@@ -6442,7 +6114,7 @@ setInterval(updateClock,10000);
 
 // ══ AI ASSISTANT ══
 const _aiResponses = {
-  'restock': `Based on your sales data:\n\n🥥 **Coconut Oil** — restock urgently (only 24 units, selling 8/day)\n🌾 **Red Rice** — critical (7 units left, 2 days until stockout)\n🌶️ **Kerala Spice Mix** — order soon (18 units, peaks Thursday)\n\nRecommend ordering tomorrow before your Friday peak.`,
+  'restock': `Based on your sales data:\n\n🥥 **Coconut Oil** — restock urgently (only 24 units, selling 8/day)\n🌾 **Red Rice** — critical (7 units left, 2 days until stockout)\n🌶️ **Lifebuoy Handwash** — order soon (18 units, peaks Thursday)\n\nRecommend ordering tomorrow before your Friday peak.`,
   'sales': `This week's summary 📊\n\n• Total revenue: **₹21,840** (↑14% vs last week)\n• Best day: **Friday ₹4,000**\n• Best product: **Coconut Oil** (42% of revenue)\n• SM Street outperforming other locations by 2.3×\n\nYou're on track for your best month!`,
   'space': `Space performance ranking 🏪\n\n1️⃣ **SM Street A1** — ₹24,100 · 4.8⭐ · Best ROI\n2️⃣ **City Mall C3** — ₹15,800 · 4.9⭐ · Premium traffic\n3️⃣ **More Supermarket B2** — ₹8,300 · 4.2⭐ · Growing\n\nCity Mall has highest footfall but SM Street converts best.`,
   'renewal': `City Mall Space C3 ⚠️\n\nExpires in **2 days** (4 Apr 2026)\nWeekly rent: ₹2,200\nDaily footfall: ~4,200 customers\n\n💡 Recommendation: Renew for 4 weeks — your Coconut Oil sells 3× faster here than other locations. ROI is strong.`,
@@ -6913,7 +6585,7 @@ setInterval(() => { goDealSlide((_dealIdx+1) % 3); }, 4000);
 
 // ── FILTER CATEGORY ──
 function filterCat(cat) {
-  const labels = {veggies:'🥬 Vegetables',grains:'🌾 Grains',coconut:'🥥 Coconut Products',spices:'🌶️ Spices',snacks:'🍿 Snacks',dairy:'🥛 Dairy',fruits:'🍎 Fruits'};
+  const labels = {veggies:'🥬 Vegetables',grains:'🌾 Grains',coconut:'🥥 Coconut Products',spices:'🧼 Lifebuoys',snacks:'🍿 Snacks',dairy:'🥛 Dairy',fruits:'🍎 Fruits'};
   showToast('🔍', 'Showing ' + (labels[cat] || cat));
   openSearch();
   const inp = document.getElementById('searchInput');
@@ -6922,7 +6594,7 @@ function filterCat(cat) {
 
 // ── LIVE CLOCK ──
 
-const _voiceWords = ['Coconut Oil', 'Red Rice', 'Banana Chips', 'Kerala Spice', 'Turmeric', 'Pepper', 'SM Street', 'City Mall'];
+const _voiceWords = ['Coconut Oil', 'Red Rice', 'Brooke Bond Red Label', 'Kerala Spice', 'Turmeric', 'Pepper', 'SM Street', 'City Mall'];
 function openVoice() {
   document.getElementById('voiceOverlay').classList.add('open');
   document.getElementById('voiceResult').textContent = '';
@@ -6976,14 +6648,14 @@ function filterBrandSKU(type, el) {
 }
 
 const _jiyaReplies = {
-  demand: '📈 **Demand Forecast (Next 7 days):**\n• Coconut Oil: +25% — Easter demand\n• Red Rice: Stable at 52 units/day\n• Spice Mix: +18% — Onam prep early buying\n• Banana Chips: −5% — price sensitivity',
-  pricing: '💰 **Pricing Recommendations:**\n• Coconut Oil 1L: Hold at ₹180 (premium positioning)\n• Red Rice 5kg: Consider ₹310 (-3%) to accelerate velocity\n• Banana Chips: Drop to ₹55 at City Mall only\n• Spice Mix: Bundle offer ₹85 × 3 = ₹255',
-  restock: '📦 **Restock Priority List:**\n🔴 Red Rice 5kg — Order 200 units TODAY\n🟡 Coconut Oil — Order 120 units by Friday\n🟢 Spice Mix — Healthy, no action needed\n🟢 Banana Chips — 230 units, 5+ weeks stock',
+  demand: '📈 **Demand Forecast (Next 7 days):**\n• Coconut Oil: +25% — Easter demand\n• Red Rice: Stable at 52 units/day\n• Spice Mix: +18% — Onam prep early buying\n• Brooke Bond Red Label: −5% — price sensitivity',
+  pricing: '💰 **Pricing Recommendations:**\n• Surf Excel Liquid 1L: Hold at ₹180 (premium positioning)\n• Dove Body Wash 200ml: Consider ₹310 (-3%) to accelerate velocity\n• Brooke Bond Red Label: Drop to ₹55 at City Mall only\n• Spice Mix: Bundle offer ₹85 × 3 = ₹255',
+  restock: '📦 **Restock Priority List:**\n🔴 Dove Body Wash 200ml — Order 200 units TODAY\n🟡 Coconut Oil — Order 120 units by Friday\n🟢 Spice Mix — Healthy, no action needed\n🟢 Brooke Bond Red Label — 230 units, 5+ weeks stock',
   growth: '🚀 **Growth Opportunities:**\n1. Calicut North expansion — ₹1.2L/month potential\n2. Launch Coconut Oil 500ml SKU (smaller size = higher margins)\n3. Introduce gift pack combos for Onam\n4. Partner with 2 more RIVULET stores in Kozhikode'
 };
 
 function jiyaAsk(topic) {
-  const box = document.getElementById('jiayMessages');
+  const box = document.getElementById('jiyaMessages');
   if (!box) return;
 
   // User bubble
@@ -6996,7 +6668,7 @@ function jiyaAsk(topic) {
   // Typing indicator
   const typing = document.createElement('div');
   typing.style.cssText = 'background:rgba(108,63,197,0.08);border:1px solid rgba(108,63,197,0.15);border-radius:14px 14px 14px 4px;padding:12px 14px;';
-  typing.innerHTML = '<div style="font-size:12px;color:var(--river-light);">✨ Jiya is thinking…</div>';
+  typing.innerHTML = '<div style="font-size:12px;color:var(--river-light);">✨ Jiya Jarvis is thinking…</div>';
   box.appendChild(typing);
   box.scrollTop = box.scrollHeight;
 
@@ -7005,7 +6677,7 @@ function jiyaAsk(topic) {
     const aiBubble = document.createElement('div');
     aiBubble.style.cssText = 'background:rgba(108,63,197,0.08);border:1px solid rgba(108,63,197,0.15);border-radius:14px 14px 14px 4px;padding:12px 14px;';
     const lines = _jiyaReplies[topic].split('\n');
-    aiBubble.innerHTML = `<div style="font-size:12px;font-weight:700;color:var(--river);margin-bottom:6px;">✨ Jiya AI</div>` +
+    aiBubble.innerHTML = `<div style="font-size:12px;font-weight:700;color:var(--river);margin-bottom:6px;">✨ Jiya Jarvis</div>` +
       lines.map(l => `<div style="font-size:12px;color:var(--text);line-height:1.6;">${l.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')}</div>`).join('');
     box.appendChild(aiBubble);
     box.scrollTop = box.scrollHeight;
@@ -7032,9 +6704,9 @@ function filterSKU(el, type) {
 
 // Brand AI answers
 const _brandAIAnswers = {
-  'best': '🥥 Your best-selling SKU is <strong>Coconut Oil 1L</strong> with ₹2.23L revenue this week — 22% above last week. SM Street is the top location for this product.',
-  'restock': '⚠️ <strong>City Mall</strong> needs urgent restocking of Coconut Oil 1L (4 units left). <strong>More Supermarket</strong> is also low on Red Rice 5kg (7 units). Restock both by Thursday.',
-  'forecast': '📈 Next week forecast: Total revenue projected at <strong>₹6.4L–6.9L</strong> (+10–18% vs this week). Banana Chips expected surge of +35% due to weekend. Friday remains peak demand day.',
+  'best': '🥥 Your best-selling SKU is <strong>Surf Excel Liquid 1L</strong> with ₹2.23L revenue this week — 22% above last week. SM Street is the top location for this product.',
+  'restock': '⚠️ <strong>City Mall</strong> needs urgent restocking of Surf Excel Liquid 1L (4 units left). <strong>More Supermarket</strong> is also low on Dove Body Wash 200ml (7 units). Restock both by Thursday.',
+  'forecast': '📈 Next week forecast: Total revenue projected at <strong>₹6.4L–6.9L</strong> (+10–18% vs this week). Brooke Bond Red Label expected surge of +35% due to weekend. Friday remains peak demand day.',
   'default': '🤖 Based on your 7-day data: Revenue is up 18.4%, Coconut Oil leads sales, and City Mall is your highest-converting store. I recommend restocking City Mall by Thursday and running a bundle promotion for Rice + Spice Mix.'
 };
 
@@ -7050,7 +6722,7 @@ function sendBrandAI() {
   if (!inp || !reply) return;
   const q = inp.value.trim();
   if (!q) return;
-  reply.innerHTML = '<span style="color:var(--river-light);font-weight:600;">Jiya is thinking…</span>';
+  reply.innerHTML = '<span style="color:var(--river-light);font-weight:600;">Jiya Jarvis is thinking…</span>';
   setTimeout(() => {
     const ql = q.toLowerCase();
     let ans = _brandAIAnswers.default;
@@ -7058,7 +6730,7 @@ function sendBrandAI() {
     else if (ql.includes('restock') || ql.includes('stock') || ql.includes('alert')) ans = _brandAIAnswers.restock;
     else if (ql.includes('forecast') || ql.includes('next') || ql.includes('week')) ans = _brandAIAnswers.forecast;
     reply.innerHTML = '<div style="background:rgba(108,63,197,0.06);border:1px solid rgba(108,63,197,0.14);border-radius:12px;padding:10px 12px;margin-top:2px;">' +
-      '<div style="font-size:9px;color:var(--river-light);font-weight:700;letter-spacing:.8px;margin-bottom:4px;">JIYA AI · RIVULET FMCG INTELLIGENCE</div>' +
+      '<div style="font-size:9px;color:var(--river-light);font-weight:700;letter-spacing:.8px;margin-bottom:4px;">JIYA JARVIS · RIVULET FMCG INTELLIGENCE</div>' +
       ans + '</div>';
     inp.value = '';
   }, 800);
