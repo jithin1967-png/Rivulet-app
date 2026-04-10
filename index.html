@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -3039,12 +3038,26 @@ function doDailyCheckIn(el){doCheckIn(2);}
         <div class="field-label">Password</div>
         <input class="field" type="password" placeholder="Enter password">
         <button class="login-btn" onclick="doLogin()">Sign In →</button>
+
+        <!-- Brand Portal CTA — right below Sign In -->
+        <div onclick="goTo('brand-login')" style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding:13px 16px;border-radius:16px;border:1.5px solid rgba(184,120,26,0.35);background:linear-gradient(135deg,rgba(184,120,26,0.07),rgba(255,252,244,0.6));cursor:pointer;transition:all .2s;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--amber));display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:var(--gold);">👑 Brand Portal</div>
+              <div style="font-size:10px;color:var(--muted);margin-top:1px;">FMCG Analytics · Jiya Jarvis AI · Register / Login</div>
+            </div>
+          </div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </div>
+
         <div style="text-align:center;font-size:12px;color:var(--muted);margin-top:14px;margin-bottom:6px;">
           <span style="color:var(--river-light);cursor:pointer;font-weight:700;" onclick="openOTP()">📱 Login with OTP instead</span>
         </div>
         <div style="text-align:center;font-size:12px;color:var(--muted);margin-top:6px;">
           New to RIVULET? <span style="color:var(--river-light);cursor:pointer;" onclick="goTo('register')">Register as Seller</span>
-          &nbsp;·&nbsp; <span style="color:var(--gold);cursor:pointer;font-weight:700;" onclick="openBrandLogin()">👑 Brand Portal</span>
         </div>
         <div class="demo-cards">
           <div class="demo-title">Quick Demo — Tap to Enter</div>
@@ -4432,9 +4445,9 @@ function doDailyCheckIn(el){doCheckIn(2);}
           <div class="setting-row" onclick="goTo('admin-policy')" style="cursor:pointer;">
             <div class="setting-left">
               <span class="setting-icon" style="background:rgba(184,120,26,0.12);border-radius:10px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="12" y1="9" x2="12" y2="15"/></svg>
               </span>
-              <div><div class="setting-name">Platform Rules</div><div style="font-size:10px;color:var(--muted);">Commission · policies · fees</div></div>
+              <div><div class="setting-name">Platform Policy</div><div style="font-size:10px;color:var(--muted);">About · Founders · Policies · Rules</div></div>
             </div>
             <span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
           </div>
@@ -4756,7 +4769,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
           <div class="pw-logo-ring">🌊</div>
           <div class="pw-company-name">PENTAWAVE FOUNDATION</div>
           <div class="pw-tagline-hero">TECHNOLOGY · COMMERCE · COMMUNITY</div>
-          <div class="pw-reg">CIN: U72900KL2024NPL089421 · Kerala, India · Est. 2024</div>
+          <div class="pw-reg">CIN: U72900KL2026NPL089421 · Kerala, India · Est. 2026</div>
         </div>
 
         <!-- Tab bar -->
@@ -4774,7 +4787,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
         <div id="policy-about">
           <div class="card" style="animation-delay:.05s;">
             <div class="section-title">About Pentawave Foundation</div>
-            <p style="font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:12px;">Pentawave Foundation is a technology and social enterprise headquartered in <strong style="color:var(--text)">Kozhikode (Calicut), Kerala</strong>, India. Founded in 2024 by five visionary engineers and business minds, Pentawave builds platforms that bridge the gap between local commerce and modern digital infrastructure.</p>
+            <p style="font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:12px;">Pentawave Foundation is a technology and social enterprise headquartered in <strong style="color:var(--text)">Kozhikode (Calicut), Kerala</strong>, India. Founded in 2026 by five visionary engineering students, Pentawave builds platforms that bridge the gap between local commerce and modern digital infrastructure.</p>
             <p style="font-size:12px;color:var(--muted);line-height:1.7;">The foundation's flagship product, <strong style="color:var(--river-light)">RIVULET</strong>, is a multi-sided marketplace that connects independent sellers, retail stores, delivery partners, and FMCG brands through a unified, AI-powered platform — bringing organised retail to Kerala's vibrant local economy.</p>
           </div>
 
@@ -4791,13 +4804,13 @@ function doDailyCheckIn(el){doCheckIn(2);}
             </div>
             <div class="card" style="animation-delay:.14s;text-align:center;">
               <div style="font-size:28px;margin-bottom:6px;">🚀</div>
-              <div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:900;color:var(--leaf-light);">2024</div>
+              <div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:900;color:var(--leaf-light);">2026</div>
               <div style="font-size:10px;color:var(--muted);margin-top:2px;">Year Founded</div>
             </div>
             <div class="card" style="animation-delay:.16s;text-align:center;">
               <div style="font-size:28px;margin-bottom:6px;">🤖</div>
-              <div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:900;color:var(--river-light);">Jiya AI</div>
-              <div style="font-size:10px;color:var(--muted);margin-top:2px;">Core Technology</div>
+              <div style="font-family:'Outfit',sans-serif;font-size:18px;font-weight:900;color:var(--river-light);">Jiya Jarvis</div>
+              <div style="font-size:10px;color:var(--muted);margin-top:2px;">Core AI Model</div>
             </div>
           </div>
 
@@ -4814,7 +4827,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
               <div style="width:36px;height:36px;border-radius:11px;background:rgba(184,120,26,0.12);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;">🌅</div>
               <div>
                 <div style="font-size:12px;font-weight:700;margin-bottom:3px;">Vision</div>
-                <div style="font-size:11px;color:var(--muted);line-height:1.6;">To become Kerala's most trusted retail operating system — expanding to all 14 districts by 2027, powering 10,000+ sellers, 500+ stores, and ₹100Cr in annual GMV.</div>
+                <div style="font-size:11px;color:var(--muted);line-height:1.6;">To become Kerala's most trusted retail operating system — expanding to all 14 districts by 2029, powering 10,000+ sellers, 500+ stores, and ₹100Cr in annual GMV.</div>
               </div>
             </div>
           </div>
@@ -4847,10 +4860,10 @@ function doDailyCheckIn(el){doCheckIn(2);}
           <div class="card" style="animation-delay:.22s;">
             <div class="section-title">Contact & Legal</div>
             <div class="order-item-row"><span style="color:var(--muted);font-size:12px;">📍 Registered Office</span><span style="font-size:12px;font-weight:600;text-align:right;max-width:55%;">Kozhikode, Kerala — 673001</span></div>
-            <div class="order-item-row"><span style="color:var(--muted);font-size:12px;">📧 Email</span><span style="font-size:12px;font-weight:600;color:var(--river-light);">hello@pentawave.in</span></div>
+            <div class="order-item-row"><span style="color:var(--muted);font-size:12px;">📧 Email</span><span style="font-size:12px;font-weight:600;color:var(--river-light);"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="81e9e4ededeec1f1e4eff5e0f6e0f7e4afe8ef">[email&#160;protected]</a></span></div>
             <div class="order-item-row"><span style="color:var(--muted);font-size:12px;">🌐 Website</span><span style="font-size:12px;font-weight:600;color:var(--river-light);">pentawave.in</span></div>
             <div class="order-item-row"><span style="color:var(--muted);font-size:12px;">📱 Support</span><span style="font-size:12px;font-weight:600;">+91 9876 543210</span></div>
-            <div class="order-item-row" style="border:none;"><span style="color:var(--muted);font-size:12px;">🏛️ CIN</span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;">U72900KL2024NPL089421</span></div>
+            <div class="order-item-row" style="border:none;"><span style="color:var(--muted);font-size:12px;">🏛️ CIN</span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;">U72900KL2026NPL089421</span></div>
           </div>
         </div>
 
@@ -4859,7 +4872,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
 
           <div style="background:linear-gradient(135deg,rgba(108,63,197,0.08),rgba(45,138,78,0.05));border:1px solid rgba(108,63,197,0.12);border-radius:16px;padding:14px;margin-bottom:16px;text-align:center;">
             <div style="font-size:10px;font-weight:700;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;">The Founding Team</div>
-            <div style="font-size:12px;color:var(--muted);line-height:1.6;">Five engineers who left comfortable careers to build Kerala's retail future — united by a shared belief that local commerce deserves world-class technology.</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.6;">Five Applied Electronics &amp; Instrumentation Engineering students from <strong style="color:var(--text);">Government Engineering College Kozhikode</strong> (Batch 2025–2029) who turned a college idea into Kerala's most ambitious retail platform.</div>
           </div>
 
           <!-- Pavina -->
@@ -4868,11 +4881,11 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <div style="flex:1;">
               <div class="founder-name" style="background:linear-gradient(135deg,#d4bfeb,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Pavina</div>
               <div class="founder-role" style="color:var(--river-light);">CEO & Co-Founder</div>
-              <div class="founder-bio">Pavina leads RIVULET's overall product vision and business strategy. A graduate of IIT Kozhikode with a specialisation in Human-Computer Interaction, she previously built AI products at a Bangalore-based edtech startup. Her deep understanding of Kerala's retail ecosystem shapes every product decision at Pentawave.</div>
+              <div class="founder-bio">Pavina is a B.Tech student in Applied Electronics &amp; Instrumentation Engineering at Government Engineering College Kozhikode (GECK), Batch 2025–2029. She leads RIVULET's overall product vision and strategy, channelling her passion for embedded systems and user-centric design into building Kerala's smartest retail platform.</div>
               <div class="founder-tags">
+                <span class="founder-tag" style="background:rgba(108,63,197,0.1);color:var(--river-light);">AEI · GECK 2025–29</span>
                 <span class="founder-tag" style="background:rgba(108,63,197,0.1);color:var(--river-light);">Product Strategy</span>
-                <span class="founder-tag" style="background:rgba(108,63,197,0.1);color:var(--river-light);">AI / UX</span>
-                <span class="founder-tag" style="background:rgba(108,63,197,0.1);color:var(--river-light);">Fundraising</span>
+                <span class="founder-tag" style="background:rgba(108,63,197,0.1);color:var(--river-light);">UI / UX</span>
               </div>
             </div>
           </div>
@@ -4883,11 +4896,11 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <div style="flex:1;">
               <div class="founder-name" style="background:linear-gradient(135deg,#fbbf24,#d97706);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Nidhin</div>
               <div class="founder-role" style="color:var(--amber);">CTO & Co-Founder</div>
-              <div class="founder-bio">Nidhin architects RIVULET's entire technical backbone — from the real-time shelf management engine to Jiya Jarvis AI. A self-taught full-stack engineer who built his first SaaS at age 17, he brings a bias for speed and scalability to Pentawave's engineering culture. His expertise spans distributed systems, ML pipelines, and mobile-first PWA architecture.</div>
+              <div class="founder-bio">Nidhin is a B.Tech student in Applied Electronics &amp; Instrumentation Engineering at Government Engineering College Kozhikode (GECK), Batch 2025–2029. He architects RIVULET's technical backbone — from the real-time shelf management engine to Jiya Jarvis AI — combining his electronics expertise with a passion for scalable software systems.</div>
               <div class="founder-tags">
-                <span class="founder-tag" style="background:rgba(184,120,26,0.12);color:var(--amber);">Full-Stack</span>
-                <span class="founder-tag" style="background:rgba(184,120,26,0.12);color:var(--amber);">ML / AI</span>
-                <span class="founder-tag" style="background:rgba(184,120,26,0.12);color:var(--amber);">Systems Design</span>
+                <span class="founder-tag" style="background:rgba(184,120,26,0.12);color:var(--amber);">AEI · GECK 2025–29</span>
+                <span class="founder-tag" style="background:rgba(184,120,26,0.12);color:var(--amber);">Full-Stack Dev</span>
+                <span class="founder-tag" style="background:rgba(184,120,26,0.12);color:var(--amber);">Embedded Systems</span>
               </div>
             </div>
           </div>
@@ -4898,10 +4911,10 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <div style="flex:1;">
               <div class="founder-name" style="background:linear-gradient(135deg,#6ee7b7,#059669);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Sreejith</div>
               <div class="founder-role" style="color:var(--leaf-light);">COO & Co-Founder</div>
-              <div class="founder-bio">Sreejith owns RIVULET's operations — store partnerships, delivery network expansion, and seller onboarding. With 4 years of supply chain experience at a major FMCG distributor in Calicut, he brought the ground-level retail knowledge that made RIVULET's shelf rental model viable from day one. He manages all 80+ partner store relationships personally.</div>
+              <div class="founder-bio">Sreejith is a B.Tech student in Applied Electronics &amp; Instrumentation Engineering at Government Engineering College Kozhikode (GECK), Batch 2025–2029. He drives RIVULET's operations — store partnerships, delivery network, and seller onboarding — applying his instrumentation engineering mindset to build reliable, ground-level retail infrastructure across Calicut.</div>
               <div class="founder-tags">
+                <span class="founder-tag" style="background:rgba(45,138,78,0.12);color:var(--leaf-light);">AEI · GECK 2025–29</span>
                 <span class="founder-tag" style="background:rgba(45,138,78,0.12);color:var(--leaf-light);">Operations</span>
-                <span class="founder-tag" style="background:rgba(45,138,78,0.12);color:var(--leaf-light);">Supply Chain</span>
                 <span class="founder-tag" style="background:rgba(45,138,78,0.12);color:var(--leaf-light);">Partnerships</span>
               </div>
             </div>
@@ -4913,11 +4926,11 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <div style="flex:1;">
               <div class="founder-name" style="background:linear-gradient(135deg,#f9a8d4,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Safal</div>
               <div class="founder-role" style="color:#ec4899;">CMO & Co-Founder</div>
-              <div class="founder-bio">Safal drives RIVULET's brand, growth, and seller acquisition. A marketing prodigy who ran a successful digital agency before joining Pentawave, she designed the RIVULET identity from scratch — including the iconic wave brand language. Under her leadership, RIVULET onboarded 500 sellers in its first 6 months with zero paid advertising.</div>
+              <div class="founder-bio">Safal is a B.Tech student in Applied Electronics &amp; Instrumentation Engineering at Government Engineering College Kozhikode (GECK), Batch 2025–2029. He leads RIVULET's brand, growth, and seller acquisition — blending his electronics background with creative marketing instincts to craft the RIVULET identity and grow its community of local sellers across Kerala.</div>
               <div class="founder-tags">
-                <span class="founder-tag" style="background:rgba(236,72,153,0.1);color:#ec4899;">Growth</span>
+                <span class="founder-tag" style="background:rgba(236,72,153,0.1);color:#ec4899;">AEI · GECK 2025–29</span>
+                <span class="founder-tag" style="background:rgba(236,72,153,0.1);color:#ec4899;">Growth & Marketing</span>
                 <span class="founder-tag" style="background:rgba(236,72,153,0.1);color:#ec4899;">Brand Design</span>
-                <span class="founder-tag" style="background:rgba(236,72,153,0.1);color:#ec4899;">Community</span>
               </div>
             </div>
           </div>
@@ -4927,21 +4940,21 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <div class="founder-avatar" style="background:linear-gradient(135deg,#93c5fd,#2563eb);color:#000d1a;">J</div>
             <div style="flex:1;">
               <div class="founder-name" style="background:linear-gradient(135deg,#93c5fd,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Jithin</div>
-              <div class="founder-role" style="color:#60a5fa);">CFO & Co-Founder</div>
-              <div class="founder-bio">Jithin manages Pentawave's finances, legal compliance, and investor relations. A chartered accountant by training with an MBA from IIMK, he structured the platform's commission model, negotiated the first institutional funding round, and ensures RIVULET operates within all regulatory frameworks including FSSAI, GST, and RBI payment guidelines.</div>
+              <div class="founder-role" style="color:#60a5fa;">CFO & Co-Founder</div>
+              <div class="founder-bio">Jithin is a B.Tech student in Applied Electronics &amp; Instrumentation Engineering at Government Engineering College Kozhikode (GECK), Batch 2025–2029. He manages Pentawave's finances, legal compliance, and investor relations — applying his analytical engineering mindset to structure the platform's commission model and ensure RIVULET operates within all regulatory frameworks.</div>
               <div class="founder-tags">
-                <span class="founder-tag" style="background:rgba(96,165,250,0.12);color:#60a5fa;">Finance</span>
-                <span class="founder-tag" style="background:rgba(96,165,250,0.12);color:#60a5fa;">Legal & Compliance</span>
-                <span class="founder-tag" style="background:rgba(96,165,250,0.12);color:#60a5fa;">Investor Relations</span>
+                <span class="founder-tag" style="background:rgba(96,165,250,0.12);color:#60a5fa;">AEI · GECK 2025–29</span>
+                <span class="founder-tag" style="background:rgba(96,165,250,0.12);color:#60a5fa;">Finance & Legal</span>
+                <span class="founder-tag" style="background:rgba(96,165,250,0.12);color:#60a5fa;">Compliance</span>
               </div>
             </div>
           </div>
 
           <div class="card" style="text-align:center;animation-delay:.2s;">
             <div style="font-size:22px;margin-bottom:8px;">✉️</div>
-            <div style="font-size:12px;font-weight:700;margin-bottom:4px;">Work With the Team</div>
-            <div style="font-size:11px;color:var(--muted);margin-bottom:12px;">We're always open to collaboration, partnerships, and exceptional talent.</div>
-            <button onclick="showToast('📧','careers@pentawave.in — We'll be in touch!')" style="padding:10px 22px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--river-light);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;">📩 Contact Founders</button>
+            <div style="font-size:12px;font-weight:700;margin-bottom:4px;">Reach the Founders</div>
+            <div style="font-size:11px;color:var(--muted);margin-bottom:12px;">All five founders are students at GECK Kozhikode — open to collaboration, partnerships, and building together.</div>
+            <button onclick="showToast('📧','hello@pentawave.in — We\'ll get back to you!')" style="padding:10px 22px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--river-light);font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;cursor:pointer;">📩 Contact Founders</button>
           </div>
         </div>
 
@@ -4955,9 +4968,9 @@ function doDailyCheckIn(el){doCheckIn(2);}
             </div>
             <div class="policy-acc-body">
               <p>Pentawave Foundation collects personal data including name, phone number, email, and location to provide RIVULET platform services. All data is encrypted at rest (AES-256) and in transit (TLS 1.3).</p>
-              <p>We do not sell personal data to third parties. Data may be shared with partner stores and delivery agents solely to fulfil orders. Users may request data deletion at any time by contacting hello@pentawave.in.</p>
+              <p>We do not sell personal data to third parties. Data may be shared with partner stores and delivery agents solely to fulfil orders. Users may request data deletion at any time by contacting <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4129242d2d2e0131242f3520362037246f282f">[email&#160;protected]</a>.</p>
               <p>Analytics data (anonymised) is shared with FMCG brand partners via the Brand Analytics PRO product. No personally identifiable information is included in brand reports.</p>
-              <p style="font-size:10px;color:var(--muted);font-style:italic;">Last updated: April 2025 · Compliant with IT Act 2000 and DPDP Act 2023</p>
+              <p style="font-size:10px;color:var(--muted);font-style:italic;">Last updated: January 2026 · Compliant with IT Act 2000 and DPDP Act 2023</p>
             </div>
           </div>
 
@@ -6247,8 +6260,8 @@ function doDailyCheckIn(el){doCheckIn(2);}
           <div class="order-item-row"><span style="color:var(--muted)">Region Manager</span><span style="font-weight:700;">Pradeep R. Nair</span></div>
           <div class="order-item-row"><span style="color:var(--muted)">Email</span><span style="color:var(--river-light);font-weight:600;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a4d4d6c5c0c1c1d48acac5cdd6e4ccd1c88ac7cb8acdca">[email&#160;protected]</a></span></div>
           <div class="order-item-row"><span style="color:var(--muted)">Region</span><span style="font-weight:600;">Kerala · South India</span></div>
-          <div class="order-item-row"><span style="color:var(--muted)">RIVULET ID</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--river-light);">HUL-KL-2024-001</span></div>
-          <div class="order-item-row" style="border:none;"><span style="color:var(--muted)">Member Since</span><span style="font-weight:600;">January 2024</span></div>
+          <div class="order-item-row"><span style="color:var(--muted)">RIVULET ID</span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--river-light);">HUL-KL-2026-001</span></div>
+          <div class="order-item-row" style="border:none;"><span style="color:var(--muted)">Member Since</span><span style="font-weight:600;">January 2026</span></div>
         </div>
 
         <!-- Support & Billing -->
@@ -7153,7 +7166,7 @@ function doDailyCheckIn(el){doCheckIn(2);}
 
 
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ══ STATE ══
 let currentRole = 'seller';
 let currentNav  = 0;
@@ -8482,15 +8495,15 @@ function setSbLang(el) {
   shell.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
-    dragging = startX < 28;
-  }, { passive: true });
-  shell.addEventListener('touchend', e => {
+    dragging = startX < 22;
+  });
+  shell.addEventListener('touchmove', e => {
     if (!dragging) return;
-    const dx = e.changedTouches[0].clientX - startX;
-    const dy = Math.abs(e.changedTouches[0].clientY - startY);
-    if (dx > 48 && dy < 60) openSidebar();
-    dragging = false;
-  }, { passive: true });
+    const dx = e.touches[0].clientX - startX;
+    const dy = Math.abs(e.touches[0].clientY - startY);
+    if (dx > 40 && dy < 60) { openSidebar(); dragging = false; }
+  });
+  shell.addEventListener('touchend', () => { dragging = false; });
 })();
 
 </script>
