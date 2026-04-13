@@ -6413,15 +6413,15 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <!-- Live KPIs row in header -->
             <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
               <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:10px;text-align:center;">
-                <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:900;color:#a78bfa;">₹4.82L</div>
-                <div style="font-size:9px;color:rgba(255,255,255,0.45);margin-top:2px;font-weight:600;">GMV</div>
+                <div id="adminHdrGmv" style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:900;color:#a78bfa;">₹4.82L</div>
+                <div id="adminHdrGmvLbl" style="font-size:9px;color:rgba(255,255,255,0.45);margin-top:2px;font-weight:600;">GMV</div>
               </div>
               <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:10px;text-align:center;">
-                <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:900;color:#34d399;">48</div>
+                <div id="adminHdrSellers" style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:900;color:#34d399;">48</div>
                 <div style="font-size:9px;color:rgba(255,255,255,0.45);margin-top:2px;font-weight:600;">Sellers</div>
               </div>
               <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:10px;text-align:center;">
-                <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:900;color:#fbbf24;">₹24.1k</div>
+                <div id="adminHdrCommission" style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:900;color:#fbbf24;">₹24.1k</div>
                 <div style="font-size:9px;color:rgba(255,255,255,0.45);margin-top:2px;font-weight:600;">Commission</div>
               </div>
             </div>
@@ -6432,34 +6432,34 @@ function doDailyCheckIn(el){doCheckIn(2);}
       <div class="content" style="padding-top:8px;">
 
         <!-- Date range pills — scrolls with content -->
-        <div style="display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:12px;scrollbar-width:none;">
-          <div class="brand-period-chip active" onclick="setBrandPeriod(this,'7d')">7 Days</div>
-          <div class="brand-period-chip" onclick="setBrandPeriod(this,'30d')">30 Days</div>
-          <div class="brand-period-chip" onclick="setBrandPeriod(this,'q1')">Q1 2026</div>
-          <div class="brand-period-chip" onclick="setBrandPeriod(this,'ytd')">YTD</div>
+        <div style="display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:12px;scrollbar-width:none;" id="adminPeriodChipsBar">
+          <div class="brand-period-chip active" onclick="setAdminPeriod(this,'30d')">30 Days</div>
+          <div class="brand-period-chip" onclick="setAdminPeriod(this,'6m')">6 Months</div>
+          <div class="brand-period-chip" onclick="setAdminPeriod(this,'1y')">1 Year</div>
+          <div class="brand-period-chip" onclick="setAdminPeriod(this,'ytd')">YTD</div>
         </div>
 
         <!-- Full KPI Grid -->
         <div class="kpi-row">
           <div class="kpi" style="animation-delay:.05s">
-            <div class="kpi-label">Total Platform Sales</div>
-            <div class="kpi-val" style="background:linear-gradient(135deg,var(--river-light),var(--river-glow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:20px;">₹4,82,000</div>
-            <div class="kpi-change trend-up">↑ 22% this month</div>
+            <div class="kpi-label" id="adminSalesLabel">Total Platform Sales (30 Days)</div>
+            <div class="kpi-val" id="adminSalesVal" style="background:linear-gradient(135deg,var(--river-light),var(--river-glow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:20px;">₹4,82,000</div>
+            <div class="kpi-change trend-up" id="adminSalesChg">↑ 22% this month</div>
           </div>
           <div class="kpi" style="animation-delay:.1s">
-            <div class="kpi-label">Commission Earned</div>
-            <div class="kpi-val" style="color:var(--amber);font-size:20px;">₹24,100</div>
-            <div class="kpi-change neutral">0.5% of GMV</div>
+            <div class="kpi-label" id="adminCommLabel">Commission Earned</div>
+            <div class="kpi-val" id="adminCommVal" style="color:var(--amber);font-size:20px;">₹24,100</div>
+            <div class="kpi-change neutral" id="adminCommChg">0.5% of GMV</div>
           </div>
           <div class="kpi" style="animation-delay:.12s">
             <div class="kpi-label">Active Sellers</div>
-            <div class="kpi-val" style="font-size:20px;">48</div>
-            <div class="kpi-change up">↑ 6 new this week</div>
+            <div class="kpi-val" id="adminSellersVal" style="font-size:20px;">48</div>
+            <div class="kpi-change up" id="adminSellersChg">↑ 6 new this week</div>
           </div>
           <div class="kpi" style="animation-delay:.15s">
             <div class="kpi-label">Delivery Agents</div>
-            <div class="kpi-val" style="font-size:20px;">32</div>
-            <div class="kpi-change up">↑ 4 onboarded</div>
+            <div class="kpi-val" id="adminAgentsVal" style="font-size:20px;">32</div>
+            <div class="kpi-change up" id="adminAgentsChg">↑ 4 onboarded</div>
           </div>
         </div>
 
@@ -7951,24 +7951,32 @@ function doDailyCheckIn(el){doCheckIn(2);}
       </div>
       <div class="content" style="padding-top:12px;">
 
+        <!-- Financial Period Filter -->
+        <div style="display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:4px;scrollbar-width:none;" id="brandHomePeriodBar">
+          <div class="brand-period-chip" onclick="setHulPeriod(this,'30d')">30 Days</div>
+          <div class="brand-period-chip active" onclick="setHulPeriod(this,'6m')">6 Months</div>
+          <div class="brand-period-chip" onclick="setHulPeriod(this,'1y')">1 Year</div>
+          <div class="brand-period-chip" onclick="setHulPeriod(this,'ytd')">YTD</div>
+        </div>
+
         <!-- Revenue KPI row -->
         <div class="kpi-row">
           <div class="kpi brand-kpi" style="grid-column:span 2;background:linear-gradient(135deg,rgba(184,120,26,0.12),rgba(108,63,197,0.08));border-color:rgba(184,120,26,0.22);">
-            <div class="kpi-label" id="brandRevLabel">Total Revenue (7 Days)</div>
+            <div class="kpi-label" id="brandRevLabel">Total Revenue (6 Months)</div>
             <div style="display:flex;align-items:flex-end;gap:12px;margin-top:4px;">
-              <div class="kpi-val" id="brandRevVal" style="font-size:32px;background:linear-gradient(135deg,var(--gold),var(--river-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;" data-counter="582400">₹5.82L</div>
+              <div class="kpi-val" id="brandRevVal" style="font-size:32px;background:linear-gradient(135deg,var(--gold),var(--river-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;" data-counter="582400">₹1.24Cr</div>
               <div style="padding-bottom:4px;">
-                <div class="kpi-change up" id="brandRevChange" style="font-size:13px;">↑ 18.4% vs last week</div>
+                <div class="kpi-change up" id="brandRevChange" style="font-size:13px;">↑ 26.3% vs last 6 months</div>
                 <div id="brandRevSub" style="font-size:10px;color:var(--muted);margin-top:1px;">across 3 stores · 47 SKUs</div>
               </div>
             </div>
           </div>
         </div>
         <div class="kpi-row">
-          <div class="kpi brand-kpi"><div class="kpi-label">Units Sold</div><div class="kpi-val" id="brandUnitsVal" style="color:var(--river)">3,847</div><div class="kpi-change up" id="brandUnitsChg">↑ 12%</div></div>
-          <div class="kpi brand-kpi"><div class="kpi-label">Avg Order Value</div><div class="kpi-val" id="brandAovVal" style="color:var(--amber)">₹151</div><div class="kpi-change up" id="brandAovChg">↑ ₹8</div></div>
-          <div class="kpi brand-kpi"><div class="kpi-label">Market Share</div><div class="kpi-val" id="brandShareVal" style="color:var(--leaf-light)">34.2%</div><div class="kpi-change up" id="brandShareChg">↑ 2.1pp</div></div>
-          <div class="kpi brand-kpi"><div class="kpi-label">Return Rate</div><div class="kpi-val" id="brandReturnVal" style="color:var(--coral)">1.3%</div><div class="kpi-change up" id="brandReturnChg">↓ 0.4pp</div></div>
+          <div class="kpi brand-kpi"><div class="kpi-label">Units Sold</div><div class="kpi-val" id="brandUnitsVal" style="color:var(--river)">92,840</div><div class="kpi-change up" id="brandUnitsChg">↑ 24%</div></div>
+          <div class="kpi brand-kpi"><div class="kpi-label">Avg Order Value</div><div class="kpi-val" id="brandAovVal" style="color:var(--amber)">₹134</div><div class="kpi-change up" id="brandAovChg">↑ ₹16</div></div>
+          <div class="kpi brand-kpi"><div class="kpi-label">Market Share</div><div class="kpi-val" id="brandShareVal" style="color:var(--leaf-light)">36.8%</div><div class="kpi-change up" id="brandShareChg">↑ 5.4pp</div></div>
+          <div class="kpi brand-kpi"><div class="kpi-label">Return Rate</div><div class="kpi-val" id="brandReturnVal" style="color:var(--coral)">1.5%</div><div class="kpi-change up" id="brandReturnChg">↓ 0.6pp</div></div>
         </div>
 
         <!-- Sales trend mini chart -->
@@ -7981,13 +7989,12 @@ function doDailyCheckIn(el){doCheckIn(2);}
             <div style="width:8px;height:8px;border-radius:2px;background:rgba(175,145,105,0.4);margin-left:8px;"></div><span style="font-size:10px;color:var(--muted)">Category Avg</span>
           </div>
           <div class="brand-chart" id="brandHomeTrendChart">
-            <div class="brand-bar-wrap"><div class="brand-bar" style="height:58%;"></div><div class="brand-bar-ref" style="height:32%;"></div><div class="brand-bar-lbl">Mon</div></div>
-            <div class="brand-bar-wrap"><div class="brand-bar" style="height:72%;"></div><div class="brand-bar-ref" style="height:40%;"></div><div class="brand-bar-lbl">Tue</div></div>
-            <div class="brand-bar-wrap"><div class="brand-bar" style="height:88%;"></div><div class="brand-bar-ref" style="height:48%;"></div><div class="brand-bar-lbl">Wed</div></div>
-            <div class="brand-bar-wrap"><div class="brand-bar" style="height:76%;"></div><div class="brand-bar-ref" style="height:42%;"></div><div class="brand-bar-lbl">Thu</div></div>
-            <div class="brand-bar-wrap"><div class="brand-bar brand-bar-peak" style="height:100%;"></div><div class="brand-bar-ref" style="height:55%;"></div><div class="brand-bar-lbl">Fri⚡</div></div>
-            <div class="brand-bar-wrap"><div class="brand-bar" style="height:93%;"></div><div class="brand-bar-ref" style="height:51%;"></div><div class="brand-bar-lbl">Sat</div></div>
-            <div class="brand-bar-wrap"><div class="brand-bar" style="height:81%;"></div><div class="brand-bar-ref" style="height:45%;"></div><div class="brand-bar-lbl">Sun</div></div>
+            <div class="brand-bar-wrap"><div class="brand-bar" style="height:52%;"></div><div class="brand-bar-ref" style="height:30%;"></div><div class="brand-bar-lbl">Nov</div></div>
+            <div class="brand-bar-wrap"><div class="brand-bar" style="height:60%;"></div><div class="brand-bar-ref" style="height:34%;"></div><div class="brand-bar-lbl">Dec</div></div>
+            <div class="brand-bar-wrap"><div class="brand-bar" style="height:68%;"></div><div class="brand-bar-ref" style="height:38%;"></div><div class="brand-bar-lbl">Jan</div></div>
+            <div class="brand-bar-wrap"><div class="brand-bar" style="height:76%;"></div><div class="brand-bar-ref" style="height:42%;"></div><div class="brand-bar-lbl">Feb</div></div>
+            <div class="brand-bar-wrap"><div class="brand-bar" style="height:88%;"></div><div class="brand-bar-ref" style="height:48%;"></div><div class="brand-bar-lbl">Mar</div></div>
+            <div class="brand-bar-wrap"><div class="brand-bar brand-bar-peak" style="height:100%;"></div><div class="brand-bar-ref" style="height:55%;"></div><div class="brand-bar-lbl">Apr⚡</div></div>
           </div>
         </div>
 
@@ -11172,83 +11179,87 @@ function jiyaAsk(topic) {
 // BRAND / ANALYTICS DASHBOARD JS
 // ══════════════════════════════════════════════
 
+// ── Legacy alias (used by brand-products page SKU chips) ──
 function setBrandPeriod(el, period) {
-  document.querySelectorAll('.brand-period-chip').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('#brand-products .brand-period-chip').forEach(c => c.classList.remove('active'));
   el.classList.add('active');
+  const labels = { 'all':'All 47 SKUs', 'top':'Top 10 performers', 'risk':'3 at-risk SKUs', 'new':'2 new SKUs' };
+  showToast('🔍', 'Filter: ' + (labels[period] || period));
+}
 
-  const data = {
-    '7d': {
-      label: 'Total Revenue (7 Days)',
-      revenue: '₹5.82L', revChange: '↑ 18.4% vs last week', revSub: 'across 3 stores · 47 SKUs',
-      units: '3,847', unitsChange: '↑ 12%',
-      aov: '₹151', aovChange: '↑ ₹8',
-      share: '34.2%', shareChange: '↑ 2.1pp',
-      returns: '1.3%', returnsChange: '↓ 0.4pp',
-      bars: [
-        {h:'58%',lbl:'Mon'},{h:'72%',lbl:'Tue'},{h:'88%',lbl:'Wed'},
-        {h:'76%',lbl:'Thu'},{h:'100%',lbl:'Fri⚡',peak:true},{h:'93%',lbl:'Sat'},{h:'81%',lbl:'Sun'}
-      ]
-    },
-    '30d': {
-      label: 'Total Revenue (30 Days)',
-      revenue: '₹21.4L', revChange: '↑ 23% vs last month', revSub: 'across 3 stores · 47 SKUs',
-      units: '15,820', unitsChange: '↑ 19%',
-      aov: '₹135', aovChange: '↑ ₹11',
-      share: '31.8%', shareChange: '↑ 3.4pp',
-      returns: '1.6%', returnsChange: '↓ 0.2pp',
-      bars: [
-        {h:'52%',lbl:'W1'},{h:'68%',lbl:'W2'},{h:'85%',lbl:'W3'},{h:'100%',lbl:'W4',peak:true}
-      ]
-    },
-    'q1': {
-      label: 'Total Revenue (Q1 2026)',
-      revenue: '₹46.1L', revChange: '↑ 31% vs Q4 2025', revSub: 'Jan · Feb · Mar 2026',
-      units: '42,300', unitsChange: '↑ 28%',
-      aov: '₹109', aovChange: '↑ ₹14',
-      share: '29.4%', shareChange: '↑ 4.8pp',
-      returns: '1.9%', returnsChange: '↓ 0.3pp',
-      bars: [
-        {h:'62%',lbl:'Jan'},{h:'74%',lbl:'Feb'},{h:'100%',lbl:'Mar',peak:true}
-      ]
-    },
-    'ytd': {
-      label: 'Total Revenue (YTD 2026)',
-      revenue: '₹67.5L', revChange: '↑ 28% vs Jan–Apr 2025', revSub: 'Jan – Apr 2026 · 47 SKUs',
-      units: '58,120', unitsChange: '↑ 25%',
-      aov: '₹116', aovChange: '↑ ₹18',
-      share: '30.7%', shareChange: '↑ 5.2pp',
-      returns: '1.7%', returnsChange: '↓ 0.5pp',
-      bars: [
-        {h:'55%',lbl:'Jan'},{h:'65%',lbl:'Feb'},{h:'80%',lbl:'Mar'},{h:'100%',lbl:'Apr',peak:true}
-      ]
-    }
-  };
+// ── HUL Brand-Home financial period data ──
+const _hulPeriodData = {
+  '30d': {
+    label: 'Total Revenue (30 Days)',
+    revenue: '₹21.4L', revChange: '↑ 23% vs last month', revSub: 'across 3 stores · 47 SKUs',
+    units: '15,820', unitsChange: '↑ 19%',
+    aov: '₹135', aovChange: '↑ ₹11',
+    share: '31.8%', shareChange: '↑ 3.4pp',
+    returns: '1.6%', returnsChange: '↓ 0.2pp',
+    bars: [
+      {h:'52%',lbl:'W1'},{h:'68%',lbl:'W2'},{h:'85%',lbl:'W3'},{h:'100%',lbl:'W4',peak:true}
+    ]
+  },
+  '6m': {
+    label: 'Total Revenue (6 Months)',
+    revenue: '₹1.24Cr', revChange: '↑ 26.3% vs last 6 months', revSub: 'Nov 2025 – Apr 2026 · 47 SKUs',
+    units: '92,840', unitsChange: '↑ 24%',
+    aov: '₹134', aovChange: '↑ ₹16',
+    share: '36.8%', shareChange: '↑ 5.4pp',
+    returns: '1.5%', returnsChange: '↓ 0.6pp',
+    bars: [
+      {h:'52%',lbl:'Nov'},{h:'60%',lbl:'Dec'},{h:'68%',lbl:'Jan'},
+      {h:'76%',lbl:'Feb'},{h:'88%',lbl:'Mar'},{h:'100%',lbl:'Apr⚡',peak:true}
+    ]
+  },
+  '1y': {
+    label: 'Total Revenue (1 Year)',
+    revenue: '₹2.18Cr', revChange: '↑ 34.1% vs FY 2024–25', revSub: 'May 2025 – Apr 2026 · 47 SKUs',
+    units: '1,74,600', unitsChange: '↑ 31%',
+    aov: '₹125', aovChange: '↑ ₹22',
+    share: '33.5%', shareChange: '↑ 6.2pp',
+    returns: '1.8%', returnsChange: '↓ 0.8pp',
+    bars: [
+      {h:'42%',lbl:'Q2\'25'},{h:'55%',lbl:'Q3\'25'},{h:'72%',lbl:'Q4\'25'},{h:'100%',lbl:'Q1\'26',peak:true}
+    ]
+  },
+  'ytd': {
+    label: 'Total Revenue (YTD 2026)',
+    revenue: '₹67.5L', revChange: '↑ 28% vs Jan–Apr 2025', revSub: 'Jan – Apr 2026 · 47 SKUs',
+    units: '58,120', unitsChange: '↑ 25%',
+    aov: '₹116', aovChange: '↑ ₹18',
+    share: '30.7%', shareChange: '↑ 5.2pp',
+    returns: '1.7%', returnsChange: '↓ 0.5pp',
+    bars: [
+      {h:'55%',lbl:'Jan'},{h:'65%',lbl:'Feb'},{h:'80%',lbl:'Mar'},{h:'100%',lbl:'Apr',peak:true}
+    ]
+  }
+};
 
-  const d = data[period] || data['7d'];
+function setHulPeriod(el, period) {
+  document.querySelectorAll('#brandHomePeriodBar .brand-period-chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  const d = _hulPeriodData[period] || _hulPeriodData['6m'];
 
-  // Update large revenue KPI
   const revLabel = document.getElementById('brandRevLabel');
   const revVal   = document.getElementById('brandRevVal');
   const revChg   = document.getElementById('brandRevChange');
   const revSub   = document.getElementById('brandRevSub');
   if (revLabel) revLabel.textContent = d.label;
   if (revVal)   revVal.textContent   = d.revenue;
-  if (revChg)   revChg.textContent   = d.revChange;
+  if (revChg)   { revChg.textContent = d.revChange; revChg.className = 'kpi-change up'; }
   if (revSub)   revSub.textContent   = d.revSub;
 
-  // Update small KPIs
   const ids = {
-    brandUnitsVal: d.units,   brandUnitsChg: d.unitsChange,
-    brandAovVal:   d.aov,     brandAovChg:   d.aovChange,
-    brandShareVal: d.share,   brandShareChg: d.shareChange,
-    brandReturnVal:d.returns, brandReturnChg:d.returnsChange
+    brandUnitsVal: d.units,    brandUnitsChg: d.unitsChange,
+    brandAovVal:   d.aov,      brandAovChg:   d.aovChange,
+    brandShareVal: d.share,    brandShareChg: d.shareChange,
+    brandReturnVal:d.returns,  brandReturnChg:d.returnsChange
   };
   Object.entries(ids).forEach(([id, val]) => {
-    const el2 = document.getElementById(id);
-    if (el2) el2.textContent = val;
+    const e = document.getElementById(id); if (e) e.textContent = val;
   });
 
-  // Update mini trend chart
   const chart = document.getElementById('brandHomeTrendChart');
   if (chart) {
     chart.innerHTML = d.bars.map(b => `
@@ -11258,9 +11269,79 @@ function setBrandPeriod(el, period) {
         <div class="brand-bar-lbl">${b.lbl}</div>
       </div>`).join('');
   }
+  const lbls = {'30d':'30 Days','6m':'6 Months','1y':'1 Year','ytd':'Year to Date'};
+  showToast('📊', 'HUL: ' + (lbls[period]||period));
+}
 
-  const labels = { '7d':'7 Days', '30d':'30 Days', 'q1':'Q1 2026', 'ytd':'Year to Date' };
-  showToast('📊', 'Showing data for: ' + (labels[period] || period));
+// ── Admin financial period data ──
+const _adminPeriodData = {
+  '30d': {
+    salesLabel: 'Total Platform Sales (30 Days)',
+    sales: '₹4,82,000', salesChg: '↑ 22% vs last month',
+    comm: '₹24,100',    commChg: '0.5% of GMV',
+    sellers: '48',      sellersChg: '↑ 6 new this week',
+    agents: '32',       agentsChg: '↑ 4 onboarded',
+    gmv: '₹4.82L',     hdrComm: '₹24.1k',
+    graphPts: '0,65 43,50 86,20 129,35 172,10 215,25 258,5 300,22'
+  },
+  '6m': {
+    salesLabel: 'Total Platform Sales (6 Months)',
+    sales: '₹28.6L',   salesChg: '↑ 34% vs prev 6 months',
+    comm: '₹1,43,000', commChg: '0.5% of GMV',
+    sellers: '48',      sellersChg: '↑ 14 added in 6mo',
+    agents: '32',       agentsChg: '↑ 9 onboarded in 6mo',
+    gmv: '₹28.6L',     hdrComm: '₹1.43L',
+    graphPts: '0,72 60,60 120,48 180,30 240,18 300,8'
+  },
+  '1y': {
+    salesLabel: 'Total Platform Sales (1 Year)',
+    sales: '₹52.4L',   salesChg: '↑ 41% YoY growth',
+    comm: '₹2,62,000', commChg: '0.5% of GMV',
+    sellers: '48',      sellersChg: 'Started from 12 sellers',
+    agents: '32',       agentsChg: 'Started from 8 agents',
+    gmv: '₹52.4L',     hdrComm: '₹2.62L',
+    graphPts: '0,82 50,70 100,58 150,44 200,28 250,14 300,5'
+  },
+  'ytd': {
+    salesLabel: 'Total Platform Sales (YTD 2026)',
+    sales: '₹19.8L',   salesChg: '↑ 31% vs Jan–Apr 2025',
+    comm: '₹99,000',   commChg: '0.5% of GMV',
+    sellers: '48',      sellersChg: '↑ 8 new YTD',
+    agents: '32',       agentsChg: '↑ 5 onboarded YTD',
+    gmv: '₹19.8L',     hdrComm: '₹99k',
+    graphPts: '0,68 75,48 150,25 225,10 300,5'
+  }
+};
+
+function setAdminPeriod(el, period) {
+  document.querySelectorAll('#adminPeriodChipsBar .brand-period-chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  const d = _adminPeriodData[period] || _adminPeriodData['30d'];
+
+  const set = (id, val) => { const e = document.getElementById(id); if (e) e.textContent = val; };
+  set('adminSalesLabel', d.salesLabel);
+  set('adminSalesVal',   d.sales);
+  set('adminSalesChg',   d.salesChg);
+  set('adminCommVal',    d.comm);
+  set('adminCommChg',    d.commChg);
+  set('adminSellersVal', d.sellers);
+  set('adminSellersChg', d.sellersChg);
+  set('adminAgentsVal',  d.agents);
+  set('adminAgentsChg',  d.agentsChg);
+  set('adminHdrGmv',     d.gmv);
+  set('adminHdrCommission', d.hdrComm);
+
+  // Update SVG revenue chart polyline & polygon
+  const poly = document.querySelector('#admin-dashboard polyline[stroke]');
+  const area = document.querySelector('#admin-dashboard polygon[fill]');
+  if (poly) poly.setAttribute('points', d.graphPts);
+  if (area) {
+    const pts = d.graphPts + ' 300,90 0,90';
+    area.setAttribute('points', pts);
+  }
+
+  const lbls = {'30d':'30 Days','6m':'6 Months','1y':'1 Year','ytd':'Year to Date'};
+  showToast('📊', 'Admin: ' + (lbls[period]||period));
 }
 
 function filterSKU(el, type) {
