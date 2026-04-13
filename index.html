@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,8 +40,8 @@ body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--tex
 
 /* ── MOBILE: full screen ── */
 @media(max-width:900px){
-  body{overflow:auto;}
-  .shell{width:100vw;height:100vh;border-radius:0;box-shadow:none;position:fixed;top:0;left:0;transform:none;}
+  body{overflow:hidden;height:100vh;height:100dvh;}
+  .shell{width:100vw;height:100vh;height:100dvh;border-radius:0;box-shadow:none;position:fixed;top:0;left:0;transform:none;}
   .status-bar{display:none;}
   .desktop-bg{display:none;}
   .desktop-hint{display:none!important;}
@@ -3642,7 +3641,7 @@ body{font-family:'Space Grotesk',sans-serif;background:#2a1a0a;color:var(--text)
 }
 @media(max-width:900px){
   body{overflow:auto;background:var(--bg);}
-  .shell{width:100vw;height:100vh;border-radius:0;box-shadow:none;position:fixed;top:0;left:0;transform:none;}
+  .shell{width:100vw;height:100vh;height:100dvh;border-radius:0;box-shadow:none;position:fixed;top:0;left:0;transform:none;}
   .status-bar{display:none;}
 }
 
@@ -3981,6 +3980,17 @@ body{font-family:'Space Grotesk',sans-serif;background:#2a1a0a;color:var(--text)
 }
 .lm-page::-webkit-scrollbar{display:none;}
 .lm-page .content{padding-bottom:100px !important;}
+
+/* ── BOTTOM NAV SLIDE ANIMATION ── */
+#bottomNav {
+  transition: transform 0.38s cubic-bezier(0.4,0,0.2,1), opacity 0.32s ease;
+  transform: translateY(0);
+}
+#bottomNav.nav-out {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+}
 </style>
 
   <!-- Firebase SDK -->
@@ -4070,7 +4080,7 @@ function startRealtimeSync() {
   ];
   let idx = 0;
   function showFeed() {
-    if (document.getElementById('bottomNav')?.style.display === 'none') return;
+    if (!document.getElementById('bottomNav') || document.getElementById('bottomNav').classList.contains('nav-out') || document.getElementById('bottomNav').style.display === 'none') return;
     const o = orders[idx % orders.length];
     idx++;
     const feed = document.createElement('div');
@@ -10123,7 +10133,18 @@ function goTo(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));
   const t=document.getElementById(id);
   if(t) t.classList.remove('hidden');
-  document.getElementById('bottomNav').style.display = noNavPages.includes(id)?'none':'flex';
+  // Animate bottom nav in/out
+  (function(){
+    var nav = document.getElementById('bottomNav');
+    var hide = noNavPages.includes(id);
+    if(hide){
+      nav.classList.add('nav-out');
+      setTimeout(function(){ if(nav.classList.contains('nav-out')) nav.style.display='none'; }, 380);
+    } else {
+      nav.style.display='flex';
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){ nav.classList.remove('nav-out'); }); });
+    }
+  })();
   if(id==='cart-page') renderCart();
   if(id==='payment-page') _cartUI();
   if(id==='wishlist-page') renderWishlist();
@@ -10147,7 +10168,7 @@ function quickLogin(role){
   // Billing counter — dedicated full-screen page, skip normal nav setup
   if(role==='billing'){
     currentRole='billing';
-    document.getElementById('bottomNav').style.display='none';
+    (function(){ var nav=document.getElementById('bottomNav'); nav.classList.add('nav-out'); setTimeout(function(){ nav.style.display='none'; },380); })();
     const bFab=document.getElementById('billingFab'); if(bFab) bFab.style.display='none';
     const jFab=document.getElementById('brandJiyaFab'); if(jFab) jFab.style.display='none';
     const sFab=document.getElementById('brandSignOutFab'); if(sFab) sFab.style.display='none';
@@ -10197,7 +10218,12 @@ function updateNavActive(){
 
 function doLogout(){
   cart.clear();
-  document.getElementById('bottomNav').style.display='none';
+  // Slide nav out then hide
+  (function(){
+    var nav=document.getElementById('bottomNav');
+    nav.classList.add('nav-out');
+    setTimeout(function(){ nav.style.display='none'; }, 380);
+  })();
   // Hide all floating action buttons
   const jFab=document.getElementById('brandJiyaFab');
   const sFab=document.getElementById('brandSignOutFab');
@@ -13222,9 +13248,8 @@ function bcInitAll(){
 
   
     </div><!-- /lulu-screen-wrap -->
-
     <!-- Lulu Bottom Nav -->
-    <div class="bottom-nav" style="justify-content:space-around;position:relative;flex-shrink:0;height:90px;">
+    <div id="lm-bottom-nav" style="display:flex;align-items:center;justify-content:space-around;height:90px;background:rgba(245,237,226,0.98);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-top:1px solid rgba(175,145,105,0.25);flex-shrink:0;padding:0 4px 18px;box-shadow:0 -8px 30px rgba(120,80,30,0.10);">
       <button class="nav-item active" id="lm-nav-overview" onclick="lm_switchTab('overview')"><div class="nav-icon" style="font-size:20px;">🏠</div><span>Overview</span></button>
       <button class="nav-item" id="lm-nav-tenants" onclick="lm_switchTab('tenants')"><div class="nav-icon" style="font-size:20px;">👥</div><span>Tenants</span></button>
       <button class="nav-item" id="lm-nav-spaces" onclick="lm_switchTab('spaces')"><div class="nav-icon">&#128506;&#65039;</div><span>Spaces</span></button>
@@ -13388,4 +13413,21 @@ document.querySelectorAll('#lulu-mall .lm-page').forEach(p => {
 /* ═ END LULU MALL JS ═ */
 </script>
 
+
+<script>
+/* ── VIEWPORT HEIGHT FIX (iOS Safari 100vh bug) ── */
+(function(){
+  function fixVH(){
+    var vh = window.innerHeight;
+    var shells = document.querySelectorAll('.shell');
+    shells.forEach(function(s){ s.style.height = vh + 'px'; });
+  }
+  // Run on load
+  fixVH();
+  // Run on resize (handles toolbar show/hide on scroll)
+  window.addEventListener('resize', fixVH);
+  // Also on orientation change
+  window.addEventListener('orientationchange', function(){ setTimeout(fixVH, 200); });
+})();
+</script>
 </body>
