@@ -3979,6 +3979,7 @@ body{font-family:'Space Grotesk',sans-serif;background:#2a1a0a;color:var(--text)
   background:var(--bg);
 }
 .lm-page::-webkit-scrollbar{display:none;}
+.lm-page .content{padding-bottom:100px !important;}
 </style>
 
   <!-- Firebase SDK -->
@@ -10016,7 +10017,7 @@ const roleNavs = {
   admin:    {pages:['admin-dashboard','admin-sellers','admin-bookings','admin-spaces','admin-policy'],  svgs:['home','sellers','bookings','spacesmgt','policy'],labels:['Home','Sellers','Orders','Spaces','Policy']},
   brand:    {pages:['brand-home','brand-sales','brand-stores','brand-products','brand-account'],     svgs:['home','analytics','stores','orders','profile'],  labels:['Home','Sales','Stores','SKUs','Account']},
 };
-const noNavPages = ['splash','login','register','register-auth','brand-login','onboarding','otp-page','customer-otp-verify','notifications','customer-notifications','order-detail','billing-counter','lulu-mall'];
+const noNavPages = ['splash','login','register','register-auth','brand-login','onboarding','otp-page','customer-otp-verify','notifications','customer-notifications','order-detail','billing-counter','lulu-mall','seller-products','seller-payment','seller-agreements','seller-support','seller-fssai','delivery-route-history'];
 
 // ══ CART (real reactive, persisted) ══
 const cart = {
@@ -13219,14 +13220,15 @@ function bcInitAll(){
     </div>
 
   
-      <!-- Lulu Bottom Nav -->
-      <div class="bottom-nav" style="justify-content:space-around;">
-        <button class="nav-item active" id="lm-nav-overview" onclick="lm_switchTab('overview')"><div class="nav-icon" style="font-size:20px;">🏠</div><span>Overview</span></button>
-        <button class="nav-item" id="lm-nav-tenants" onclick="lm_switchTab('tenants')"><div class="nav-icon" style="font-size:20px;">👥</div><span>Tenants</span></button>
-        <button class="nav-item" id="lm-nav-spaces" onclick="lm_switchTab('spaces')"><div class="nav-icon">&#128506;&#65039;</div><span>Spaces</span></button>
-        <button class="nav-item" id="lm-nav-analytics" onclick="lm_switchTab('analytics')"><div class="nav-icon">&#128202;</div><span>Analytics</span></button>
-        <button class="nav-item" id="lm-nav-profile" onclick="lm_switchTab('profile')"><div class="nav-icon">&#9881;&#65039;</div><span>Settings</span></button>
-      </div>
+    </div><!-- /lulu-screen-wrap -->
+
+    <!-- Lulu Bottom Nav -->
+    <div class="bottom-nav" style="justify-content:space-around;position:relative;flex-shrink:0;height:90px;">
+      <button class="nav-item active" id="lm-nav-overview" onclick="lm_switchTab('overview')"><div class="nav-icon" style="font-size:20px;">🏠</div><span>Overview</span></button>
+      <button class="nav-item" id="lm-nav-tenants" onclick="lm_switchTab('tenants')"><div class="nav-icon" style="font-size:20px;">👥</div><span>Tenants</span></button>
+      <button class="nav-item" id="lm-nav-spaces" onclick="lm_switchTab('spaces')"><div class="nav-icon">&#128506;&#65039;</div><span>Spaces</span></button>
+      <button class="nav-item" id="lm-nav-analytics" onclick="lm_switchTab('analytics')"><div class="nav-icon">&#128202;</div><span>Analytics</span></button>
+      <button class="nav-item" id="lm-nav-profile" onclick="lm_switchTab('profile')"><div class="nav-icon">&#9881;&#65039;</div><span>Settings</span></button>
     </div>
   </div>
   <!-- ═══ END LULU MALL ═══ -->
