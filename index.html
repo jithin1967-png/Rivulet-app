@@ -27,6 +27,7 @@
   --indigo:#6c3fc5;--crimson:#c0392b;--orange:#b8560e;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+button,a,[onclick]{touch-action:manipulation;}
 body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);overflow:hidden;height:100vh;width:100vw;}
 
 /* ── DESKTOP: phone shell ── */
@@ -66,7 +67,7 @@ body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--tex
 .screen-wrap{flex:1;overflow:hidden;position:relative;}
 .page{
   position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;
-  transition:transform .4s cubic-bezier(.4,0,.2,1),opacity .4s ease;
+  transition:transform .25s cubic-bezier(.4,0,.2,1),opacity .25s ease;
   background:var(--bg);
 }
 .page.hidden{transform:translateX(100%);opacity:0;pointer-events:none;}
@@ -129,6 +130,7 @@ body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--tex
   font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;letter-spacing:1px;
   background:linear-gradient(135deg,var(--river),var(--river-mid));color:white;
   animation:fadeUp .8s .5s ease both;transition:all .2s;margin-bottom:14px;display:block;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none;
 }
 .splash-btn.outline{background:transparent;border:1px solid var(--border);color:var(--text);}
 .live-dot{
@@ -144,7 +146,7 @@ body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--tex
 }
 #login::-webkit-scrollbar{display:none;}
 .login-inner{padding:40px 28px;}
-.back-btn{font-size:22px;cursor:pointer;margin-bottom:24px;display:inline-block;}
+.back-btn{font-size:22px;cursor:pointer;margin-bottom:24px;display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none;}
 .login-logo{
   font-family:'Outfit',sans-serif;font-size:28px;font-weight:800;
   background:linear-gradient(135deg,var(--river-light),var(--river-glow));
@@ -171,6 +173,7 @@ body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--tex
   font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;
   background:linear-gradient(135deg,var(--river),var(--river-mid));color:white;
   margin-top:8px;transition:all .2s;letter-spacing:.5px;display:block;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none;
 }
 .demo-cards{margin-top:28px;}
 .demo-title{font-size:11px;color:var(--muted);text-align:center;margin-bottom:14px;letter-spacing:1px;text-transform:uppercase;}
@@ -178,6 +181,7 @@ body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--tex
 .demo-card{
   flex:1;min-width:70px;background:var(--card);border:1px solid var(--border);border-radius:14px;
   padding:14px 8px;text-align:center;cursor:pointer;transition:all .2s;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none;
 }
 .demo-card:hover{border-color:var(--river-light);}
 .demo-card-billing{border-color:rgba(45,138,78,0.3);background:rgba(45,138,78,0.05);}
@@ -318,7 +322,7 @@ body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--tex
 .profile-name{font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;}
 .profile-role{font-size:11px;color:var(--river-light);margin-top:3px;}
 .profile-loc{font-size:11px;color:var(--muted);margin-top:2px;}
-.setting-row{display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid rgba(255,255,255,0.05);cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none;}
+.setting-row{display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid rgba(255,255,255,0.05);cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none;width:100%;background:none;border-top:none;border-left:none;border-right:none;font-family:'Space Grotesk',sans-serif;color:var(--text);text-align:left;-webkit-appearance:none;appearance:none;box-sizing:border-box;}
 .setting-row:last-child{border-bottom:none;}
 .setting-row:active{background:rgba(108,63,197,0.06);border-radius:10px;margin:0 -4px;padding:15px 4px;}
 .setting-left{display:flex;align-items:center;gap:12px;}
@@ -5012,15 +5016,22 @@ function doDailyCheckIn(el){doCheckIn(2);}
           </div>
         </div>
         <div class="card">
-          <div class="setting-row" onclick="goTo('seller-products')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span><span class="setting-name">My Products (8)</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
-          <div class="setting-row" onclick="goTo('seller-payment')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span><span class="setting-name">Payment Settings</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
-          <div class="setting-row" onclick="goTo('seller-agreements')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span><span class="setting-name">My Agreements</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          <button class="setting-row" onclick="goTo('seller-products')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span><span class="setting-name">My Products (8)</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></button>
+
+          <button class="setting-row" onclick="goTo('seller-payment')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span><span class="setting-name">Payment Settings</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></button>
+
+          <button class="setting-row" onclick="goTo('seller-agreements')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span><span class="setting-name">My Agreements</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></button>
+
           <div class="setting-row" onclick="goTo('seller-fssai')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span class="setting-name">FSSAI License</span></div><span class="badge badge-green" style="font-size:10px;">Active</span></div>
+
           <div class="setting-row" onclick="toggleNotifs()"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></span><span class="setting-name">Notifications</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
+
           <div class="setting-row" style="cursor:default;"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></span><span class="setting-name theme-mode-label">Light Mode</span></div><button class="theme-toggle" id="themeToggle" onclick="toggleTheme()"><div class="theme-knob">☀️</div></button></div>
           <div class="setting-row" style="cursor:default;"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><span class="setting-name">Neon Mode</span></div><button class="neon-toggle-btn" id="neonToggle" onclick="toggleNeon()">OFF</button></div>
           <div class="setting-row" onclick="goTo('seller-support')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span><span class="setting-name">Support</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
+
           <div class="setting-row" onclick="doLogout()"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></span><span class="setting-name" style="color:var(--coral)">Sign Out</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
+
         </div>
       </div>
     </div>
@@ -5256,10 +5267,14 @@ function doDailyCheckIn(el){doCheckIn(2);}
           </div>
         </div>
         <div class="card">
-          <div class="setting-row" onclick="goTo('delivery-route-history')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></span><span class="setting-name">Route History</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
-          <div class="setting-row" onclick="goTo('delivery-vehicle')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span><span class="setting-name">Vehicle Details</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
-          <div class="setting-row" onclick="goTo('delivery-agreement')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span><span class="setting-name">Partner Agreement</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
+          <button class="setting-row" onclick="goTo('delivery-route-history')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></span><span class="setting-name">Route History</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></button>
+
+          <button class="setting-row" onclick="goTo('delivery-vehicle')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span><span class="setting-name">Vehicle Details</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></button>
+
+          <button class="setting-row" onclick="goTo('delivery-agreement')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span><span class="setting-name">Partner Agreement</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></button>
+
           <div class="setting-row" onclick="doLogout()"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></span><span class="setting-name" style="color:var(--coral)">Sign Out</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
+
         </div>
       </div>
     </div>
@@ -6114,8 +6129,11 @@ function doDailyCheckIn(el){doCheckIn(2);}
         </div>
         <div class="card">
           <div class="setting-row" onclick="goTo('wishlist-page')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></span><span class="setting-name">My Wishlist</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
+
           <div class="setting-row" onclick="goTo('loyalty-page')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="setting-name">Loyalty & Rewards</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
+
           <div class="setting-row" onclick="goTo('customer-otp-verify')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></span><span class="setting-name">Verify Phone (OTP)</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
+
           <div class="setting-row" style="cursor:default;"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></span><span class="setting-name">Language</span></div>
             <div class="lang-row" style="margin:0;gap:5px;">
               <div class="lang-chip active" id="langEN" onclick="setLang('en',this)">EN</div>
@@ -6124,9 +6142,13 @@ function doDailyCheckIn(el){doCheckIn(2);}
             </div>
           </div>
           <div class="setting-row" onclick="goTo('customer-addresses')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span class="setting-name">Saved Addresses</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
+
           <div class="setting-row" onclick="goTo('customer-payment-methods')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span><span class="setting-name">Payment Methods</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
+
           <div class="setting-row" onclick="goTo('customer-notifications')"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></span><span class="setting-name">Notifications</span></div><div style="display:flex;align-items:center;gap:6px;"><span style="background:rgba(192,57,43,0.12);color:var(--coral);border-radius:20px;padding:2px 8px;font-size:10px;font-weight:800;">3 New</span><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div></div>
+
           <div class="setting-row" onclick="doLogout()"><div class="setting-left"><span class="setting-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></span><span class="setting-name" style="color:var(--coral)">Sign Out</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
+
         </div>
       </div>
     </div>
@@ -7364,8 +7386,11 @@ function doDailyCheckIn(el){doCheckIn(2);}
           <div class="card">
             <div class="section-title">Platform Controls</div>
             <div class="setting-row" onclick="showToast('✏️','Commission rate editor — coming in v3.0')"><div class="setting-left"><span class="setting-icon">💰</span><span class="setting-name">Edit Commission Rates</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
+
             <div class="setting-row" onclick="showToast('📢','Push notification sent to all sellers.')"><div class="setting-left"><span class="setting-icon">📢</span><span class="setting-name">Broadcast Announcement</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
+
             <div class="setting-row" onclick="showToast('🛑','Emergency maintenance mode activated!')"><div class="setting-left"><span class="setting-icon" style="color:var(--coral)">🛑</span><span class="setting-name" style="color:var(--coral)">Emergency Maintenance Mode</span></div><span class="setting-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span></div>
+
           </div>
           <button class="login-btn" onclick="showToast('📄','Platform rules PDF exported!')">⬇️ Export Rules PDF</button>
         </div>
@@ -10028,7 +10053,7 @@ const roleNavs = {
   admin:    {pages:['admin-dashboard','admin-sellers','admin-bookings','admin-spaces','admin-policy'],  svgs:['home','sellers','bookings','spacesmgt','policy'],labels:['Home','Sellers','Orders','Spaces','Policy']},
   brand:    {pages:['brand-home','brand-sales','brand-stores','brand-products','brand-account'],     svgs:['home','analytics','stores','orders','profile'],  labels:['Home','Sales','Stores','SKUs','Account']},
 };
-const noNavPages = ['splash','login','register','register-auth','brand-login','onboarding','otp-page','customer-otp-verify','notifications','customer-notifications','order-detail','billing-counter','lulu-mall','seller-products','seller-payment','seller-agreements','seller-support','seller-fssai','delivery-route-history'];
+const noNavPages = ['splash','login','register','register-auth','brand-login','onboarding','otp-page','customer-otp-verify','notifications','customer-notifications','order-detail','billing-counter','lulu-mall','seller-products','seller-payment','seller-agreements','seller-support','seller-fssai','delivery-route-history','delivery-vehicle','delivery-agreement'];
 
 // ══ CART (real reactive, persisted) ══
 const cart = {
@@ -10138,8 +10163,8 @@ function goTo(id){
     var nav = document.getElementById('bottomNav');
     var hide = noNavPages.includes(id);
     if(hide){
+      nav.style.display='none';
       nav.classList.add('nav-out');
-      setTimeout(function(){ if(nav.classList.contains('nav-out')) nav.style.display='none'; }, 380);
     } else {
       nav.style.display='flex';
       requestAnimationFrame(function(){ requestAnimationFrame(function(){ nav.classList.remove('nav-out'); }); });
